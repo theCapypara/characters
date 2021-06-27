@@ -1,0 +1,11 @@
+gitbuddy:
+  providers:
+    github:
+      org: TUDOCK
+      private_key_file: tudockbot.2021-02-25.private-key.pem
+      app_id: '102214'
+      installation_id: '14955684'
+    bitbucket:
+      url: https://k4101.pixsoftware.de/bitbucket
+      user: ...
+      password: ...

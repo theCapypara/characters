@@ -1,0 +1,1132 @@
+gitbuddy:
+  $ref: /local/local
+  users:
+    aptudock:
+      bitbucket_name: andre.peters
+    Parakoopa:  # Marco
+      bitbucket_name: marco.koepcke
+    NielsPahlmann:
+      bitbucket_name: niels.pahlmann
+    L3P3:  # Len
+      bitbucket_name: lpeschko
+    ZhukValentina:
+      bitbucket_name: valentina.zhuk
+    ismetyavuz:
+      bitbucket_name: ismet.yavuz
+    Naftula70:  # Lars
+      bitbucket_name: lars.piehler
+    td-sclemens:
+      bitbucket_name: steffen.clemens
+    TKlement:
+      bitbucket_name: timo.klement
+    johann-lr:
+      bitbucket_name: jlaur
+    ben-samuel-k:
+      bitbucket_name: ben.kuhn
+    bjoern-quast:
+      bitbucket_name: bjoern.quast
+    asheesh-mage:
+      bitbucket_name: asheesh.srivastav
+    ta-tang:  # Tracy
+      bitbucket_name: tracy.tang
+    kris-terziev:
+      bitbucket_name: kristian.terziev
+  teams:
+    DevOps:
+      github_name: DevOps
+      members:
+        - aptudock
+        - Parakoopa
+        - tudock-devops
+    Sirius:
+      github_name: Team Sirius
+      members:
+        - Parakoopa
+        - NielsPahlmann
+        - L3P3
+        - ZhukValentina
+        - ismetyavuz
+        - Naftula70
+        - td-sclemens
+    Orion:
+      github_name: Team Orion
+      members:
+        - aptudock
+        - TKlement
+        - johann-lr
+        - ben-samuel-k
+        - bjoern-quast
+        - asheesh-mage
+        - tobiasverhaag
+    Magento:
+      github_name: Magento
+      copy_from: ['Sirius', 'Orion']
+    Developers:
+      github_name: Developers
+      members:
+        - ta-tang
+      copy_from: ['Magento', 'DevOps']
+  projects:
+    ankerkraut:
+      $ref: /project/default
+      jira: ANKER
+      external_collaborators:
+        - ak-avesta
+        - Christoph-AK
+        - dennisoderwald
+        - simonstamm
+      repos:
+        magento2-shop:
+          $ref: /repo/default
+          bitbucket_key: magento2-shop
+          access_keys:
+          - label: Ankerkraut M2 BitBucket
+            key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDWjTMoAq1AKYW9clwYXxA9qH3rZspKZgtESAuYvpwgiH4C/2fGcwjmk5DPU7RUvvyNa36u2UtbSs/OLv7mYbVGHQSgx+3ocLUyZbpj17Q9W0KPbJwV8DrpoYGqrTYApnX5+KzFqhpa85Sm8BxuugbOA+X5WyS0xs+JF6DipgtbHwt3jklMk+ZoWv7/4/ZZgwHa7RDhi6DfouqYis6gg/5CjpPi8EIwXMei9EhTFeL0LFPtES3EvCGl18TMxADTB4S0WHCiwlJZfTSsmsFFs84ARujjysgaf5FEGqU2dCYhQuY8iULQPwcxy9RvukJpFPoegwPMdfan9L+FnnE//RnyiqwWhhoQosZAhPGVQ4euEuM/5U/YRqaXRki+6ldRob8sjkJW60Bv4fdCOwZDE8JAjV4oE93eZZeuAGyOSXOHZWTwpV6mE6M3m8qNAd+6CVynY5rgCBz5jPBpRph1DoKGylevZfTdP0SAPm2RXvw685fZz44oQbjzdgvpKl8+AgCCVChY/P4X90o1Oe8/IAwzT9rn5TScqpfGovv1nwgYeMYL0UhkvKDJpB6d/tihDWnwPXWYk8nFJfuKeW9F7OuCzKWmjc/fx7J9WwQHFbHpOCXYEVbCyIPoxWAWssMg/J14TaEMgcucyaIXJKRH+izZNANZyjK8zomciwZT+P07IQ==
+              Ankerkraut M2 BitBucket
+            permission: read
+      bitbucket_key: ANKERKRAUT
+      teams:
+        write:
+        - Orion
+    barthel:
+      $ref: /project/default
+      jira: BAR
+      repos:
+        library-barthel-porto:
+          $ref: /repo/default
+          bitbucket_key: library-barthel-porto
+        shop:
+          $ref: /repo/default
+          bitbucket_key: shop
+        tudock-language-de_de:
+          $ref: /repo/default
+          bitbucket_key: tudock-language-de_de
+        tudock-library-styleguide:
+          $ref: /repo/default
+          bitbucket_key: tudock-library-styleguide
+        tudock-module-barthel:
+          $ref: /repo/default
+          bitbucket_key: tudock-module-barthel
+        tudock-module-category-landing-page:
+          $ref: /repo/default
+          bitbucket_key: tudock-module-category-landing-page
+        tudock-module-checkout:
+          $ref: /repo/default
+          bitbucket_key: tudock-module-checkout
+        tudock-module-cms:
+          $ref: /repo/default
+          bitbucket_key: tudock-module-cms
+        tudock-module-company-sites:
+          $ref: /repo/default
+          bitbucket_key: tudock-module-company-sites
+        tudock-module-products-importer:
+          $ref: /repo/default
+          bitbucket_key: tudock-module-products-importer
+        tudock-module-url-rewrite:
+          $ref: /repo/default
+          bitbucket_key: tudock-module-url-rewrite
+        tudock-theme-backend-barthel:
+          $ref: /repo/default
+          bitbucket_key: tudock-theme-backend-barthel
+        tudock-theme-barthel:
+          $ref: /repo/default
+          bitbucket_key: tudock-theme-barthel
+      bitbucket_key: BARTHEL
+      teams:
+        write:
+        - Sirius
+      access_keys:
+      - label: staging@barthel.c-503.maxcluster.net
+        key: AAAAB3NzaC1yc2EAAAADAQABAAACAQDGEU9/bd7yqVwhv0o+x8qPOB1sQS52nkHAAvQAGCz/IiUugav7CPDMz/6hyqzlMPu6nrLIBMhnCAf3MiODaMrjrUEARYluvMxzxNLYLJu2YrOozxJR/IQcsculVz1OaWDs3likmD7eDbCdO4oIBow79zSPt5xKT8cVeVr9Pf13UHCl0g1c4anJnvTITIoD/bQK6xd4FrfW1OIv9Pz/wggCDdAcd7fLFsDU+NaRbk5dLIoZmtLfBUdbWhcuMHvQdbr7wlxTzBgadjab3rGhJfQkvwT0SfqPNOh6ddEMBX4LhzZSzCtfr2Ld3Pjm0lw2/TdpRG1SWc+bPPmiblaOmZPWdtkiU8QY35oahnMkN8S/v4IqFDPdLnvFw7xP+PWoYsfX0zcughHaE3xIMpPKDd2FfoIn9JFMnYqzU0mROyZcqZKYvvD0DWc09xYIZHBHAn9DO+E2B/XYM8PFzDD6P2PHGzErmyPS9a9Qb5AA3VP/MyHeIVPe1/tL9D9biVkTSO4NqIvSFuLrb1COxaMuAisRm1CFZ/0Hq+cQU2jyMMDPrsaMnaj+Y0U7HeMOiAf47Gln9m+gV6U4XxW+MrCmH9kCp2qXzjxlSpkvxENA0T+R73C5lKT9Z7CjqulEkmI6X8zpXOmWF9jCB4eVWVyJCeiwXUFcwE4M+thfgjrSAvBbmw==
+          staging@barthel.c-503.maxcluster.net
+        permission: read
+      - label: web-user@srv-a-de.c-523.maxcluster.net
+        key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD2sF4fGEKeZa30nb7PBeQgdB3cDjEY9xmDIEt7zEUAne55+M2WNoGdXohqiKmDO0jqxviuwk21wVT9joHrFm3Q+WLsUGLbOwG0x/1m8WZiMyD9uE4SD12u0tDX1xx3ea+7sYLJnWlCKBzQqAc99uflycuOkJJlB0a+Pc/pyWVS/dIn31pYHuOejG6aufmoSJy/firDfbedyWI5ryGDRME0XXJGQ+uUQAO1EU9x6RPpB4CUpwVp7N6N2UuBtmBi8eKCRL0Fr4d5rCG4HYFEw0jHPBF0RYAtaaYvApc3UTTiUT+UX1tz8o1Iq628/oLYoOozldPiDgrsjL+5flWyV7KD
+          web-user@srv-a-de.c-523.maxcluster.net
+        permission: read
+      - label: web-user@srv-a-io
+        key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCdLw6q/bHxPn8ciwQXGoxFQY3hw236aKRElM9haCf5oQf+fUdStjMUH9y3anHsqe9btTq4TTfEpnSs+468RGlO3SRbl4LhjEL6UvIes/PVRx7HonOh2+5P49sI6LJcd+QqMQBSumgd1/pIO12BmAk3lFouM1MdHsNK+hzon3zIOnTT0Jw/8E/9sL316b66X/rIX5ZO4bDmz8/vUb2sVzbYRJxARUU9j0/6B6mVrIqw7MnLPQAH7D2LEfANAr5nJzxbTLV6snF1J4pvuyw1oEWxyDTBaPfL7VuAguodN3+7eSsFTTF8AhUT32FCXpOnWEHWDl+wB9P9XEc1q32YJS1H
+          web-user@srv-a-io
+        permission: read
+    keimling:
+      $ref: /project/default
+      jira: KEIM
+      repos:
+        shop:
+          $ref: /repo/default
+          bitbucket_key: shop
+        snapshot:
+          $ref: /repo/default
+          bitbucket_key: snapshot
+          access_keys:
+          - label: staging@keimling.de
+            key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDc1R9t6vuyBUSsIVFHEGY4wIotN7sYPxr6vHCcHI+1eFM9ofqJmG40JMywCbR3NlraFCZTP5+P9kF0pWlEb/pOkfFvSagfBmXrrCv2zKZn/3sincyLB5h3d9I6x+3Hqtjwh5mxnpy4aGQxudAlC/Ofi9sfNBf6QJ4UwuqQaDdy5IsB+oHNqVnuvH5vLwraFDMe+q9LrJ25PFSxlsUJS4WcA9U8cws7DaSTfUNl+p5mwgyyg3eU8r6UbLVgULAo5KFssjKzEeG5k5wuIj9yAL3l/WwDOMbji87px+GfVorjXI0SftrkeqKDEZG5/PCuIMH+RLuLEAL5VEEe+QQUD9pd
+              staging@keimling.de
+            permission: read
+      bitbucket_key: KEIMLING
+      teams:
+        write:
+        - Orion
+    kinderdent:
+      $ref: /project/default
+      jira: KID
+      repos:
+        shop:
+          $ref: /repo/default
+          bitbucket_key: shop
+        snapshot:
+          $ref: /repo/default
+          bitbucket_key: snapshot
+          access_keys:
+          - label: live@kinderdent
+            key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC9TZkclGdPAovCsWXxfEf+raGrVKYwue7+Dv+rIhDh5mUVEVBqUCvw+FvYkZA1aJX9cFtAu4Xm0NPk2FdPon1Lu1CYc5bzhNbX/sGrOD67AJNZirLB5E+PvGpz+xxW5/eTWIyPTlufkPaM9bOGF37UWVfqwRROyoAGBzryv9yKvffhL8NBFmeuBDD/sxsSDi7pf1jw+eqt4rCCxrsnEjMZKlmm7xwh8fiklg/RZlv10nq3ykIu3dCU9XbAf4FrBAUoWzMak+C/1rp8qY+JZ7tlbU6D+ZLhNctnABk2q8crxRKwJ2lE8OlPLjq2mqHKd5AiH5ZnPKNz6H7CvpDcvsu5
+              live@kinderdent
+            permission: read
+          - label: web-user@c-1264.maxcluster.net
+            key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDP7W+rGVomYj44Vpn4FLJzLL4tga+26mAFFXtbOWtUT4OroY2GxtMmpcRcFp57mCbF7UfLrfVZHjEHC9HYeg6duZ2On8L1VBVm81qhsLDZKq5APFxPmlP1c48H3JOZk/5wNV8xhCGTeZvEIfVp2OB12b3mHJuaPF38aMC6i/cam7Gfwq4yDtQhXVNL+qU4Eb4kmUY6k5M0SV6F6SPgn630pI1IVIWIeXNwhc4eWt10/QezmADt3t8x0mjUSJaATlLSbIvA7J+kySysHEVBF/rInvC4yjcBZ4uqNR68qy1AnNJ9WlOMpvT8u4/HcMNQZySL5tA0RLfZNSpr8LLfDz24nsHF7el3LQsDLPck9DueVk8PjIoj6JcWFeUYnR1XOdRfbOkogKp1xLpdlOAwwFHVu++Kn20pOz+/yD55MqGUURFZVmTCBEU5NNtQePXMfK0HL/nXw8Jl7Zf8ZXpZ5Zn3SeboTlxjPJbSlOAguayHZafv0SjQpJqSyJUHz4PabeWX+3kDkUEPCjJH8djVbcEAEPrQRFEKDMUcj2J4De3aqDS4qm+lvwMeTlL2FSoO5oKtLnoF7zuQ+2ZW0ScDEvwaJJBILRLjlMe+WPOtVwcSOCKrjlEtzxful9hNFlViQSUOnaXB1i7yXzr0idJRCC/4S+NzmlOlXUucULA7rpcIsw==
+              web-user@c-1264.maxcluster.net
+            permission: read
+      bitbucket_key: KINDERDENT
+      teams:
+        write:
+        - Sirius
+    kreativ:
+      $ref: /project/default
+      jira: KREATIV
+      repos:
+        shop:
+          $ref: /repo/default
+          bitbucket_key: shop
+        snapshot:
+          $ref: /repo/default
+          bitbucket_key: snapshot
+          default_branch: $remove
+          access_keys:
+          - label: shop_live@kreativhaus.de
+            key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC9cORDCeEjhGLYZ2BHY1crH3i+VRVYLFzRrEfrbuEmerYS2JF0+19y+9gGwB/GCpIaaK7GMUH0TFqP5CcUrCotSdXQvyAZf8LYxLzzEXfw7uct9N0omAOEyX/1motYUeZlfpCDo9FpnVnIu1tMSX20+HWMpaUMK6NB6hd5/4e7e5tiXZrKqSyZva0OkRmUkUg7W6z98XtahXNmBRlYmG/zBfQ4v7dceY5teVobdYyO318/ghQDntNrLuDupy0P9+69XzJ3qvyFM2m9DXtpxYPLH8ALejeLyHELY7UMUqD5bSmXkRDrpAh2YJDkItP/8ZiVB3jt79dpF6i6paBvDEEAR/Ab9WGQ7m7xp2X+NOdt4YdUMeuGDFlUL7JN3jSmzIj30uNI3YRMW3u8esAmXdNv+vezoo9mUxf5FAk4h0TZkv3bdrBxC/flAzCv1gqCL7wSM7x5oqKe08+XEMpPsdjipLuNPcMQ1CqjPSNKrlm1e4WO5ahpxwte7A5a+kzpecO9wIeeMyxjQ2JMNNIPxu6WaBXOAilSF8kDrQn4r1vqZ9EyvMxTrZtVO8Ffo9qcdDEvKP80/Q0KVKnVjo1sQ/xdA3+Ok66cPYTfTs2IwZfYYPLdhojRmiEEuaqUrUiGEvvbWmA9xgPw8aqcBd9GCvmr42sdMAmN7KTIDAUbfHhnMw==
+              shop_live@kreativhaus.de
+            permission: read
+      bitbucket_key: KREATIV
+      teams:
+        write:
+        - Orion
+    labio:
+      $ref: /project/default
+      jira: LABIO
+      repos:
+        connect20-locale-mage-community-it-it:
+          $ref: /repo/default
+          bitbucket_key: connect20-locale-mage-community-it-it
+        flagbit-module-factfinder:
+          $ref: /repo/default
+          bitbucket_key: flagbit-module-factfinder
+        flagbit-module-glossary:
+          $ref: /repo/default
+          bitbucket_key: flagbit-module-glossary
+        flagbit-module-images:
+          $ref: /repo/default
+          bitbucket_key: flagbit-module-images
+        flagbit-module-labio-forms:
+          $ref: /repo/default
+          bitbucket_key: flagbit-module-labio-forms
+        flagbit-module-magento-cashondelivery:
+          $ref: /repo/default
+          bitbucket_key: flagbit-module-magento-cashondelivery
+        flagbit-module-magento-computop:
+          $ref: /repo/default
+          bitbucket_key: flagbit-module-magento-computop
+        flagbit-module-magento-enterprise:
+          $ref: /repo/default
+          bitbucket_key: flagbit-module-magento-enterprise
+        flagbit-module-magento-referrer:
+          $ref: /repo/default
+          bitbucket_key: flagbit-module-magento-referrer
+        flagbit-module-magento-require-login:
+          $ref: /repo/default
+          bitbucket_key: flagbit-module-magento-require-login
+        flagbit-module-magento-richsnippets:
+          $ref: /repo/default
+          bitbucket_key: flagbit-module-magento-richsnippets
+        flagbit-module-mep:
+          $ref: /repo/default
+          bitbucket_key: flagbit-module-mep
+        flagbit-module-mip:
+          $ref: /repo/default
+          bitbucket_key: flagbit-module-mip
+        flagbit-module-optivo:
+          $ref: /repo/default
+          bitbucket_key: flagbit-module-optivo
+        flagbit-module-systemconfigdiff:
+          $ref: /repo/default
+          bitbucket_key: flagbit-module-systemconfigdiff
+        labio-module-b2b-checkout:
+          $ref: /repo/default
+          bitbucket_key: labio-module-b2b-checkout
+        labio-module-b2b-frontend:
+          $ref: /repo/default
+          bitbucket_key: labio-module-b2b-frontend
+        magento1-b2b-shop:
+          $ref: /repo/default
+          bitbucket_key: magento1-b2b-shop
+        magento1-b2b-shop-riptide:
+          $ref: /repo/default
+          bitbucket_key: magento1-b2b-shop-riptide
+        magento1-b2c-shop:
+          $ref: /repo/default
+          bitbucket_key: magento1-b2c-shop
+        netzarbeiter-module-magento-customer-activation:
+          $ref: /repo/default
+          bitbucket_key: netzarbeiter-module-magento-customer-activation
+        phoenix-media-module-magento-bankpayment:
+          $ref: /repo/default
+          bitbucket_key: phoenix-media-module-magento-bankpayment
+        tudock-library-pattern-lab:
+          $ref: /repo/default
+          bitbucket_key: tudock-library-pattern-lab
+          access_keys:
+          - label: labio@tudock.de
+            key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCulqmMgLHHcQVHBXVtZ3/7js+O9+l7ekICRw10Z0MFiu4+dmUZWm4JAYE41xnSKdL6H/W0XDf+MkQpCD6FzWCLDLWYAVOmCMTY3it1XuT64Y4hOJ8jJMd7dw12mzIQ2vGiY02YUTixBQMNjw2FF+yKQEhGNYUhWY7PC7QNGuMG4z/NpNymfvJzEd/1eKAIVLIozbqiXOj04JI0+0Bv1bvIOAj5OH04ckqCJ6iOCUEg48CxvUosi+mhN18lofYJTPjhbjYQTVapUn/WFeuhniQTNsL52oPBwkI3WD7IptwhANK8CmV8XkFkiuwfMcmJD5rRtNVifyVEEZ8MGaaTowqh
+              labio@tudock.de
+            permission: read
+      bitbucket_key: LABIO
+      teams:
+        write:
+        - Orion
+    labio-m2:
+      $ref: /project/default
+      jira: LAB2
+      external_collaborators: [ 'kris-terziev', 'dimasch' ]
+      merge_strategies:
+      - merge_commit
+      - squash
+      - rebase_merge
+      repos:
+        aeronicsbuergel-module-credit-check:
+          $ref: /repo/default
+          bitbucket_key: aeronicsbuergel-module-credit-check
+        b2c-vue-storefront:
+          $ref: /repo/default
+          bitbucket_key: b2c-vue-storefront
+        b2c-vue-storefront-api:
+          $ref: /repo/default
+          bitbucket_key: b2c-vue-storefront-api
+        buergel_modul_adress_normalization:
+          $ref: /repo/default
+          bitbucket_key: buergel_modul_adress_normalization
+          external_collaborators: [ 'Schrank' ]
+        buergel_modul_api:
+          $ref: /repo/default
+          bitbucket_key: buergel_modul_api
+          external_collaborators: [ 'Schrank' ]
+        buergel-module-ident-check:
+          $ref: /repo/default
+          bitbucket_key: buergel-module-ident-check
+          external_collaborators: [ 'Schrank' ]
+        cluster-provisioning:
+          $ref: /repo/default
+          bitbucket_key: cluster-provisioning
+        computop-form-paygate:
+          $ref: /repo/default
+          bitbucket_key: computop-form-paygate
+        data-migration:
+          $ref: /repo/default
+          bitbucket_key: data-migration
+        magento2-b2c-shop:
+          $ref: /repo/default
+          bitbucket_key: magento2-b2c-shop
+        node-proxy-server:
+          $ref: /repo/default
+          bitbucket_key: node-proxy-server
+        optivo-module-broadmail-episerver:
+          $ref: /repo/default
+          bitbucket_key: optivo-module-broadmail-episerver
+        phpstorm-ide-settings:
+          $ref: /repo/default
+          bitbucket_key: phpstorm-ide-settings
+        symfony-product-converter:
+          $ref: /repo/default
+          bitbucket_key: symfony-product-converter
+      bitbucket_key: LABIO-M2
+      teams:
+        write:
+        - Orion
+    lms:
+      $ref: /project/default
+      jira:
+        - LMS
+        - LMSSER
+      repos:
+        lms-azu:
+          $ref: /repo/default
+          bitbucket_key: lms-azu
+        lmsm:
+          $ref: /repo/default
+          bitbucket_key: lmsm
+        lms-plop:
+          $ref: /repo/default
+          bitbucket_key: lms-plop
+        lmss:
+          $ref: /repo/default
+          bitbucket_key: lmss
+        lmss-and-lmss-extreact-release-builds:
+          $ref: /repo/default
+          bitbucket_key: lmss-and-lmss-extreact-release-builds
+          access_keys:
+              - label: lms-dev@lms.de.pub
+                key: ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEA9XdbLms3Kq1XgYd+Wn4eYCRWpT2/qjvRkhlJbo5zxZwTIOjqSSoqLYBs2E6iwlwPTYsBKmmYE+J/yoXkuYAp2BdEa0/aH41qmroHawew42YZ+8IpuQVZqCXVkaGBOij3KvLXGeKoAn8b6BCOQro28Z3QxT1tAC+whwD6hTO0Vk/XwiJYXGIi/wk7lkd2KeFsSDgQstHY6kHRNxFVZ9+vLpTMpO8BM94vOXdOxNx2U4Ej4IZJ+yVb+Y2lPg2ng9sVV3kxIhKZ/xBIXb35X73uopp6i+zENjrXBVa7vqYjwopz7KrzoZUzS41YN4oc9xcl0whKXIwLKgd51C/JdPl4NQ==
+                  lms-dev@lms.de.pub
+                permission: write
+        lmss-elisa:
+          $ref: /repo/default
+          bitbucket_key: lmss-elisa
+          access_keys:
+          - label: j.tonner@soft-park.de
+            key: "ssh-rsa\r AAAAB3NzaC1yc2EAAAABJQAAAQEApJCIAOV5dUL4KjEqs0xBg4hURiQ4lVTglZDobO53/qsSVaDeJCEBYmJrSOsRP+opGC5zFDu2TBHFYlHnKtZyYzbUIjAWywweF1zqG3BnehbmyDXRSxgHKJOGZymbNwqoqBDyvhXsufLXP+fTM+BLxqARVR6nBEkRCf1y6IsGK9C/tweZM9g2VgY/tzOEk6hETh9d0BuSnsCg+PlTMzsSCPLAeLdUBYQO7DnNaoROEp8iXdjJh2WYLdluSEXockmf7U8k1kYUpbDp5A1QkuyFYn8o4/HTR87BLKjfrPhWnEqlLnIux4VhgGOrD5DU8CO+3+/anlstBk9zI7zihTZ1uw==\
+              \ j.tonner@soft-park.de"
+            permission: read
+        lmss-elisa-built:
+          $ref: /repo/default
+          bitbucket_key: lmss-elisa-built
+          access_keys:
+          - label: j.tonner@soft-park.de
+            key: "ssh-rsa\r AAAAB3NzaC1yc2EAAAABJQAAAQEApJCIAOV5dUL4KjEqs0xBg4hURiQ4lVTglZDobO53/qsSVaDeJCEBYmJrSOsRP+opGC5zFDu2TBHFYlHnKtZyYzbUIjAWywweF1zqG3BnehbmyDXRSxgHKJOGZymbNwqoqBDyvhXsufLXP+fTM+BLxqARVR6nBEkRCf1y6IsGK9C/tweZM9g2VgY/tzOEk6hETh9d0BuSnsCg+PlTMzsSCPLAeLdUBYQO7DnNaoROEp8iXdjJh2WYLdluSEXockmf7U8k1kYUpbDp5A1QkuyFYn8o4/HTR87BLKjfrPhWnEqlLnIux4VhgGOrD5DU8CO+3+/anlstBk9zI7zihTZ1uw==\
+              \ j.tonner@soft-park.de"
+            permission: read
+        lmss-extreact:
+          $ref: /repo/default
+          bitbucket_key: lmss-extreact
+        lmss-rewe-sql:
+          $ref: /repo/default
+          bitbucket_key: lmss-rewe-sql
+      bitbucket_key: LMS
+      teams:
+        write:
+        - Sirius
+    magento1-ext:
+      $ref: /project/default
+      repos:
+        customweb-module-computopcw:
+          $ref: /repo/default
+          bitbucket_key: customweb-module-computopcw
+        dhl-module-onlineretoure:
+          $ref: /repo/default
+          bitbucket_key: dhl-module-onlineretoure
+        magestore-module-megamenu:
+          $ref: /repo/default
+          bitbucket_key: magestore-module-megamenu
+        magmodules-module-channable:
+          $ref: /repo/default
+          bitbucket_key: magmodules-module-channable
+        valdecode-module-cookielaw:
+          $ref: /repo/default
+          bitbucket_key: valdecode-module-cookielaw
+        valdecode-module-mage-cookie-law:
+          $ref: /repo/default
+          bitbucket_key: valdecode-module-mage-cookie-law
+        wamoco-module-cookieconsent:
+          $ref: /repo/default
+          bitbucket_key: wamoco-module-cookieconsent
+      bitbucket_key: MAGENTO1-EXT
+    magento1-tudock:
+      $ref: /project/default
+      repos:
+        tudock-module-block-caching:
+          $ref: /repo/default
+          bitbucket_key: tudock-module-block-caching
+        tudock-module-eec-data-provider:
+          $ref: /repo/default
+          bitbucket_key: tudock-module-eec-data-provider
+        tudock-module-google-analytics:
+          $ref: /repo/default
+          bitbucket_key: tudock-module-google-analytics
+        tudock-module-minify:
+          $ref: /repo/default
+          bitbucket_key: tudock-module-minify
+        tudock-module-notification:
+          $ref: /repo/default
+          bitbucket_key: tudock-module-notification
+        tudock-module-tinymceconfig:
+          $ref: /repo/default
+          bitbucket_key: tudock-module-tinymceconfig
+        tudock-module-to-graylog:
+          $ref: /repo/default
+          bitbucket_key: tudock-module-to-graylog
+      bitbucket_key: MAGENTO1-TUDOCK
+    magento2-ext:
+      $ref: /project/default
+      external_collaborators: [ 'elfacht' ]
+      repos:
+        amasty-module-base:
+          $ref: /repo/default
+          bitbucket_key: amasty-module-base
+        amasty-module-paction:
+          $ref: /repo/default
+          bitbucket_key: amasty-module-paction
+        amasty-module-product-attachment:
+          $ref: /repo/default
+          bitbucket_key: amasty-module-product-attachment
+        anowave-library-package:
+          $ref: /repo/default
+          bitbucket_key: anowave-library-package
+          access_keys:
+          - label: gitosis@twe
+            key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDHIR1M8EWfFfSl7EiCxPSaQsvkNkh0EQj+h1ApEFvAGuYyhL9MDyGV5XAHqBsVLr60KxOxpAKXdOWnMccKUTY63WlQrWgGkHIMVgK225oERxZXIpO1337fXDBCWzK2nH6x65q8XQQFwtPIkQDTCdAMIGFGEoOpLshpr98vCcyqDdiPt6iN1Elet9dFJqZO2NfAiTsdLYT18cONY/2Gec8HMCHnltFP8OhIeZfM17zdmqUy1RuyBsPWF34jknYrA+wtk8+GLZl7UfHRFeYKrekiKXc4Hr/bktu2OBaSun+FsN1E/JYnAuatgQgAp2MoEtXlKC89oTgMCHZ23pF9KRjYejDh/ZvdOakBDrSAEttNUT+h86Mh/RwQvFCffL/jIuW6FQG39L5P1NMEiHJaPNdDp0nqfmHA2SBz6H76LE/VuX+sUU9YZii0tFdpaWfSOukfiytDKjW5Wh2QwwFXgCGM+1H0bJySxXBN+W31G2aJbJXkQC5sn2utMqecy1KxmDw0vQ240DT6O4uzBG6XngK8DlSNYajNvbKpTKsSyEz1OZhg9d7ep4S3ukwR9I1oPmj5c549NUYzN15+JMdiZr9G5tnaICd4L8a7vd/5yd37yK3+FBNeQGaG7AudETAbiaTsc3ZJ75VnZ1ksH/Cp2Avat9wmE1USkLa1HEKSPvbwlQ==
+              gitosis@twe
+            permission: read
+        anowave-module-ec:
+          $ref: /repo/default
+          bitbucket_key: anowave-module-ec
+          access_keys:
+          - label: gitosis@twe
+            key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDHIR1M8EWfFfSl7EiCxPSaQsvkNkh0EQj+h1ApEFvAGuYyhL9MDyGV5XAHqBsVLr60KxOxpAKXdOWnMccKUTY63WlQrWgGkHIMVgK225oERxZXIpO1337fXDBCWzK2nH6x65q8XQQFwtPIkQDTCdAMIGFGEoOpLshpr98vCcyqDdiPt6iN1Elet9dFJqZO2NfAiTsdLYT18cONY/2Gec8HMCHnltFP8OhIeZfM17zdmqUy1RuyBsPWF34jknYrA+wtk8+GLZl7UfHRFeYKrekiKXc4Hr/bktu2OBaSun+FsN1E/JYnAuatgQgAp2MoEtXlKC89oTgMCHZ23pF9KRjYejDh/ZvdOakBDrSAEttNUT+h86Mh/RwQvFCffL/jIuW6FQG39L5P1NMEiHJaPNdDp0nqfmHA2SBz6H76LE/VuX+sUU9YZii0tFdpaWfSOukfiytDKjW5Wh2QwwFXgCGM+1H0bJySxXBN+W31G2aJbJXkQC5sn2utMqecy1KxmDw0vQ240DT6O4uzBG6XngK8DlSNYajNvbKpTKsSyEz1OZhg9d7ep4S3ukwR9I1oPmj5c549NUYzN15+JMdiZr9G5tnaICd4L8a7vd/5yd37yK3+FBNeQGaG7AudETAbiaTsc3ZJ75VnZ1ksH/Cp2Avat9wmE1USkLa1HEKSPvbwlQ==
+              gitosis@twe
+            permission: read
+        brandung-module-cash-on-delivery-fee:
+          $ref: /repo/default
+          bitbucket_key: brandung-module-cash-on-delivery-fee
+        experius-module-reindex-catalog-url-rewrites:
+          $ref: /repo/default
+          bitbucket_key: experius-module-reindex-catalog-url-rewrites
+        fme-module-hreflang-tag-implementer:
+          $ref: /repo/default
+          bitbucket_key: fme-module-hreflang-tag-implementer
+          access_keys:
+          - label: web-user@srv-a-io
+            key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCdLw6q/bHxPn8ciwQXGoxFQY3hw236aKRElM9haCf5oQf+fUdStjMUH9y3anHsqe9btTq4TTfEpnSs+468RGlO3SRbl4LhjEL6UvIes/PVRx7HonOh2+5P49sI6LJcd+QqMQBSumgd1/pIO12BmAk3lFouM1MdHsNK+hzon3zIOnTT0Jw/8E/9sL316b66X/rIX5ZO4bDmz8/vUb2sVzbYRJxARUU9j0/6B6mVrIqw7MnLPQAH7D2LEfANAr5nJzxbTLV6snF1J4pvuyw1oEWxyDTBaPfL7VuAguodN3+7eSsFTTF8AhUT32FCXpOnWEHWDl+wB9P9XEc1q32YJS1H
+              web-user@srv-a-io
+            permission: read
+        fme-module-no-follow-index:
+          $ref: /repo/default
+          bitbucket_key: fme-module-no-follow-index
+        integer-net-solr-magento2:
+          $ref: /repo/default
+          bitbucket_key: integer-net-solr-magento2
+        integer-net-solr-magento2-autosuggest:
+          $ref: /repo/default
+          bitbucket_key: integer-net-solr-magento2-autosuggest
+        janolaw-module-agb:
+          $ref: /repo/default
+          bitbucket_key: janolaw-module-agb
+          access_keys:
+          - label: gitosis@twe
+            key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDHIR1M8EWfFfSl7EiCxPSaQsvkNkh0EQj+h1ApEFvAGuYyhL9MDyGV5XAHqBsVLr60KxOxpAKXdOWnMccKUTY63WlQrWgGkHIMVgK225oERxZXIpO1337fXDBCWzK2nH6x65q8XQQFwtPIkQDTCdAMIGFGEoOpLshpr98vCcyqDdiPt6iN1Elet9dFJqZO2NfAiTsdLYT18cONY/2Gec8HMCHnltFP8OhIeZfM17zdmqUy1RuyBsPWF34jknYrA+wtk8+GLZl7UfHRFeYKrekiKXc4Hr/bktu2OBaSun+FsN1E/JYnAuatgQgAp2MoEtXlKC89oTgMCHZ23pF9KRjYejDh/ZvdOakBDrSAEttNUT+h86Mh/RwQvFCffL/jIuW6FQG39L5P1NMEiHJaPNdDp0nqfmHA2SBz6H76LE/VuX+sUU9YZii0tFdpaWfSOukfiytDKjW5Wh2QwwFXgCGM+1H0bJySxXBN+W31G2aJbJXkQC5sn2utMqecy1KxmDw0vQ240DT6O4uzBG6XngK8DlSNYajNvbKpTKsSyEz1OZhg9d7ep4S3ukwR9I1oPmj5c549NUYzN15+JMdiZr9G5tnaICd4L8a7vd/5yd37yK3+FBNeQGaG7AudETAbiaTsc3ZJ75VnZ1ksH/Cp2Avat9wmE1USkLa1HEKSPvbwlQ==
+              gitosis@twe
+            permission: read
+        magefan-module-blog:
+          $ref: /repo/default
+          bitbucket_key: magefan-module-blog
+          access_keys:
+          - label: gitosis@twe
+            key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDHIR1M8EWfFfSl7EiCxPSaQsvkNkh0EQj+h1ApEFvAGuYyhL9MDyGV5XAHqBsVLr60KxOxpAKXdOWnMccKUTY63WlQrWgGkHIMVgK225oERxZXIpO1337fXDBCWzK2nH6x65q8XQQFwtPIkQDTCdAMIGFGEoOpLshpr98vCcyqDdiPt6iN1Elet9dFJqZO2NfAiTsdLYT18cONY/2Gec8HMCHnltFP8OhIeZfM17zdmqUy1RuyBsPWF34jknYrA+wtk8+GLZl7UfHRFeYKrekiKXc4Hr/bktu2OBaSun+FsN1E/JYnAuatgQgAp2MoEtXlKC89oTgMCHZ23pF9KRjYejDh/ZvdOakBDrSAEttNUT+h86Mh/RwQvFCffL/jIuW6FQG39L5P1NMEiHJaPNdDp0nqfmHA2SBz6H76LE/VuX+sUU9YZii0tFdpaWfSOukfiytDKjW5Wh2QwwFXgCGM+1H0bJySxXBN+W31G2aJbJXkQC5sn2utMqecy1KxmDw0vQ240DT6O4uzBG6XngK8DlSNYajNvbKpTKsSyEz1OZhg9d7ep4S3ukwR9I1oPmj5c549NUYzN15+JMdiZr9G5tnaICd4L8a7vd/5yd37yK3+FBNeQGaG7AudETAbiaTsc3ZJ75VnZ1ksH/Cp2Avat9wmE1USkLa1HEKSPvbwlQ==
+              gitosis@twe
+            permission: read
+        mageplaza-module-ajax-layered-navigation:
+          $ref: /repo/default
+          bitbucket_key: mageplaza-module-ajax-layered-navigation
+        mageplaza-module-core:
+          $ref: /repo/default
+          bitbucket_key: mageplaza-module-core
+          access_keys:
+          - label: gitosis@twe
+            key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDHIR1M8EWfFfSl7EiCxPSaQsvkNkh0EQj+h1ApEFvAGuYyhL9MDyGV5XAHqBsVLr60KxOxpAKXdOWnMccKUTY63WlQrWgGkHIMVgK225oERxZXIpO1337fXDBCWzK2nH6x65q8XQQFwtPIkQDTCdAMIGFGEoOpLshpr98vCcyqDdiPt6iN1Elet9dFJqZO2NfAiTsdLYT18cONY/2Gec8HMCHnltFP8OhIeZfM17zdmqUy1RuyBsPWF34jknYrA+wtk8+GLZl7UfHRFeYKrekiKXc4Hr/bktu2OBaSun+FsN1E/JYnAuatgQgAp2MoEtXlKC89oTgMCHZ23pF9KRjYejDh/ZvdOakBDrSAEttNUT+h86Mh/RwQvFCffL/jIuW6FQG39L5P1NMEiHJaPNdDp0nqfmHA2SBz6H76LE/VuX+sUU9YZii0tFdpaWfSOukfiytDKjW5Wh2QwwFXgCGM+1H0bJySxXBN+W31G2aJbJXkQC5sn2utMqecy1KxmDw0vQ240DT6O4uzBG6XngK8DlSNYajNvbKpTKsSyEz1OZhg9d7ep4S3ukwR9I1oPmj5c549NUYzN15+JMdiZr9G5tnaICd4L8a7vd/5yd37yK3+FBNeQGaG7AudETAbiaTsc3ZJ75VnZ1ksH/Cp2Avat9wmE1USkLa1HEKSPvbwlQ==
+              gitosis@twe
+            permission: read
+        mageplaza-module-layered-navigation:
+          $ref: /repo/default
+          bitbucket_key: mageplaza-module-layered-navigation
+          access_keys:
+          - label: gitosis@twe
+            key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDHIR1M8EWfFfSl7EiCxPSaQsvkNkh0EQj+h1ApEFvAGuYyhL9MDyGV5XAHqBsVLr60KxOxpAKXdOWnMccKUTY63WlQrWgGkHIMVgK225oERxZXIpO1337fXDBCWzK2nH6x65q8XQQFwtPIkQDTCdAMIGFGEoOpLshpr98vCcyqDdiPt6iN1Elet9dFJqZO2NfAiTsdLYT18cONY/2Gec8HMCHnltFP8OhIeZfM17zdmqUy1RuyBsPWF34jknYrA+wtk8+GLZl7UfHRFeYKrekiKXc4Hr/bktu2OBaSun+FsN1E/JYnAuatgQgAp2MoEtXlKC89oTgMCHZ23pF9KRjYejDh/ZvdOakBDrSAEttNUT+h86Mh/RwQvFCffL/jIuW6FQG39L5P1NMEiHJaPNdDp0nqfmHA2SBz6H76LE/VuX+sUU9YZii0tFdpaWfSOukfiytDKjW5Wh2QwwFXgCGM+1H0bJySxXBN+W31G2aJbJXkQC5sn2utMqecy1KxmDw0vQ240DT6O4uzBG6XngK8DlSNYajNvbKpTKsSyEz1OZhg9d7ep4S3ukwR9I1oPmj5c549NUYzN15+JMdiZr9G5tnaICd4L8a7vd/5yd37yK3+FBNeQGaG7AudETAbiaTsc3ZJ75VnZ1ksH/Cp2Avat9wmE1USkLa1HEKSPvbwlQ==
+              gitosis@twe
+            permission: read
+        magestore-module-megamenu:
+          $ref: /repo/default
+          bitbucket_key: magestore-module-megamenu
+          access_keys:
+          - label: gitosis@twe
+            key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDHIR1M8EWfFfSl7EiCxPSaQsvkNkh0EQj+h1ApEFvAGuYyhL9MDyGV5XAHqBsVLr60KxOxpAKXdOWnMccKUTY63WlQrWgGkHIMVgK225oERxZXIpO1337fXDBCWzK2nH6x65q8XQQFwtPIkQDTCdAMIGFGEoOpLshpr98vCcyqDdiPt6iN1Elet9dFJqZO2NfAiTsdLYT18cONY/2Gec8HMCHnltFP8OhIeZfM17zdmqUy1RuyBsPWF34jknYrA+wtk8+GLZl7UfHRFeYKrekiKXc4Hr/bktu2OBaSun+FsN1E/JYnAuatgQgAp2MoEtXlKC89oTgMCHZ23pF9KRjYejDh/ZvdOakBDrSAEttNUT+h86Mh/RwQvFCffL/jIuW6FQG39L5P1NMEiHJaPNdDp0nqfmHA2SBz6H76LE/VuX+sUU9YZii0tFdpaWfSOukfiytDKjW5Wh2QwwFXgCGM+1H0bJySxXBN+W31G2aJbJXkQC5sn2utMqecy1KxmDw0vQ240DT6O4uzBG6XngK8DlSNYajNvbKpTKsSyEz1OZhg9d7ep4S3ukwR9I1oPmj5c549NUYzN15+JMdiZr9G5tnaICd4L8a7vd/5yd37yK3+FBNeQGaG7AudETAbiaTsc3ZJ75VnZ1ksH/Cp2Avat9wmE1USkLa1HEKSPvbwlQ==
+              gitosis@twe
+            permission: read
+        magestore-module-pdf-invoice-plus:
+          $ref: /repo/default
+          bitbucket_key: magestore-module-pdf-invoice-plus
+          access_keys:
+          - label: gitosis@twe
+            key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDHIR1M8EWfFfSl7EiCxPSaQsvkNkh0EQj+h1ApEFvAGuYyhL9MDyGV5XAHqBsVLr60KxOxpAKXdOWnMccKUTY63WlQrWgGkHIMVgK225oERxZXIpO1337fXDBCWzK2nH6x65q8XQQFwtPIkQDTCdAMIGFGEoOpLshpr98vCcyqDdiPt6iN1Elet9dFJqZO2NfAiTsdLYT18cONY/2Gec8HMCHnltFP8OhIeZfM17zdmqUy1RuyBsPWF34jknYrA+wtk8+GLZl7UfHRFeYKrekiKXc4Hr/bktu2OBaSun+FsN1E/JYnAuatgQgAp2MoEtXlKC89oTgMCHZ23pF9KRjYejDh/ZvdOakBDrSAEttNUT+h86Mh/RwQvFCffL/jIuW6FQG39L5P1NMEiHJaPNdDp0nqfmHA2SBz6H76LE/VuX+sUU9YZii0tFdpaWfSOukfiytDKjW5Wh2QwwFXgCGM+1H0bJySxXBN+W31G2aJbJXkQC5sn2utMqecy1KxmDw0vQ240DT6O4uzBG6XngK8DlSNYajNvbKpTKsSyEz1OZhg9d7ep4S3ukwR9I1oPmj5c549NUYzN15+JMdiZr9G5tnaICd4L8a7vd/5yd37yK3+FBNeQGaG7AudETAbiaTsc3ZJ75VnZ1ksH/Cp2Avat9wmE1USkLa1HEKSPvbwlQ==
+              gitosis@twe
+            permission: read
+        smartwave-module-core:
+          $ref: /repo/default
+          bitbucket_key: smartwave-module-core
+          access_keys:
+          - label: gitosis@twe
+            key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDHIR1M8EWfFfSl7EiCxPSaQsvkNkh0EQj+h1ApEFvAGuYyhL9MDyGV5XAHqBsVLr60KxOxpAKXdOWnMccKUTY63WlQrWgGkHIMVgK225oERxZXIpO1337fXDBCWzK2nH6x65q8XQQFwtPIkQDTCdAMIGFGEoOpLshpr98vCcyqDdiPt6iN1Elet9dFJqZO2NfAiTsdLYT18cONY/2Gec8HMCHnltFP8OhIeZfM17zdmqUy1RuyBsPWF34jknYrA+wtk8+GLZl7UfHRFeYKrekiKXc4Hr/bktu2OBaSun+FsN1E/JYnAuatgQgAp2MoEtXlKC89oTgMCHZ23pF9KRjYejDh/ZvdOakBDrSAEttNUT+h86Mh/RwQvFCffL/jIuW6FQG39L5P1NMEiHJaPNdDp0nqfmHA2SBz6H76LE/VuX+sUU9YZii0tFdpaWfSOukfiytDKjW5Wh2QwwFXgCGM+1H0bJySxXBN+W31G2aJbJXkQC5sn2utMqecy1KxmDw0vQ240DT6O4uzBG6XngK8DlSNYajNvbKpTKsSyEz1OZhg9d7ep4S3ukwR9I1oPmj5c549NUYzN15+JMdiZr9G5tnaICd4L8a7vd/5yd37yK3+FBNeQGaG7AudETAbiaTsc3ZJ75VnZ1ksH/Cp2Avat9wmE1USkLa1HEKSPvbwlQ==
+              gitosis@twe
+            permission: read
+        smartwave-module-filter-products:
+          $ref: /repo/default
+          bitbucket_key: smartwave-module-filter-products
+          access_keys:
+          - label: gitosis@twe
+            key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDHIR1M8EWfFfSl7EiCxPSaQsvkNkh0EQj+h1ApEFvAGuYyhL9MDyGV5XAHqBsVLr60KxOxpAKXdOWnMccKUTY63WlQrWgGkHIMVgK225oERxZXIpO1337fXDBCWzK2nH6x65q8XQQFwtPIkQDTCdAMIGFGEoOpLshpr98vCcyqDdiPt6iN1Elet9dFJqZO2NfAiTsdLYT18cONY/2Gec8HMCHnltFP8OhIeZfM17zdmqUy1RuyBsPWF34jknYrA+wtk8+GLZl7UfHRFeYKrekiKXc4Hr/bktu2OBaSun+FsN1E/JYnAuatgQgAp2MoEtXlKC89oTgMCHZ23pF9KRjYejDh/ZvdOakBDrSAEttNUT+h86Mh/RwQvFCffL/jIuW6FQG39L5P1NMEiHJaPNdDp0nqfmHA2SBz6H76LE/VuX+sUU9YZii0tFdpaWfSOukfiytDKjW5Wh2QwwFXgCGM+1H0bJySxXBN+W31G2aJbJXkQC5sn2utMqecy1KxmDw0vQ240DT6O4uzBG6XngK8DlSNYajNvbKpTKsSyEz1OZhg9d7ep4S3ukwR9I1oPmj5c549NUYzN15+JMdiZr9G5tnaICd4L8a7vd/5yd37yK3+FBNeQGaG7AudETAbiaTsc3ZJ75VnZ1ksH/Cp2Avat9wmE1USkLa1HEKSPvbwlQ==
+              gitosis@twe
+            permission: read
+        smartwave-module-megamenu:
+          $ref: /repo/default
+          bitbucket_key: smartwave-module-megamenu
+          access_keys:
+          - label: gitosis@twe
+            key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDHIR1M8EWfFfSl7EiCxPSaQsvkNkh0EQj+h1ApEFvAGuYyhL9MDyGV5XAHqBsVLr60KxOxpAKXdOWnMccKUTY63WlQrWgGkHIMVgK225oERxZXIpO1337fXDBCWzK2nH6x65q8XQQFwtPIkQDTCdAMIGFGEoOpLshpr98vCcyqDdiPt6iN1Elet9dFJqZO2NfAiTsdLYT18cONY/2Gec8HMCHnltFP8OhIeZfM17zdmqUy1RuyBsPWF34jknYrA+wtk8+GLZl7UfHRFeYKrekiKXc4Hr/bktu2OBaSun+FsN1E/JYnAuatgQgAp2MoEtXlKC89oTgMCHZ23pF9KRjYejDh/ZvdOakBDrSAEttNUT+h86Mh/RwQvFCffL/jIuW6FQG39L5P1NMEiHJaPNdDp0nqfmHA2SBz6H76LE/VuX+sUU9YZii0tFdpaWfSOukfiytDKjW5Wh2QwwFXgCGM+1H0bJySxXBN+W31G2aJbJXkQC5sn2utMqecy1KxmDw0vQ240DT6O4uzBG6XngK8DlSNYajNvbKpTKsSyEz1OZhg9d7ep4S3ukwR9I1oPmj5c549NUYzN15+JMdiZr9G5tnaICd4L8a7vd/5yd37yK3+FBNeQGaG7AudETAbiaTsc3ZJ75VnZ1ksH/Cp2Avat9wmE1USkLa1HEKSPvbwlQ==
+              gitosis@twe
+            permission: read
+        smartwave-module-porto:
+          $ref: /repo/default
+          bitbucket_key: smartwave-module-porto
+          access_keys:
+          - label: gitosis@twe
+            key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDHIR1M8EWfFfSl7EiCxPSaQsvkNkh0EQj+h1ApEFvAGuYyhL9MDyGV5XAHqBsVLr60KxOxpAKXdOWnMccKUTY63WlQrWgGkHIMVgK225oERxZXIpO1337fXDBCWzK2nH6x65q8XQQFwtPIkQDTCdAMIGFGEoOpLshpr98vCcyqDdiPt6iN1Elet9dFJqZO2NfAiTsdLYT18cONY/2Gec8HMCHnltFP8OhIeZfM17zdmqUy1RuyBsPWF34jknYrA+wtk8+GLZl7UfHRFeYKrekiKXc4Hr/bktu2OBaSun+FsN1E/JYnAuatgQgAp2MoEtXlKC89oTgMCHZ23pF9KRjYejDh/ZvdOakBDrSAEttNUT+h86Mh/RwQvFCffL/jIuW6FQG39L5P1NMEiHJaPNdDp0nqfmHA2SBz6H76LE/VuX+sUU9YZii0tFdpaWfSOukfiytDKjW5Wh2QwwFXgCGM+1H0bJySxXBN+W31G2aJbJXkQC5sn2utMqecy1KxmDw0vQ240DT6O4uzBG6XngK8DlSNYajNvbKpTKsSyEz1OZhg9d7ep4S3ukwR9I1oPmj5c549NUYzN15+JMdiZr9G5tnaICd4L8a7vd/5yd37yK3+FBNeQGaG7AudETAbiaTsc3ZJ75VnZ1ksH/Cp2Avat9wmE1USkLa1HEKSPvbwlQ==
+              gitosis@twe
+            permission: read
+        smartwave-module-social-feeds:
+          $ref: /repo/default
+          bitbucket_key: smartwave-module-social-feeds
+          access_keys:
+          - label: gitosis@twe
+            key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDHIR1M8EWfFfSl7EiCxPSaQsvkNkh0EQj+h1ApEFvAGuYyhL9MDyGV5XAHqBsVLr60KxOxpAKXdOWnMccKUTY63WlQrWgGkHIMVgK225oERxZXIpO1337fXDBCWzK2nH6x65q8XQQFwtPIkQDTCdAMIGFGEoOpLshpr98vCcyqDdiPt6iN1Elet9dFJqZO2NfAiTsdLYT18cONY/2Gec8HMCHnltFP8OhIeZfM17zdmqUy1RuyBsPWF34jknYrA+wtk8+GLZl7UfHRFeYKrekiKXc4Hr/bktu2OBaSun+FsN1E/JYnAuatgQgAp2MoEtXlKC89oTgMCHZ23pF9KRjYejDh/ZvdOakBDrSAEttNUT+h86Mh/RwQvFCffL/jIuW6FQG39L5P1NMEiHJaPNdDp0nqfmHA2SBz6H76LE/VuX+sUU9YZii0tFdpaWfSOukfiytDKjW5Wh2QwwFXgCGM+1H0bJySxXBN+W31G2aJbJXkQC5sn2utMqecy1KxmDw0vQ240DT6O4uzBG6XngK8DlSNYajNvbKpTKsSyEz1OZhg9d7ep4S3ukwR9I1oPmj5c549NUYzN15+JMdiZr9G5tnaICd4L8a7vd/5yd37yK3+FBNeQGaG7AudETAbiaTsc3ZJ75VnZ1ksH/Cp2Avat9wmE1USkLa1HEKSPvbwlQ==
+              gitosis@twe
+            permission: read
+        smartwave-theme-porto:
+          $ref: /repo/default
+          bitbucket_key: smartwave-theme-porto
+          access_keys:
+          - label: gitosis@twe
+            key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDHIR1M8EWfFfSl7EiCxPSaQsvkNkh0EQj+h1ApEFvAGuYyhL9MDyGV5XAHqBsVLr60KxOxpAKXdOWnMccKUTY63WlQrWgGkHIMVgK225oERxZXIpO1337fXDBCWzK2nH6x65q8XQQFwtPIkQDTCdAMIGFGEoOpLshpr98vCcyqDdiPt6iN1Elet9dFJqZO2NfAiTsdLYT18cONY/2Gec8HMCHnltFP8OhIeZfM17zdmqUy1RuyBsPWF34jknYrA+wtk8+GLZl7UfHRFeYKrekiKXc4Hr/bktu2OBaSun+FsN1E/JYnAuatgQgAp2MoEtXlKC89oTgMCHZ23pF9KRjYejDh/ZvdOakBDrSAEttNUT+h86Mh/RwQvFCffL/jIuW6FQG39L5P1NMEiHJaPNdDp0nqfmHA2SBz6H76LE/VuX+sUU9YZii0tFdpaWfSOukfiytDKjW5Wh2QwwFXgCGM+1H0bJySxXBN+W31G2aJbJXkQC5sn2utMqecy1KxmDw0vQ240DT6O4uzBG6XngK8DlSNYajNvbKpTKsSyEz1OZhg9d7ep4S3ukwR9I1oPmj5c549NUYzN15+JMdiZr9G5tnaICd4L8a7vd/5yd37yK3+FBNeQGaG7AudETAbiaTsc3ZJ75VnZ1ksH/Cp2Avat9wmE1USkLa1HEKSPvbwlQ==
+              gitosis@twe
+            permission: read
+        trustedshops-module-trustedshops:
+          $ref: /repo/default
+          bitbucket_key: trustedshops-module-trustedshops
+          access_keys:
+          - label: gitosis@twe
+            key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDHIR1M8EWfFfSl7EiCxPSaQsvkNkh0EQj+h1ApEFvAGuYyhL9MDyGV5XAHqBsVLr60KxOxpAKXdOWnMccKUTY63WlQrWgGkHIMVgK225oERxZXIpO1337fXDBCWzK2nH6x65q8XQQFwtPIkQDTCdAMIGFGEoOpLshpr98vCcyqDdiPt6iN1Elet9dFJqZO2NfAiTsdLYT18cONY/2Gec8HMCHnltFP8OhIeZfM17zdmqUy1RuyBsPWF34jknYrA+wtk8+GLZl7UfHRFeYKrekiKXc4Hr/bktu2OBaSun+FsN1E/JYnAuatgQgAp2MoEtXlKC89oTgMCHZ23pF9KRjYejDh/ZvdOakBDrSAEttNUT+h86Mh/RwQvFCffL/jIuW6FQG39L5P1NMEiHJaPNdDp0nqfmHA2SBz6H76LE/VuX+sUU9YZii0tFdpaWfSOukfiytDKjW5Wh2QwwFXgCGM+1H0bJySxXBN+W31G2aJbJXkQC5sn2utMqecy1KxmDw0vQ240DT6O4uzBG6XngK8DlSNYajNvbKpTKsSyEz1OZhg9d7ep4S3ukwR9I1oPmj5c549NUYzN15+JMdiZr9G5tnaICd4L8a7vd/5yd37yK3+FBNeQGaG7AudETAbiaTsc3ZJ75VnZ1ksH/Cp2Avat9wmE1USkLa1HEKSPvbwlQ==
+              gitosis@twe
+            permission: read
+        wamoco-module-cookie-consent:
+          $ref: /repo/default
+          bitbucket_key: wamoco-module-cookie-consent
+        wyomind-module-core:
+          $ref: /repo/default
+          bitbucket_key: wyomind-module-core
+          access_keys:
+          - label: gitosis@twe
+            key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDHIR1M8EWfFfSl7EiCxPSaQsvkNkh0EQj+h1ApEFvAGuYyhL9MDyGV5XAHqBsVLr60KxOxpAKXdOWnMccKUTY63WlQrWgGkHIMVgK225oERxZXIpO1337fXDBCWzK2nH6x65q8XQQFwtPIkQDTCdAMIGFGEoOpLshpr98vCcyqDdiPt6iN1Elet9dFJqZO2NfAiTsdLYT18cONY/2Gec8HMCHnltFP8OhIeZfM17zdmqUy1RuyBsPWF34jknYrA+wtk8+GLZl7UfHRFeYKrekiKXc4Hr/bktu2OBaSun+FsN1E/JYnAuatgQgAp2MoEtXlKC89oTgMCHZ23pF9KRjYejDh/ZvdOakBDrSAEttNUT+h86Mh/RwQvFCffL/jIuW6FQG39L5P1NMEiHJaPNdDp0nqfmHA2SBz6H76LE/VuX+sUU9YZii0tFdpaWfSOukfiytDKjW5Wh2QwwFXgCGM+1H0bJySxXBN+W31G2aJbJXkQC5sn2utMqecy1KxmDw0vQ240DT6O4uzBG6XngK8DlSNYajNvbKpTKsSyEz1OZhg9d7ep4S3ukwR9I1oPmj5c549NUYzN15+JMdiZr9G5tnaICd4L8a7vd/5yd37yK3+FBNeQGaG7AudETAbiaTsc3ZJ75VnZ1ksH/Cp2Avat9wmE1USkLa1HEKSPvbwlQ==
+              gitosis@twe
+            permission: read
+        wyomind-module-data-feed-manager:
+          $ref: /repo/default
+          bitbucket_key: wyomind-module-data-feed-manager
+          access_keys:
+          - label: gitosis@twe
+            key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDHIR1M8EWfFfSl7EiCxPSaQsvkNkh0EQj+h1ApEFvAGuYyhL9MDyGV5XAHqBsVLr60KxOxpAKXdOWnMccKUTY63WlQrWgGkHIMVgK225oERxZXIpO1337fXDBCWzK2nH6x65q8XQQFwtPIkQDTCdAMIGFGEoOpLshpr98vCcyqDdiPt6iN1Elet9dFJqZO2NfAiTsdLYT18cONY/2Gec8HMCHnltFP8OhIeZfM17zdmqUy1RuyBsPWF34jknYrA+wtk8+GLZl7UfHRFeYKrekiKXc4Hr/bktu2OBaSun+FsN1E/JYnAuatgQgAp2MoEtXlKC89oTgMCHZ23pF9KRjYejDh/ZvdOakBDrSAEttNUT+h86Mh/RwQvFCffL/jIuW6FQG39L5P1NMEiHJaPNdDp0nqfmHA2SBz6H76LE/VuX+sUU9YZii0tFdpaWfSOukfiytDKjW5Wh2QwwFXgCGM+1H0bJySxXBN+W31G2aJbJXkQC5sn2utMqecy1KxmDw0vQ240DT6O4uzBG6XngK8DlSNYajNvbKpTKsSyEz1OZhg9d7ep4S3ukwR9I1oPmj5c549NUYzN15+JMdiZr9G5tnaICd4L8a7vd/5yd37yK3+FBNeQGaG7AudETAbiaTsc3ZJ75VnZ1ksH/Cp2Avat9wmE1USkLa1HEKSPvbwlQ==
+              gitosis@twe
+            permission: read
+      bitbucket_key: MAGENTO2-EXT
+    mage-2dm:
+      $ref: /project/default
+      repos:
+        magento2-module-mageplaza-one-step-checkout-extension:
+          $ref: /repo/default
+          bitbucket_key: magento2-module-mageplaza-one-step-checkout-extension
+      bitbucket_key: MAGE-2DM
+    m2s:
+      $ref: /project/default
+      repos:
+        tudock-search:
+          $ref: /repo/default
+          bitbucket_key: tudock-search
+        tudock-search-lib-semknox:
+          $ref: /repo/default
+          bitbucket_key: tudock-search-lib-semknox
+        tudock-search-lib-solr:
+          $ref: /repo/default
+          bitbucket_key: tudock-search-lib-solr
+      bitbucket_key: M2S
+    magento2-tudock:
+      $ref: /project/default
+      external_collaborators: [ 'elfacht' ]
+      repos:
+        tudock-module-build-notice:
+          $ref: /repo/default
+          bitbucket_key: tudock-module-build-notice
+        tudock-module-cartmerge:
+          $ref: /repo/default
+          bitbucket_key: tudock-module-cartmerge
+        tudock-module-core-fixes:
+          $ref: /repo/default
+          bitbucket_key: tudock-module-core-fixes
+          access_keys:
+          - label: gitosis@twe
+            key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDHIR1M8EWfFfSl7EiCxPSaQsvkNkh0EQj+h1ApEFvAGuYyhL9MDyGV5XAHqBsVLr60KxOxpAKXdOWnMccKUTY63WlQrWgGkHIMVgK225oERxZXIpO1337fXDBCWzK2nH6x65q8XQQFwtPIkQDTCdAMIGFGEoOpLshpr98vCcyqDdiPt6iN1Elet9dFJqZO2NfAiTsdLYT18cONY/2Gec8HMCHnltFP8OhIeZfM17zdmqUy1RuyBsPWF34jknYrA+wtk8+GLZl7UfHRFeYKrekiKXc4Hr/bktu2OBaSun+FsN1E/JYnAuatgQgAp2MoEtXlKC89oTgMCHZ23pF9KRjYejDh/ZvdOakBDrSAEttNUT+h86Mh/RwQvFCffL/jIuW6FQG39L5P1NMEiHJaPNdDp0nqfmHA2SBz6H76LE/VuX+sUU9YZii0tFdpaWfSOukfiytDKjW5Wh2QwwFXgCGM+1H0bJySxXBN+W31G2aJbJXkQC5sn2utMqecy1KxmDw0vQ240DT6O4uzBG6XngK8DlSNYajNvbKpTKsSyEz1OZhg9d7ep4S3ukwR9I1oPmj5c549NUYzN15+JMdiZr9G5tnaICd4L8a7vd/5yd37yK3+FBNeQGaG7AudETAbiaTsc3ZJ75VnZ1ksH/Cp2Avat9wmE1USkLa1HEKSPvbwlQ==
+              gitosis@twe
+            permission: read
+        tudock-module-csv-import-data:
+          $ref: /repo/default
+          bitbucket_key: tudock-module-csv-import-data
+        tudock-module-disable-customer:
+          $ref: /repo/default
+          bitbucket_key: tudock-module-disable-customer
+        tudock-module-disable-manafilter-search:
+          $ref: /repo/default
+          bitbucket_key: tudock-module-disable-manafilter-search
+        tudock-module-extend-configurable-attributes:
+          $ref: /repo/default
+          bitbucket_key: tudock-module-extend-configurable-attributes
+        tudock-module-extended-product-attachment:
+          $ref: /repo/default
+          bitbucket_key: tudock-module-extended-product-attachment
+        tudock-module-extended-status:
+          $ref: /repo/default
+          bitbucket_key: tudock-module-extended-status
+        tudock-module-google-places-autocomplete:
+          $ref: /repo/default
+          bitbucket_key: tudock-module-google-places-autocomplete
+        tudock-module-google-tag-manager:
+          $ref: /repo/default
+          bitbucket_key: tudock-module-google-tag-manager
+        tudock-module-k8s-compatibility:
+          $ref: /repo/default
+          bitbucket_key: tudock-module-k8s-compatibility
+        tudock-module-k8s-varnish-connector:
+          $ref: /repo/default
+          bitbucket_key: tudock-module-k8s-varnish-connector
+        tudock-module-mageconfigsync-lock:
+          $ref: /repo/default
+          bitbucket_key: tudock-module-mageconfigsync-lock
+        tudock-module-nicer-image-names:
+          $ref: /repo/default
+          bitbucket_key: tudock-module-nicer-image-names
+        tudock-module-notification:
+          $ref: /repo/default
+          bitbucket_key: tudock-module-notification
+          access_keys:
+          - label: gitosis@twe
+            key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDHIR1M8EWfFfSl7EiCxPSaQsvkNkh0EQj+h1ApEFvAGuYyhL9MDyGV5XAHqBsVLr60KxOxpAKXdOWnMccKUTY63WlQrWgGkHIMVgK225oERxZXIpO1337fXDBCWzK2nH6x65q8XQQFwtPIkQDTCdAMIGFGEoOpLshpr98vCcyqDdiPt6iN1Elet9dFJqZO2NfAiTsdLYT18cONY/2Gec8HMCHnltFP8OhIeZfM17zdmqUy1RuyBsPWF34jknYrA+wtk8+GLZl7UfHRFeYKrekiKXc4Hr/bktu2OBaSun+FsN1E/JYnAuatgQgAp2MoEtXlKC89oTgMCHZ23pF9KRjYejDh/ZvdOakBDrSAEttNUT+h86Mh/RwQvFCffL/jIuW6FQG39L5P1NMEiHJaPNdDp0nqfmHA2SBz6H76LE/VuX+sUU9YZii0tFdpaWfSOukfiytDKjW5Wh2QwwFXgCGM+1H0bJySxXBN+W31G2aJbJXkQC5sn2utMqecy1KxmDw0vQ240DT6O4uzBG6XngK8DlSNYajNvbKpTKsSyEz1OZhg9d7ep4S3ukwR9I1oPmj5c549NUYzN15+JMdiZr9G5tnaICd4L8a7vd/5yd37yK3+FBNeQGaG7AudETAbiaTsc3ZJ75VnZ1ksH/Cp2Avat9wmE1USkLa1HEKSPvbwlQ==
+              gitosis@twe
+            permission: read
+        tudock-module-partial-shipping:
+          $ref: /repo/default
+          bitbucket_key: tudock-module-partial-shipping
+        tudock-module-payment-method-cart-rules:
+          $ref: /repo/default
+          bitbucket_key: tudock-module-payment-method-cart-rules
+        tudock-module-pdf-service:
+          $ref: /repo/default
+          bitbucket_key: tudock-module-pdf-service
+        tudock-module-ranking:
+          $ref: /repo/default
+          bitbucket_key: tudock-module-ranking
+        tudock-module-reindex-log:
+          $ref: /repo/default
+          bitbucket_key: tudock-module-reindex-log
+        tudock-module-review:
+          $ref: /repo/default
+          bitbucket_key: tudock-module-review
+        tudock-module-search-cobby-integration:
+          $ref: /repo/default
+          bitbucket_key: tudock-module-search-cobby-integration
+        tudock-module-seo:
+          $ref: /repo/default
+          bitbucket_key: tudock-module-seo
+        tudock-module-to-graylog:
+          $ref: /repo/default
+          bitbucket_key: tudock-module-to-graylog
+        tudock-module-touchmove-slider:
+          $ref: /repo/default
+          bitbucket_key: tudock-module-touchmove-slider
+        tudock-module-url-key-rewrite:
+          $ref: /repo/default
+          bitbucket_key: tudock-module-url-key-rewrite
+        tudock-module-widgets:
+          $ref: /repo/default
+          bitbucket_key: tudock-module-widgets
+        module-cronus:
+          $ref: /repo/default
+          inherit_external_collaborators: false
+        module-cronus-k8s:
+          $ref: /repo/default
+          inherit_external_collaborators: false
+        module-poseidon:
+          $ref: /repo/default
+          inherit_external_collaborators: false
+      bitbucket_key: MAGENTO2-TUDOCK
+    magento-artworks:
+      $ref: /project/default
+      repos:
+        shop:
+          $ref: /repo/default
+    mr:
+      $ref: /project/default
+      repos:
+        tudock_magerun:
+          $ref: /repo/default
+          bitbucket_key: tudock_magerun
+        tudock_magerun2:
+          $ref: /repo/default
+          bitbucket_key: tudock_magerun2
+      bitbucket_key: MR
+      access_keys:
+      - label: tudock@pinkmilkstage
+        key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCoZ+jQdJlbfyLwH4Za03vol2583021bJH+TWXBqfCU/RuzvBpZ6AmUghi/OUZvaC+Bu/bjKo6clS/1LIF54Mof6DASDSTqiNsGcU1DgJ0BjpkMcglTCJQhmIsfEJ8I58lj64nYm+fsxQ1e9i139ncaJMn+rxQWpLMzBexES1RDXjzeuGvQis9C4IM0rxI3LehetElFOcy3Mc92WLol2jkcNicsCkrgZ4wANMh2DSdClO5ivdt9imHIfT9WlwE+GchaMd2COyxlwFTAAn58XNg0hNqnqL9RPMZ07HZcLXPt1KBA5WecggkmCfgXSUJ8up4WOwvv4R9IdkeNeMkVzitF
+          tudock@pinkmilkstage
+        permission: read
+    moldzio:
+      $ref: /project/default
+      jira: MOL
+      repos:
+        wordpress:
+          $ref: /repo/default
+          bitbucket_key: wordpress
+          access_keys:
+          - label: live@moldzio
+            key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDBD4wRKerfk25yG8SS/hQOco8Luynv4OUMGfk3l1+0GiIZMmZdkKktRfgomvQ0s809P03gl0myoOHpBa4M12K5R8gN4qQH7sCJQyFPruF4k9qpJAdBu82Clyma0TTBAEzhLkj0+sgWqo8gVnBJ6sIzUotCxOforw+jJKSRBPOjgibq2bmqDse+juwCwAGdIM7iV9irMCcfR7Du3wiPXGrNiJ3TH/GSPzFyt53KT/ypvOIn+xC3qxjYcc0FtrXQ8llvtkN9cHN9AxZENUZ2kpmLx59ZP8xnAOFR7iuY6zFB0Svk1OSN42E5h4uWFBffpLw2phdZbIIosgh4Bk2P37FN
+              live@moldzio
+            permission: read
+      bitbucket_key: MOLDZIO
+      teams:
+        write:
+        - Sirius
+    multipower-m2:
+      $ref: /project/default
+      jira: MULPO
+      external_collaborators: [ 'krisdante' ]
+      merge_strategies:
+      - merge_commit
+      - squash
+      - rebase_merge
+      repos:
+        magento2-b2c-shop:
+          $ref: /repo/default
+          bitbucket_key: magento2-b2c-shop
+      teams:
+        write:
+        - Orion
+    prediger:
+      $ref: /project/default
+      jira: PRD2
+      external_collaborators: ['elfacht']
+      repos:
+        cachewarmer:
+          $ref: /repo/default
+          bitbucket_key: cachewarmer
+        cluster-provisioning:
+          $ref: /repo/default
+          bitbucket_key: cluster-provisioning
+        db-anonymizer:
+          $ref: /repo/default
+          bitbucket_key: db-anonymizer
+          access_keys:
+          - label: live@michelle.prediger.de
+            key: ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAgEAzxZ5P2toA/7xRkE9Z1v+3ud+OjTCWFI65Tx6gT3Z6pqegKXokG31F6Cc8oF+xIGAN9hdm+919U99p+q9g5z7WjIHsHciXNDvL05kA8v68kLWCa0zbXplvScPap6jn9cFoFzRlkmthnCwoYbZ+Vhe+jzxe2rPSc4gKGt9MGYxdnKN/ynsbTcecIzDkZdclXpHz92cF9+7CtFzmmUaU26NhAFv/zMXjbBShYBHn6WAsW6w2P6uP/UoljCSfpecCTsi/Y0t+DDCpHdcZRTgG2ELBPK5HHlEgZZ9Bwb4t5W/MlrcvJ2r6Gvxgo3WKnur86/J5wAQ+9UqU6V92Pt1DzmyCH/avrBr+ezNzZgAh+aXXwBX5k8Q+YUUscptQgImysARVaMfmsLwbYO4MnUbao90skrQT8QrHzeYSU+SRpPYGxyrwKykVth+5jKL8vf0YQQpZQzsiJo0yZtcJhUH0/AKszOuoOCrAUhklOuOd9yyyc/CbMWktt9U+2ZetsPkLIz9erYgaBKroDdiigSEd/byyLwgjB0aaebypGCiehMQyhCivroJGWGiVjgSFCrqvbwA76Tz65Jyb0upziHGN+t7gwzPh2ZbV0jgT9PsVt2Gp+/t6l+JItHXnxgYuEo7KQdLTxUKVjruynSNKHBfch+nh/08LngqisiTn2Fp5DJdrUc=
+              live@michelle.prediger.de
+            permission: read
+        franklinator:
+          $ref: /repo/default
+          bitbucket_key: franklinator
+          access_keys:
+          - label: jbu@Burkhart-PC
+            key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDgioUV60DMQjHmU9UpBYy1G3X5C3MBLtfyM3Gdl64hlIZ4ti3bSnEZbasc+3RuHHWO5SnZrrJ3BSiHYxfBd7bYfsC5hXMn1kcPxSQRBQe0+jgYuqPrHSf55dqi1Q/KUq40ruv17OHmQBwuzNqDWKkjq/ZZVEa4EeM/9FN3RYR49LscIjhXBQ0aj/XA2IuTqv2xGBBiNfbw6SZpwp3RoPKzFJnnqxtMVbn2imQqGaBIbkSliqOSvubePNFDJBdCE/WUHm7Ez2CARFuEDMm+6OEIIap/WdXErgh/pdXeSSbzClg30ZxemtgMVGnkrwnwu0RrEP56HyNF2q0tO10TmfFp
+              jbu@Burkhart-PC
+            permission: read
+        integrationtests:
+          $ref: /repo/default
+          bitbucket_key: integrationtests
+        landingpages:
+          $ref: /repo/default
+          bitbucket_key: landingpages
+        magento2-anyonymizer:
+          $ref: /repo/default
+          bitbucket_key: magento2-anyonymizer
+        magento2-shop:
+          $ref: /repo/default
+          bitbucket_key: magento2-shop
+          access_keys:
+          - label: macmini@tudock.de
+            key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDG18hjbBxFgayPXq/w0GwEoTS00DssU+sfNd6Q+nCaFNNiry7s5j4KiGENtbxqpR8h11lp8wvff9SZiOdYwinF2WpzkVDtidwNXjMlaNzF55y3ZSogkJZ0E5kcnAoU4iCV8GUzH0UvybQ0e3EW6iAv+3K2bVekIgsXRmNUU3gcjhi3a2K2rmhcsIMz+Gsz+14jfOYX2LmdEGiL2mcZ8A1UHW+YVCkyWySHv96h8dQl73advXQu1vvg+JVUSDfQn/LbjjlqwGPOkgahgDBU15SuUIG4jIo2lokg3BxVl0GcSKMPaLxlzAFUwUQZv0bUXc0QulDIzxVwDAxGsz4su/bL
+              macmini@tudock.de
+            permission: read
+        pdflatex:
+          $ref: /repo/default
+          bitbucket_key: pdflatex
+          access_keys:
+          - label: live@michelle.prediger.de
+            key: ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAgEAzxZ5P2toA/7xRkE9Z1v+3ud+OjTCWFI65Tx6gT3Z6pqegKXokG31F6Cc8oF+xIGAN9hdm+919U99p+q9g5z7WjIHsHciXNDvL05kA8v68kLWCa0zbXplvScPap6jn9cFoFzRlkmthnCwoYbZ+Vhe+jzxe2rPSc4gKGt9MGYxdnKN/ynsbTcecIzDkZdclXpHz92cF9+7CtFzmmUaU26NhAFv/zMXjbBShYBHn6WAsW6w2P6uP/UoljCSfpecCTsi/Y0t+DDCpHdcZRTgG2ELBPK5HHlEgZZ9Bwb4t5W/MlrcvJ2r6Gvxgo3WKnur86/J5wAQ+9UqU6V92Pt1DzmyCH/avrBr+ezNzZgAh+aXXwBX5k8Q+YUUscptQgImysARVaMfmsLwbYO4MnUbao90skrQT8QrHzeYSU+SRpPYGxyrwKykVth+5jKL8vf0YQQpZQzsiJo0yZtcJhUH0/AKszOuoOCrAUhklOuOd9yyyc/CbMWktt9U+2ZetsPkLIz9erYgaBKroDdiigSEd/byyLwgjB0aaebypGCiehMQyhCivroJGWGiVjgSFCrqvbwA76Tz65Jyb0upziHGN+t7gwzPh2ZbV0jgT9PsVt2Gp+/t6l+JItHXnxgYuEo7KQdLTxUKVjruynSNKHBfch+nh/08LngqisiTn2Fp5DJdrUc=
+              live@michelle.prediger.de
+            permission: read
+        styleguide:
+          $ref: /repo/default
+          bitbucket_key: styleguide
+          access_keys:
+          - label: live@michelle.prediger.de
+            key: ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAgEAzxZ5P2toA/7xRkE9Z1v+3ud+OjTCWFI65Tx6gT3Z6pqegKXokG31F6Cc8oF+xIGAN9hdm+919U99p+q9g5z7WjIHsHciXNDvL05kA8v68kLWCa0zbXplvScPap6jn9cFoFzRlkmthnCwoYbZ+Vhe+jzxe2rPSc4gKGt9MGYxdnKN/ynsbTcecIzDkZdclXpHz92cF9+7CtFzmmUaU26NhAFv/zMXjbBShYBHn6WAsW6w2P6uP/UoljCSfpecCTsi/Y0t+DDCpHdcZRTgG2ELBPK5HHlEgZZ9Bwb4t5W/MlrcvJ2r6Gvxgo3WKnur86/J5wAQ+9UqU6V92Pt1DzmyCH/avrBr+ezNzZgAh+aXXwBX5k8Q+YUUscptQgImysARVaMfmsLwbYO4MnUbao90skrQT8QrHzeYSU+SRpPYGxyrwKykVth+5jKL8vf0YQQpZQzsiJo0yZtcJhUH0/AKszOuoOCrAUhklOuOd9yyyc/CbMWktt9U+2ZetsPkLIz9erYgaBKroDdiigSEd/byyLwgjB0aaebypGCiehMQyhCivroJGWGiVjgSFCrqvbwA76Tz65Jyb0upziHGN+t7gwzPh2ZbV0jgT9PsVt2Gp+/t6l+JItHXnxgYuEo7KQdLTxUKVjruynSNKHBfch+nh/08LngqisiTn2Fp5DJdrUc=
+              live@michelle.prediger.de
+            permission: read
+      bitbucket_key: PREDIGER
+      teams:
+        write:
+        - Sirius
+      access_keys:
+      - label: vanillashop@tudock.de
+        key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDB8CJVxkhwtXlFPN7qanyGk3wxO7oz83cmnjFuLsfJRjwou0KLXAL7K3obtcJIpCr8EUz76OQfUijm6442mVx6MJ9rt+x8mNzd9NSsFjOzfmizGCMfGFTi1nrLVZ2/fvDWJpzUe8gi3TNWg7qrPsVSzOeR29K2C6NO2QHn1WvA3nX6tLkkOc/VTD3+e1Ykp0PDrzopDsd/HVdzZ1vg+fkYWMA7tXxZKI+zSTOeouJjCCcxzwqA3o859ZmryR1p3wkYoUt5vdfIYqwOUG2VAhmNYJeZMScIk65qKRnqLD+IkSQqUDtC7OS+kv4vuThzU1tJU+3q/IzLmCFR2D5eL169
+          vanillashop@tudock.de
+        permission: read
+    riptide:
+      $ref: /project/default
+      repos:
+        cli:
+          $ref: /repo/default
+          bitbucket_key: cli
+        configcrunch:
+          $ref: /repo/default
+          bitbucket_key: configcrunch
+        db-mysql:
+          $ref: /repo/default
+          bitbucket_key: db-mysql
+        engine-docker:
+          $ref: /repo/default
+          bitbucket_key: engine-docker
+        lib:
+          $ref: /repo/default
+          bitbucket_key: lib
+        proxy:
+          $ref: /repo/default
+          bitbucket_key: proxy
+        repo-tudock:
+          $ref: /repo/default
+          bitbucket_key: repo-tudock
+      bitbucket_key: RIPTIDE
+      access_keys:
+      - label: macmini@tudock.de
+        key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDG18hjbBxFgayPXq/w0GwEoTS00DssU+sfNd6Q+nCaFNNiry7s5j4KiGENtbxqpR8h11lp8wvff9SZiOdYwinF2WpzkVDtidwNXjMlaNzF55y3ZSogkJZ0E5kcnAoU4iCV8GUzH0UvybQ0e3EW6iAv+3K2bVekIgsXRmNUU3gcjhi3a2K2rmhcsIMz+Gsz+14jfOYX2LmdEGiL2mcZ8A1UHW+YVCkyWySHv96h8dQl73advXQu1vvg+JVUSDfQn/LbjjlqwGPOkgahgDBU15SuUIG4jIo2lokg3BxVl0GcSKMPaLxlzAFUwUQZv0bUXc0QulDIzxVwDAxGsz4su/bL
+          macmini@tudock.de
+        permission: read
+    roche:
+      $ref: /project/default
+      jira: ROCHE
+      repos:
+        shop:
+          $ref: /repo/default
+          bitbucket_key: shop
+      bitbucket_key: ROCHE
+      teams:
+        write:
+        - Sirius
+    schmidt:
+      $ref: /project/default
+      jira: SCHMIDT
+      repos:
+        shop:
+          $ref: /repo/default
+          bitbucket_key: shop
+      bitbucket_key: SCHMIDT
+      teams:
+        write:
+        - Sirius
+      access_keys:
+      - label: web-user@srv-a-cc.c-1590.maxcluster.net
+        key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC5gpmAbxcI4WmjEu50TPaiUmEweRQb5Jh5dXOX6408WpHrukKxqc9JShp0CaYOHeDflotxry+6EFAZZcclcfB0sy+m5AkdsxV27BCDMwUH+Yf3zKHWpwsysIs1ZEsnQ0YD/BNJtRkn274q+DYvWscoW0s/neAkZbeX2GMV2xfEYbs4aGARkH+Dfg+trP9WqstiBtwKp1HnmPtCPamR3Krww2WgYnCcQL6rKLkNfaKL+g6a9kCVO++5XG36RJsluMUCAh+7r4pnPN+2xLks3Hxapoc5cnNp8+XF/ZpgiF6hRh8jhzLPDToA9YzU9uJpaqSUw4rbmMfHK1NRVkjWJUSR
+          web-user@srv-a-cc.c-1590.maxcluster.net
+        permission: read
+      - label: web-user@srv-a-cc.c-1591.maxcluster.net
+        key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDrQIo9N0jL8NqIRBHHVUNQHFxK7b1gOOkXF6yXkbGel1gjXd70f60MuAEj6r9e0fT6afac+4h5F9LBJc6QhMtYHmg5ztaieHCra1RPN4IvGzD6M5x+DkD51d965c/VesMogStJvJmBuuoWU+lBr6zFssi/VBLfgzHD0f5hRpLwwWWs9/ZlTH5uQq1LQxUYxncGF7cm72ZWn8muLfV4Z5vpazpDWETPiCSkhPyxhsOiwzd2aPY2v/6knQlTM6kAlD+pvqTriJ2ytN0pz91QmS4Qr0aS8m8/w8V7E9ELFaQXH1GqkdYfg0WsNqTqAEhChymcUzDDcDBXE5X9kna+gHXX
+          web-user@srv-a-cc.c-1591.maxcluster.net
+        permission: read
+    servisto:
+      $ref: /project/default
+      jira: SERV
+      repos:
+        shop:
+          $ref: /repo/default
+          bitbucket_key: shop
+        tudock-theme-servisto:
+          $ref: /repo/default
+          bitbucket_key: tudock-theme-servisto
+      bitbucket_key: SER
+      teams:
+        write:
+        - Sirius
+    tudock:
+      $ref: /project/default
+      repos:
+        anonymizer:
+          $ref: /repo/default
+          bitbucket_key: anonymizer
+        composer-repo:
+          $ref: /repo/default
+          bitbucket_key: composer-repo
+        database-importer:
+          $ref: /repo/default
+          bitbucket_key: database-importer
+          access_keys:
+          - label: gitosis@twe
+            key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDHIR1M8EWfFfSl7EiCxPSaQsvkNkh0EQj+h1ApEFvAGuYyhL9MDyGV5XAHqBsVLr60KxOxpAKXdOWnMccKUTY63WlQrWgGkHIMVgK225oERxZXIpO1337fXDBCWzK2nH6x65q8XQQFwtPIkQDTCdAMIGFGEoOpLshpr98vCcyqDdiPt6iN1Elet9dFJqZO2NfAiTsdLYT18cONY/2Gec8HMCHnltFP8OhIeZfM17zdmqUy1RuyBsPWF34jknYrA+wtk8+GLZl7UfHRFeYKrekiKXc4Hr/bktu2OBaSun+FsN1E/JYnAuatgQgAp2MoEtXlKC89oTgMCHZ23pF9KRjYejDh/ZvdOakBDrSAEttNUT+h86Mh/RwQvFCffL/jIuW6FQG39L5P1NMEiHJaPNdDp0nqfmHA2SBz6H76LE/VuX+sUU9YZii0tFdpaWfSOukfiytDKjW5Wh2QwwFXgCGM+1H0bJySxXBN+W31G2aJbJXkQC5sn2utMqecy1KxmDw0vQ240DT6O4uzBG6XngK8DlSNYajNvbKpTKsSyEz1OZhg9d7ep4S3ukwR9I1oPmj5c549NUYzN15+JMdiZr9G5tnaICd4L8a7vd/5yd37yK3+FBNeQGaG7AudETAbiaTsc3ZJ75VnZ1ksH/Cp2Avat9wmE1USkLa1HEKSPvbwlQ==
+              gitosis@twe
+            permission: read
+        homepage-typo3:
+          $ref: /repo/default
+          bitbucket_key: homepage-typo3
+          access_keys:
+          - label: tudock-homepage@tudock.de
+            key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC3t7P4a4oT6Zv8G2nTKnjyh+EW8wJAP9Lu81+GVxAObkMtu3eAAPc1scptiaPWetxkmrwyDPlNbBob0s8u5zbCvDaifA8AqWTILlslDQVk4gytDySCiYqQBd8GdH9cAfl+OJa40yh8jxS7fxOm2yMkyhx1tee8W1Icmu3glW11RXumDlISTPVUNAuev9ktep1RwRKT83B35smWaWTBmMs/2cC9BMZgVZWpTqK4BgaDH3MonhZuux7pDD96y0lHVSXkHZf8MPi5WpnXwLS85ZfHiDybMdl8hkLLOJ24vBdMRnMsKb2ENr42ZAw+2bFBbF58cunGaAsrwNZY9SWs4pYd
+              tudock-homepage@tudock.de
+            permission: read
+        informationssystem:
+          $ref: /repo/default
+          bitbucket_key: informationssystem
+        jenkins-jobs:
+          $ref: /repo/default
+          bitbucket_key: jenkins-jobs
+        notification-app:
+          $ref: /repo/default
+          bitbucket_key: notification-app
+        php-cli-magedev:
+          $ref: /repo/default
+          bitbucket_key: php-cli-magedev
+        product-recommendations:
+          $ref: /repo/default
+          bitbucket_key: product-recommendations
+        shell-standards:
+          $ref: /repo/default
+          bitbucket_key: shell-standards
+          access_keys:
+          - label: jenkins@twe1
+            key: ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA1SkbE8CrquRQftgjENi1hMQ4uRh/gvj42YgrBJr6i4g0z32S/kDBZR3odestz2v9knvJ2Sj/zRom3bljP/AlzdE6Cdyzw3cyOFWnEN0AL6hCFUH6axCCOZhol/GepZgUBGJ9BrfUiX9TDWRVN/JSvMrDltOI252cR+phJWryYJ0JxL7WjL+3x744M7HFiXHlbv4EsC+4YK3jBTwt9G/IxkXsDOPJsJ/NgA+8wlPo9RWErL//5gcl+xOYcdmqJTwqoA0QEJwuNwv8t5pJWx7VT53wgfO+lwgJ1bZPjeF9Y+j6Sgsa9MoeZ1zKCzx7HjfI2j8VUfdGk2fHqZsuRgycaw==
+              jenkins@twe1
+            permission: read
+        suche_synonyme:
+          $ref: /repo/default
+          bitbucket_key: suche_synonyme
+      bitbucket_key: TUDOCK
+    td-day:
+      $ref: /project/default
+      repos:
+        chatbot-with-rasa:
+          $ref: /repo/default
+          bitbucket_key: chatbot-with-rasa
+        deployment-pipeline-with-fun:
+          $ref: /repo/default
+          bitbucket_key: deployment-pipeline-with-fun
+          access_keys:
+          - label: raspberry@fanfare
+            key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCY35kqL6xYTeUg6mvsSMfhmZBlboTguqLCO8Fmlxpb8EZ3gmzZT9vPxOkG9+i56n+PuFnm+0agu2u4GJMZPQVzPoK+d+AXDzUChxpbHQ0yazs1ig3xzSAeb9v5zIIgf2YLHlJW8kStGZ9Fi5K9WqEci8SBFqNwRxKK/HzOMVGPIw5B+0dm+pB0ADE1KGZzE1NbpecfQVAc1fwC0bT0BlarI8OJnXZSYgr6EbsnvhXwJxb+9QM1EBNkJxYN95L4Z9Y4CKsjr/8fsx4ShvnugDpyDsoDlB06aXXQK9W9SfrPOHw2SoH4M4wzLGb09iubg5uFKvqEt374TVYpl/WBHo5wkg2eigZ8+cQBJZoOEVi80e+hQ60IU++BGfGMJMx0MTK3H6bxIyu0xz1ZdqJSQDXLHHPkCLwfZ1oBrw57sbMAZcsqHx+xWiL3Nlvbh4RQGQf18ptPZdxum2/PBo/SiyG/BgiKcInSzJx+MO3WmIVkuLVOtLefM4qDLsLMcaddzfbajZC8bIcZ34jNhYFoBtVnPNA7BEASsLWL+C5dV9kzmOVDX5XFNnM9SG/NYtov6Iqt3qOaLWkbYgFdAm4lWZb315yBJdPBwoDzdGaJJOrFgvMamtxcKeLR3PyZSAQMiJlFH9zqQWgoTcAwwRp2wGIGHphv+MkMFzKIhWPqAgeuAw==
+              raspberry@fanfare
+            permission: read
+        digital-dashboards:
+          $ref: /repo/default
+          bitbucket_key: digital-dashboards
+        jira-csv-import:
+          $ref: /repo/default
+          bitbucket_key: jira-csv-import
+      bitbucket_key: TD-DAY
+    tudock-infrastructure:
+      $ref: /project/default
+      jira: INT
+      repos:
+        docker-images-ansible:
+          $ref: /repo/default
+          bitbucket_key: docker-base-images-ansible
+        index-watcher:
+          $ref: /repo/default
+          bitbucket_key: index-watcher
+        jenkins-shared-library:
+          $ref: /repo/default
+          bitbucket_key: jenkins-shared-library
+        k8s-bitbucket-cleaner:
+          $ref: /repo/default
+          bitbucket_key: k8s-bitbucket-cleaner
+        k8s-bitbucket-lister:
+          $ref: /repo/default
+          bitbucket_key: k8s-bitbucket-lister
+        mageconfigsync:
+          $ref: /repo/default
+          bitbucket_key: mageconfigsync
+          external_collaborators: [ 'elfacht' ]
+        magento2-build-deploy-ansible:
+          $ref: /repo/default
+          bitbucket_key: magento2-build-deploy-ansible
+        magento2-git-merge-driver-config-php:
+          $ref: /repo/default
+          bitbucket_key: magento2-git-merge-driver-config-php
+          external_collaborators: [ 'elfacht' ]
+        gitbuddy:
+          $ref: /repo/default
+          default_branch: main
+        marco-magento2:
+          $ref: /repo/default
+        github-jira-reviewers:
+          $ref: /repo/default
+          default_branch: main  # new github default
+        provision-do-cluster:
+          $ref: /repo/default
+          default_branch: main  # new github default
+      bitbucket_key: TUDOCK-INFRASTRUCTURE
+      access_keys:
+      - label: macmini@tudock.de
+        key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDG18hjbBxFgayPXq/w0GwEoTS00DssU+sfNd6Q+nCaFNNiry7s5j4KiGENtbxqpR8h11lp8wvff9SZiOdYwinF2WpzkVDtidwNXjMlaNzF55y3ZSogkJZ0E5kcnAoU4iCV8GUzH0UvybQ0e3EW6iAv+3K2bVekIgsXRmNUU3gcjhi3a2K2rmhcsIMz+Gsz+14jfOYX2LmdEGiL2mcZ8A1UHW+YVCkyWySHv96h8dQl73advXQu1vvg+JVUSDfQn/LbjjlqwGPOkgahgDBU15SuUIG4jIo2lokg3BxVl0GcSKMPaLxlzAFUwUQZv0bUXc0QulDIzxVwDAxGsz4su/bL
+          macmini@tudock.de
+        permission: read
+    tudock-praktikum:
+      $ref: /project/default
+      repos:
+        ben-onboarding-dashboard:
+          $ref: /repo/default
+          bitbucket_key: ben-onboarding-dashboard
+        ben-onboarding-magento-chat-widget:
+          $ref: /repo/default
+          bitbucket_key: ben-onboarding-magento-chat-widget
+        ben-onboarding-magento-widget:
+          $ref: /repo/default
+          bitbucket_key: ben-onboarding-magento-widget
+        ben-onboarding-rasa-chat-widget:
+          $ref: /repo/default
+          bitbucket_key: ben-onboarding-rasa-chat-widget
+        ben-rasa-assistant:
+          $ref: /repo/default
+          bitbucket_key: ben-rasa-assistant
+        ismet-onboarding-m2:
+          $ref: /repo/default
+          bitbucket_key: ismet-onboarding-m2
+        lars-onboarding-m2:
+          $ref: /repo/default
+          bitbucket_key: lars-onboarding-m2
+        len-onboarding-m2:
+          $ref: /repo/default
+          bitbucket_key: len-onboarding-m2
+        symfony-hairdressing-salon:
+          $ref: /repo/default
+          bitbucket_key: symfony-hairdressing-salon
+        wordpress:
+          $ref: /repo/default
+          bitbucket_key: wordpress
+      bitbucket_key: TUDOCK-PRAKTIKUM
+    tudock-workshop:
+      $ref: /project/default
+      repos:
+        js-workshop:
+          $ref: /repo/default
+          bitbucket_key: js-workshop
+        magento2-country:
+          $ref: /repo/default
+          bitbucket_key: magento2-country
+        magento2-extension-attribute:
+          $ref: /repo/default
+          bitbucket_key: magento2-extension-attribute
+        magento2-geoip:
+          $ref: /repo/default
+          bitbucket_key: magento2-geoip
+        magento2-hole-punch:
+          $ref: /repo/default
+          bitbucket_key: magento2-hole-punch
+        magento2-service-contracts:
+          $ref: /repo/default
+          bitbucket_key: magento2-service-contracts
+      bitbucket_key: TUDOCK-WORKSHOP

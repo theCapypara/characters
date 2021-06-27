@@ -1,0 +1,14 @@
+project:
+  teams:
+    read: [ ]
+    write:
+      - Developers
+    admin:
+      - DevOps
+  external_collaborators: [] # Can also be defined on Repo level; NOTE: This merges
+  access_keys: [] # Can also be defined on Repo level; NOTE: This merges
+  repos: []
+  merge_strategies: # Can also be defined on Repo level; NOTE: This overrides
+    # - merge_commit
+    - squash
+    - rebase_merge

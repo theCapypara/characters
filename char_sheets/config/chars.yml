@@ -1,0 +1,637 @@
+characters:
+  arran:
+    template: soniclink_poke5e
+    system: PMD D&D 5e RE v. 2 + Homebrew
+    full_name: Arran
+    short_description: A way too excited Bagon.
+    bg: /static/assets/bg/char1.jpg
+    spec:
+      general:
+        gender: Male
+        images:
+          - /static/assets/chars/arran/main.png
+          - /static/assets/chars/arran/bag.png
+          - /static/assets/chars/arran/pkmn1.png
+          - /static/assets/chars/arran/PokeDND_2.png
+          - /static/assets/chars/arran/sousaphone.gif
+        image_credits: Images by Charburst, Vile and Aviivix
+        home: Misty Gales
+        age: 15
+        lore:
+          personality: |
+            - Really want‘s to be an explorer!
+            - Still quite young & kinda childish
+            - Very motivated all the time and pretty naive sometimes
+            - Really likes to make new friends
+            - Takes missions and exploring very serious and can get angry when others don‘t
+            - You either hate him or love him
+          ideals: |
+            - Doing good
+            - Exploring
+            - Having fun
+          flaws: |
+            - Way too impulsive
+            - Can panic too quickly
+          bonds: |
+            Narrat ??? (Grumpig): Owns a run down diner called "The Shack"
+            Lando ??? (Yanmega): Bullies Arran :( - Has a gang of Swablu
+            Tom Strongbeak (Pikipek): Arran’s best friend since Kindergarten, both of them dream of forming an Exploration team.
+
+            Arran does not know the last name of Narrat or Lando and does not have a last name.
+          backstory: >
+            Arran grew up in the city of Misty Gales Town. He lived in the east part
+            of the town and was raised by a Grumpig named Narrat.
+            He helps cooking with Narrat but often screws things up. He always
+            dreamt of joining a guild when he was finally old enough. Now was
+            the time!
+
+            He doesn't known his parents or what happened to them... or why he
+            is being raised by Grumpig. Narrat avoids the question when asked.
+            He is often in the western part of the city and watches the bird Pokémon
+            flying from their tree top houses and plays with his best friend Tom,
+            which he met at the school. He would love to fly. Often he just tries
+            to fly by jumping from low branches.
+
+            He is being rediculed by a Yanmega named Lando for that. He knows
+            him back from school and because he and his gang are regular customers
+            of his adoptive father's diner.
+            One day he decided to finally join the guild! He had made plans with Tom
+            to join together, but one day he and his family had to move away in a rush.
+
+            Tom's parents were always strange... What did they hide?
+            Anyway.... So he had to join alone...
+      ogl:
+        $ref: ogl
+        current_hp: 16
+
+        class: Barbarian
+        subclass: (None)
+        level: 1
+        race: Bagon
+        alignment: CG
+        size_class: Small
+        stats:
+          str: 17
+          dex: 12
+          con: 17
+          int: 10
+          wis: 9
+          cha: 15
+        movement:
+          land: 30
+        vision: 60
+        max_hp: 16
+        hit_dice: 12
+        boons:
+          ac: 1  # Pot Lid
+        languages: ["Common", "Pokémon", "Draconic"]
+        race_abilities:
+          - "Built Tough: +1 HP Max per Level"
+          - "Headbutt: Natural Attack, see above"
+          - "Dragon's Resistance: You are resistant to fire damage, but are vulnerable to cold damage."
+        class_abilities:
+          - |
+            Rage: While raging, you gain the following benefits if you aren’t wearing heavy armor:
+            - You have advantage on Strength checks and Strength saving throws.
+            - When you make a melee weapon attack using Strength, you gain a bonus to the damage roll that increases as you gain levels as a barbarian, as shown in the Rage Damage column of the Barbarian table.
+            - You have resistance to bludgeoning, piercing, and slashing damage.
+          - >
+            If you are able to cast spells, you can’t cast them or concentrate on them while raging.
+            Your rage lasts for 1 minute. It ends early if you are knocked unconscious or if your turn ends and you
+            haven’t attacked a hostile creature since your last turn or taken damage since then.
+            You can also end your rage on your turn as a bonus action. Once you have raged the number of times shown
+            for your barbarian level in the Rages column of the Barbarian table, you must finish a long rest before
+            you can rage again.
+          - >
+            Unarmored Defense: While you are not wearing any armor, your Armor Class equals 10 + your
+            Dexterity modifier + your Constitution modifier. You can use a shield and still gain this benefit.
+        feats: []
+        inventory:
+          on_hand:
+            - name: Haxorus Tusk
+              notes: Normally used for chopping wood in the town, it’s still good for combat. 1d8 slashing damage, can be 1d10 when used with two hands.
+            - name: Pot Lid
+              notes: You couldn’t afford Bracers, so you grabbed the only thing you could that nobody would miss. Surprisingly, it’s still effective enough. Gives you +1 AC.
+            - name: The rest of the pot too
+              notes: Given to you after Narrat realized you took the pot lid.
+            - name: Gravelrock
+              count: 10
+              notes: A bit of a heavier throwable, but you’re strong enough that you can manage it decently well. The range is 60/100 and you deal 1d6 bludgeoning damage with your throws.
+            - name: Canteen
+              notes: Filled with water from the Caldwelch River so you can have a nice drink.
+            - name: Recipe Book
+              notes: Gives you proficiency when making checks while cooking. You aren’t sure why, but you imagine a Buneary would have liked this at some point in time.
+            #- name: Tuba
+            #  notes: You’re welcome
+            - name: Feather Pen
+              notes: A nice writing implement
+            - name: Ink
+              notes: A nice way to write. The ink is rather old, though, but it still works
+            - name: Blank piece of parchment
+              notes: A nice thing to write on
+            - name: Small pouch filled with food ingredients
+              notes: While together, they’re rather bland, if you or someone else cooks them, you have about three days worth of food and rather good food at that.
+            - name: Roc’s Feather
+              notes: Magic item, attunable. A feather Tom gave you after seeing you jump and fall off the tree houses trying to fly. Allows you two spells per day. You can cast the Jump spell once per day, and you can also cast the Feather Fall spell once per day. The feather recharges both of these at dawn.
+          stored: []
+        money:
+          gp: 5
+          sp: 0
+          cp: 0
+        spells:
+          - $ref: ogl/spells/thaumaturgy
+            special: Via Type
+      dnd5e:
+        $ref: dnd5e
+        background: Adopted
+        inspiration: 0
+        proficiency: 2
+        proficiencies:
+          weapons:
+            simple: true
+            martial: true
+            unarmed: true
+          armor:
+            light: true
+            medium: true
+            shields: true
+          saves:
+            str: true
+            con: true
+        weapons:
+          - name: Haxorus Tusk
+            finese: false
+            ranged: false
+            wpn_type: martial
+            dmg_type: slashing
+            damage_dice: 1d8
+            notes: Can be 1d10 when used with two hands.
+          - name: Headbutt
+            finese: false
+            ranged: false
+            wpn_type: unarmed
+            dmg_type: piercing
+            damage_dice: 1d4
+        armor:
+          ac: 10
+          name: Unarmored Defense
+          stats: ["dex", "con"]
+        skills:
+          Athletics: {proficiency: true}
+          Deception: {proficiency: true}
+          Perception: {proficiency: true}
+          Persuasion: {proficiency: true}
+          Stealth: {proficiency: true}
+      soniclink_poke5e:
+        types: [ "Dragon" ]
+        attacks:
+          - name: Scary Face
+            pp: { max: 4, available: 4 }
+            target: One Creature
+            range: 60
+            description: Target one creature within range. Make an Intimidation check against their Wisdom Saving Throw. If you succeed, their movement speed is lowered by 15ft.
+  tariko:
+    template: dndpkmn
+    system: Yeesha Stone's Pokémon D&D 5e
+    full_name: Tariko
+    short_description: A Fomantis from far away.
+    bg: /static/assets/bg/char1.jpg
+    spec:
+      general:
+        gender: Male
+        age: 17
+        images:
+          - /static/assets/chars/tariko/main.png
+          - /static/assets/chars/tariko/fomantis (1).jpg
+          - /static/assets/chars/tariko/image0-6.png
+          - /static/assets/chars/tariko/PXL_20210121_211647038.jpg
+          - /static/assets/chars/tariko/PXL_20210122_224047831.jpg
+          - /static/assets/chars/tariko/sketch1609297555960.png
+          - /static/assets/chars/tariko/tariko-cosplay-commission.png
+        image_credits: Image credits are pending, sorry, I need to look it up again :( - please contact Para for credits!
+        home: Everstone Forest, Laloa
+        lore:
+          bonds: |
+            Father: Ezemir: High ranking army officer
+            Mother: Miranir
+            Sister: Liraleir (“outcast”, see above) - she is a normal colored Fomantis, however due to a race genetic condition, her eyes are shiny green
+            Best friend / blood brother: Zaluko (Fomantis): Best friends since childhood. During one of the training missions Tariko almost got killed and Zaluko saved his life. In general it is tradition to form a kind of blood bond with people outside your family you are very close with and that you trust with all your life. He asked Zaluko if he wanted to join him, but he declined, however he seemed supportive of Tarikos mission.
+          personality: |
+            - Comes from an authoritative political and military system with clear hierarchies, if nobody challenges him, he will try to take the lead. If he feels challenged he might try to assert his authority
+            - Doesn’t know anything about the stuff that has happened outside of the tribe, such as about multiple worlds
+            - Doesn't talk much
+            - Common isn’t his native tongue, he speaks a bit strange
+            - Is very loyal
+            - Is direct and honest
+            - Curious about new things, but also suspicious and cautious
+            - Nocturnal
+            - Sleeps outside in the sun
+            - His tribe is everything to him
+            - Hates the bugs that invaded his forest
+            - Has some small rituals or quirks from his home that might seem strange to other people
+            - Generally hates bugs
+            - Has almost no sense of humor / weird sense of it
+            - Convinced of the superiority of his own culture
+
+          backstory: >
+            Tariko the Fomantis lived in a forest far away, called Everstone Forest (in Laloa), where he was part of a tribe of Fomantis and Lurantis, called Son'nebel.
+            Life has been peaceful, but since a few years things have changed. More and more bug-type Pokémon infested the forest and threatened the fragile ecosystem, slowly eating up the plants and trees and harassing the Lurantis (or so they felt like).
+            Because of this the Lurantis started becoming a warrior/hunter tribe over the years, hunting for bugs at night to reclaim the forest. In general the tribe-structure became quite authoritarian over time and this is the world Tariko grew up in. The tribe was also pretty much isolated from the rest of the world. As all of the Fomantis, Tariko was trained from his youth to become a hunter. His father trained him and soon he would become a hunter just like him.
+
+            Tariko has an older sister. One day when he was eight and she was 12, she just disappeared one day. His parents never explained why and didn’t want to talk about it, just saying that she was a disgrace for the family. Tariko didn’t really understand.
+            One day when he was out in the woods for training on his own, he spotted a hooded figure that seemed to want his attention. He was lured into a deep part of the woods that was overgrown. The hooded mask turned out to be his sister. She thought she travelled the world outside, and told Tariko of the wonders beyond the forest. He couldn’t really believe what he was hearing, never did the thought of leaving the forest cross his mind.
+            Over the next few months they met in secret and she told him vague stories of a world beyond. Never anything too specific, saying it would be “too dangerous”, and that she knew he had to one day find out on his own.
+            She tought him a language she learnt from a “place far away” so that they could communicate in secret and she also told him “he would one day need it” [Jthooic]. [She told him vague stories, that basically were supposed to give him hints of where the bugs came from, and that maybe they weren’t that bad after all, and that maybe something bigger was going on? Open for (other) ideas though! - Whatever it was, he certainly didn’t connect the dots yet]
+            One day she didn’t arrive at the usual time at their meeting place. This was the last he heard of her.
+
+            One day when he found a flyer for the GoW that the wind had somehow guided into the forest, he for the first time realized that there was a world outside the forest. The thought of going on an adventure to explore the world occupied his mind more and more. Maybe he would learn something about where and why those bugs came from? One day, he decided he wanted to join.
+            Despite his controversial decision to leave, he is still very loyal to his tribe and generally him leaving also wasn’t a huge problem for most of the tribe, except for a couple of people (most notably his father did not speak to him ever since he made this decision). He promised he would come back one day with all the knowledge he gathered and maybe even a plan to get rid of the bug pest once and for all. Maybe he would also find out, what happened to his sister? What all those stories meant?
+          extra: |
+            Evolution:
+            - Tariko is from Everstone Forest, the forest is called that because of it's rather big amount of naturally occuring Everstones.
+            - In his tribe nobody is allowed to elolve until they are ready for a special ritual.
+            - Traditionally to be able to qualify for this ritual, you had to prove an act of braveness. Practically it's almost always been granted after the first "successful hunt" a hunter does on their own; ever since those bugs arrived - you also had to pass the physical requirement (level + sunlight)
+            - The ritual is done once a year on the longest day of the year on top the biggest hill in the forest (in a clearing) at noon. It involves drums being played and a ceremonial dance. At the end of the ceremony the Fomantis gets their necklace removed and evolve
+            - Tariko caries an Everstone pendant around his neck. It is replaced with a silver necklace once a Fomantis has evolved at the ritual
+      ogl:
+        $ref: ogl
+        current_hp: 20
+
+        class: Ranger
+        subclass: (None)
+        level: 2
+        race: Fomantis
+        alignment: LN
+        size_class: Small
+        spellcasting_mod: wis
+        stats:
+          str: 11
+          dex: 17
+          con: 14
+          int: 11
+          wis: 15
+          cha: 8
+        movement:
+          land: 20
+        vision: 60
+        max_hp: 20
+        hit_dice: 10
+        languages: ["Common", "Tribe language", "Jthooic"]
+        race_abilities:
+          - "Sweet Smells: The smell that wafts off of you causes those around you to be more friendly towards you, however it doesn’t last forever. You can use the Friends cantrip and do not need any components to do so. This is a temporary trait, when the sheet is finished it will be updated."
+          - "Sunlight Nap: Sleeping in the sun helps you to feel more alive, more awake. If you take a long or short rest in the sunlight you regain all levels of exhaustion and gain proficiency on your first skill check after waking up. This is a temporary trait, when the sheet is finished it will be updated."
+        class_abilities:
+          - |
+            Favored Foe:
+            This 1st-level feature replaces the Favored Enemy feature and works with the Foe Slayer feature. You gain no benefit from the replaced feature and don't qualify for anything in the game that requires it.
+            When you hit a creature with an attack roll, you can call on your mystical bond with nature to mark the target as your favored enemy for 1 minute or until you lose your concentration (as if you were concentrating on a spell).
+            The first time on each of your turns that you hit the favored enemy and deal damage to it, including when you mark it, you increase that damage by 1d4.
+            You can use this feature to mark a favored enemy a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.
+            This feature's extra damage increases when you reach certain levels in this class: to 1d6 at 6th level and to 1d8 at 14th level.
+          - |
+            Deft Explorer (Canny): Choose one of your skill proficiencies (Stealth) -> Expertise
+            Next effect at Lv. 6
+          - "Fighting Style (Archery): You gain a +2 bonus to attack rolls you make with ranged weapons."
+        feats: []
+        inventory:
+          on_hand:
+            - name: Light Leather Armor
+            - name: Backpack
+            - name: Bedroll
+            - name: Mess kit
+            - name: Tinderbox
+            - name: Torches
+              count: 10
+            - name: Rations (days)
+              count: 10
+            - name: Waterkin
+            - name: Hempen Rope (ft.)
+              count: 50
+            - name: Poorly wrought maps from your homeland
+            - name: A teal & black pendant made of crystals in shape of a flower
+            - name: Jar of berry jam
+            - name: Woodcarver's Tools (knife, a gouge, and a small saw)
+            - name: Lum Berries
+              count: 2
+            - name: Seeds (bags)
+              count: 1
+              notes: https://drive.google.com/drive/folders/19WIGDN0exDtfpiMh1IxZ9HHkDMpyUc_K
+          stored: []
+        money:
+          gp: 7
+          sp: 7
+          cp: 0
+        spell_slots:
+          1: { max: 2, available: 2 }
+        known_spells: 2
+        spells:
+          - $ref: ogl/spells/friends
+            special: Via Sweet Smellls
+          - $ref: ogl/spells/ensnarig-strike
+          - $ref: ogl/spells/jump
+      dnd5e:
+        $ref: dnd5e
+        background: Far Traveler
+        inspiration: 0
+        proficiency: 2
+        proficiencies:
+          weapons:
+            simple: true
+            martial: true
+          armor:
+            light: true
+            medium: true
+            shields: true
+          saves:
+            str: true
+            dex: true
+        weapons:
+          - name: Dagger
+            finese: true
+            ranged: false
+            wpn_type: simple
+            dmg_type: piercing
+            damage_dice: 1d4
+            range: {normal: 20, better: 60}
+          - name: Mace
+            finese: false
+            ranged: false
+            wpn_type: simple
+            dmg_type: bludgeoning
+            damage_dice: 1d6
+          - name: Longbow
+            finese: false
+            ranged: true
+            wpn_type: martial
+            dmg_type: piercing
+            damage_dice: 1d8
+            range: {normal: 150, better: 600}
+            ammo: 20
+        armor:
+          ac: 11
+          name: Light Leather Armor
+          stats: ["dex"]
+        skills:
+          Athletics: {proficiency: true}
+          Insight: {proficiency: true}
+          Nature: {proficiency: true}
+          Perception: {proficiency: true}
+          Stealth: {proficiency: true, expertise: true}
+      dndpkmn:
+        evolution_level: 9
+        types: ["Grass"]
+        current_pp: 5
+        boons:
+          pp: 0
+        nature: focused
+        ability:
+          $ref: dndpkmn/abilities/contrary
+        attacks:
+          - $ref: dndpkmn/attacks/razor-leaf
+  khij:
+    template: pathfinder
+    system: Pathfinder
+    full_name: Khij
+    short_description: An Undine looking looking for an artifact to save his people.
+    bg: /static/assets/bg/char1.jpg
+    spec:
+      general:
+        gender: Male
+        images:
+          - /static/assets/chars/khij/main.png
+        home: Suldamru
+      ogl:
+        $ref: ogl
+        current_hp: 41
+
+        class: Druid
+        subclass: Undine Adept
+        level: 7
+        race: Undine
+        spellcasting_mod: wis
+        alignment: LN
+        size_class: Medium
+        stats:
+          str: 7
+          dex: 14
+          con: 8
+          int: 15
+          wis: 19
+          cha: 11
+        movement:
+          land: 30
+          swim: 30
+        vision: 60
+        max_hp: 26
+        hit_dice: 8
+        languages: [ "Common", "Aqua", "Druid", "Elvish", "Terral", "Sylvan" ]
+        race_abilities:
+          - "Flesh Chameleon: Some undines can change their coloration to match human skin tones. As a standard action, an undine with this racial trait can change her natural blue hue to match any normal human skin tone, and can revert to normal as a free action. This grants a +4 racial bonus on Disguise checks to appear human. This racial trait replaces energy resistance."
+          - "Swim is a class ability"
+          - "Hydrated Vitality: An undine with this racial trait gains fast healing 2 for 1 round anytime she submerges completely within a body of natural salt water, fresh water, or brackish water. Stagnant, poisoned, or trapped water (such as an artificial pit or a bag of holding) does not activate this ability. The undine can heal up to 2 hit points per level per day with this ability, after which it ceases to function. This racial trait replaces water affinity."
+          - "Amphibious: Some undines are born with a permanent bond to water. Undines with this racial trait gain the aquatic subtype and amphibious special quality. This racial trait replaces the spell-like ability racial trait."
+        class_abilities:
+          - "Favored Class: +1 for rolls on Handle Animal for aquatic animals"
+          - "Connected with Argek: Can move freely, +4 on Handle Animal, can share magic with Argek"
+          - "Nature Sense: A druid gains a +2 bonus on Knowledge (nature) and Survival checks."
+          - "Wild Empathy: The druid rolls 1d20 and adds her druid level and her Charisma modifier to determine the wild empathy check result."
+          - "Verstärkte Herbeizauberung: Jede Kreatur der Unterart Wasser, w. herbeizaubert, die Vorteile des Talents Verstärkte Herbeizauberung. => Verbesserungsbonus +4 auf Stärke und Konstitution."
+          - "Wild Shape: 2x"
+        feats:
+          - "Water Skin: Standard-Aktion ein kleines, nichtmagisches Feuer mit einer Berührung löschen (max. gr. Lagerfeuer)"
+          - "Flusskämpfer: Schwimmst du flussabwärts oder quer durch einen Strom, kannst du einen Sturmangriff durchführen, wenn du den HG für Schwimmen mit 5 oder mehr bewältigst."
+          - "Stiller Beobachter (Region): Du kannst die Stimmung einer Menge erkennen… +1 auf Fertigkeitswürfe für Motiv erkennen in einer Menge; +1 auf Fertigkeitswürfe für Heimlichkeit in den Straßen"
+          - "Pride: When someone threatens, accuses, or challenges you, you take a –2 penalty on Diplomacy checks and Sense Motive. Checks involving that creature until the creature apologizes to you."
+          - "Dampfzauberer: Zauber VA statt SA: Alle Feuerzauber werden stattdessen zu Wasser/Dampfzauber. Können unter Wasser gewirkt werden. Können nicht in Brand stecken.  Gelten zur Gruppe Wasser, verursachen weiterhin Feuerschaden."
+          - "Zauberfokus: +1 auf RW Beschwörung (meine Zauber!)"
+          - "Natural Spell: You can complete the verbal and somatic components of spells while using wild shape. You substitute various noises and gestures for the normal verbal and somatic components of a spell."
+        inventory:
+          on_hand:
+            - name: Sichel
+            - name: Fellrüstung
+            - name: Rucksack
+            - name: Schlafsack
+            - name: Journal + Stift
+            - name: Reisekleidung + Handschuhe
+            - name: Kreide
+            - name: leichtes Holzschild
+            - name: Karten
+            - name: Handschellen (ohne Schlüssel)
+            - name: Pinke Muschel
+            - name: Gutschein über ein Buch
+            - name: Tieflingswurz
+            - name: Bolzen
+            - name: Satz Feuerwuth-Schuppen
+            - name: Luftelementar Essenz
+            - name: Luftelementar Kern
+            - name: Schlüssel der Elemente
+            - name: Seltsame Karte
+            - name: Karte Herz des Feuers
+            - name: "Buch: Magische Dinge und Artefakte der Wasermagie"
+            - name: "Buch: Arkane Geschütze i. 5 Schr."
+            - name: Karte von Inseln, früher
+            - name: Heiltrank, mittel
+            - name: Halluzenogene Pilze
+            - name: Froschpilz
+            - name: 2x Schlüssel HDF
+            - name: Otari? (wie Hayot aber für Feuer)
+            - name: Stein von Grisnelda, Nachtvettel
+            - name: Stein, Ruhestein, teleportiert uns 1/Tag
+            - name: Staff of the Woodlands
+            - name: Vorrat halluzinogene Pilze und Drogen
+            - name: Magische Schleuder
+            - name: Weinflasche
+          stored: []
+        money:
+          gp: 2301
+          sp: 79
+          cp: 0
+        spell_slots:
+          1: { max: 5, available: 5 }
+          2: { max: 4, available: 4 }
+          3: { max: 3, available: 3 }
+          4: { max: 2, available: 2 }
+        spells: []
+      pathfinder:
+        $ref: pathfinder
+        bab: 5
+        save_base:
+          reflex: 2
+          will: 5
+          fortitude: 5
+        weapons:
+          - name: Sichel
+            crit_mod: 2
+            crit_min: 20
+            damage_dice: 1d6
+        armor:
+          - name: leichtes Holzschild
+            bonus: 1
+            minus: 1
+            max_dex: -1
+            arcane_fail_chance: 5
+            weight: 5
+            type: shield
+          - name: Elem. Schp.panz.
+            bonus: 6
+            minus: 0
+            max_dex: 4
+            arcane_fail_chance: 10
+            weight: 25
+            type: armor
+            notes: Res. gg. el. Sch. -10
+        skills:
+          Profession: {class_skill: true, ranks: 1, type: "Seafaring"}
+          Bluff: { class_skill: true, boon: 2 }
+          Diplomacy: { ranks: 4 }
+          Fly: { class_skill: true }
+          Craft: { class_skill: true, ranks: 1 }
+          Heal: { class_skill: true, ranks: 2 }
+          Stealth: { ranks: 5 }
+          Climb: { class_skill: true, ranks: 4 }
+          Handle Animal: { class_skill: true, ranks: 3 }
+          Ride: { class_skill: true, ranks: 1 }
+          Swim: { class_skill: true, ranks: 1 }
+          Linguistics: { ranks: 1 }
+          Survival: { class_skill: true, ranks: 2, boon: 2 }
+          Disguise: { ranks: 2, boon: 2 }
+          Perception: { class_skill: true, ranks: 6 }
+          Knowledge (geography): { class_skill: true, ranks: 2 }
+          Knowledge (history): { ranks: 1 }
+          Knowledge (nature): { class_skill: true, ranks: 3, boon: 2 }
+          Knowledge (religion): { ranks: 1 }
+          Spellcraft: { class_skill: true, ranks: 2 }
+  argek:
+    template: pathfinder_ac
+    system: Pathfinder
+    full_name: Argek
+    short_description: Tariko's trusty crocodile.
+    bg: /static/assets/bg/char1.jpg
+    spec:
+      general:
+        gender: Male
+        images:
+          - /static/assets/chars/argek/main.jpg
+        home: Suldamru
+      ogl:
+        $ref: ogl
+        current_hp: 66
+
+        class: Animal Companion
+        subclass: ''
+        level: 7
+        race: Crocodile
+        alignment: n/a
+        size_class: Medium
+        stats:
+          str: 20
+          dex: 12
+          con: 18
+          int: 1
+          wis: 12
+          cha: 2
+        boons:
+          ac: 9  # natural
+        movement:
+          land: 20
+          swim: 30
+        vision: 60
+        max_hp: 51
+        hit_dice: 8
+        languages: [ "None" ]
+        race_abilities:
+          - "Can hold breath for 4 * CON"
+        class_abilities:
+          - "Ergreifen"
+          - "Sprint"
+          - "Todesrolle"
+        feats:
+          - "Verbesserte Natürliche Rüstung: +1 natürlicher Rüstungsbonus"
+          - "Verbesserter Natürlicher Angriff: 1W8 Biss → 2W6"
+          - "Umgang mit Rüstungen, leicht: Rüstungsmalus nur für Stärke/GE Fertigkeitswürfe (bereits eingerechn.)"
+          - "Angreifen: Greift Feinde an; kann befohlen werden; nur Humanoide"
+          - "Verteidigen: Das Tier verteidigt dich (oder ist verteidigungsbereit, falls es gerade keine offensichtliche Bedrohung gibt), auch wenn es Keinen Befehl dazu erhält. Alternativ kannst du dem Tier auch befehlen, einen anderen Charakter zu verteidigen."
+          - "Bei Fuß gehen: Das Tier folgt dir in geringem Abstand selbst an Orte,  an die es normalerweise nicht gehen würde"
+        inventory:
+          on_hand: []
+          stored: []
+        money:
+          gp: 0
+          sp: 0
+          cp: 0
+        spells: []
+      pathfinder:
+        $ref: pathfinder
+        bab: 4
+        natural_ac: 9
+        save_base:
+          reflex: 5
+          will: 2
+          fortitude: 5
+        weapons:
+          - name: Bite
+            crit_mod: 2
+            crit_min: 20
+            damage_dice: 1d8
+          - name: Tail Whip
+            crit_mod: 2
+            crit_min: 20
+            damage_dice: 2d8+1d4
+        armor:
+          - name: Beschl. LedR., meist.
+            bonus: 2
+            minus: 0
+            max_dex: 5
+            arcane_fail_chance: 10
+            weight: 15
+            type: armor
+            notes: Fire Resistence
+        skills:
+          Acrobatics: { class_skill: true }
+          Intimidate: { ranks: 1 }
+          Fly: { class_skill: true }
+          Stealth: { class_skill: true, ranks: 2 }
+          Climb: { class_skill: true }
+          Swim: { class_skill: true, ranks: 1 }
+          Survival: { ranks: 1 }
+          Perception: { ranks: 1 }

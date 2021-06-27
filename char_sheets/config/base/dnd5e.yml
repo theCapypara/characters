@@ -1,0 +1,48 @@
+dnd5e:
+  boons:
+    saves:
+      str: 0
+      dex: 0
+      con: 0
+      int: 0
+      wis: 0
+      cha: 0
+  death_saves:
+    successes: 0
+    fails: 0
+  proficiencies:
+    weapons:
+      simple: false
+      martial: false
+      unarmed: false
+    armor:
+      light: false
+      medium: false
+      heavy: false
+      shields: false
+    saves:
+      str: false
+      dex: false
+      con: false
+      int: false
+      wis: false
+      cha: false
+  skills:
+    Acrobatics: {proficiency: false}
+    Animal Handling: {proficiency: false}
+    Arcana: {proficiency: false}
+    Athletics: {proficiency: false}
+    Deception: {proficiency: false}
+    History: {proficiency: false}
+    Insight: {proficiency: false}
+    Intimidation: {proficiency: false}
+    Investigation: {proficiency: false}
+    Medicine: {proficiency: false}
+    Nature: {proficiency: false}
+    Perception: {proficiency: false}
+    Performance: {proficiency: false}
+    Persuasion: {proficiency: false}
+    Religion: {proficiency: false}
+    Sleight of Hand: {proficiency: false}
+    Stealth: {proficiency: false}
+    Survival: {proficiency: false}

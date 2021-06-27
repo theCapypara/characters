@@ -1,0 +1,21 @@
+{% include '_head.html' %}
+<style>
+    @media only screen and (max-width: 1000px) {
+        .sheet-wrapper {
+            background-image: url("{{ char['bg'] }}");
+        }
+    }
+</style>
+<div class="sheet-wrapper">
+    <div class="sheet sheet--odd sheet--one-col">
+        <div class="bg" style='background-image: url("{{ char['bg'] }}");'>
+            <div class="content">
+                <div class="content-inner">
+                    {% module Template('template/' + char['template'] + '.html', char=char) %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% include '_foot.html' %}

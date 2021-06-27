@@ -1,0 +1,41 @@
+<div class="statblock">
+    <div class="stat">
+        <h3>- STR -</h3>
+        <p class="stat-value">{{ char.spec('ogl')['stats']['str'] }}</p>
+        <p class="stat-mod">{{ sp(char.spec('ogl').str_m()) }}</p>
+    </div>
+    <div class="stat">
+        <h3>- DEX -</h3>
+        <p class="stat-value">{{ char.spec('ogl')['stats']['dex'] }}</p>
+        <p class="stat-mod">{{ sp(char.spec('ogl').dex_m()) }}</p>
+    </div>
+    <div class="stat">
+        <h3>- CON -</h3>
+        <p class="stat-value">{{ char.spec('ogl')['stats']['con'] }}</p>
+        <p class="stat-mod">{{ sp(char.spec('ogl').con_m()) }}</p>
+    </div>
+    <div class="stat">
+        <h3>- INT -</h3>
+        <p class="stat-value">{{ char.spec('ogl')['stats']['int'] }}</p>
+        <p class="stat-mod">{{ sp(char.spec('ogl').int_m()) }}</p>
+    </div>
+    <div class="stat">
+        <h3>- WIS -</h3>
+        <p class="stat-value">{{ char.spec('ogl')['stats']['wis'] }}</p>
+        <p class="stat-mod">{{ sp(char.spec('ogl').wis_m()) }}</p>
+    </div>
+    <div class="stat">
+        <h3>- CHA -</h3>
+        <p class="stat-value">{{ char.spec('ogl')['stats']['cha'] }}</p>
+        <p class="stat-mod">{{ sp(char.spec('ogl').cha_m()) }}</p>
+    </div>
+    {% if char.has_spec('dndpkmn') %}
+    <div class="stat">
+        <h3>Nature</h3>
+        <div style="font-size:0.5em;">
+            <p class="stat-value">{{ p(char.spec('dndpkmn')['nature']) }}</p>
+        <p class="stat-mod">+{{ up(char.spec('dndpkmn').nature_plus()) }} / -{{ up(char.spec('dndpkmn').nature_minus()) }}</p>
+        </div>
+    </div>
+    {% end %}
+</div>

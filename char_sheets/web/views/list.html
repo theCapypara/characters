@@ -1,0 +1,38 @@
+{% include '_head.html' %}
+<style>
+    @media only screen and (max-width: 1000px) {
+        .sheet-wrapper {
+            background-image: url("/static/assets/bg/index.jpg");
+        }
+    }
+</style>
+<div class="sheet-wrapper">
+    <div class="sheet sheet--odd sheet--one-col">
+        <div class="bg" style='background-image: url("/static/assets/bg/index.jpg");'>
+            <div class="content">
+                <div class="content-inner">
+                    <h1>Para's Characters</h1>
+                    <div class="stand-out-margin">
+                        <span class="flavor">
+                            A list of all my TTRPG characters.
+                        </span>
+                    </div>
+                    {% for key, char in characters.doc.items() %}
+                    <a class="character-pin" href="/character/{{ key }}">
+                        <img src="{{ char.spec('general')['images'][0] }}">
+                        <div>
+                            <h2>{{ char['full_name'] }}</h2>
+                            {% if char.has_spec('ogl') %}
+                                <p class="flavor">{{ char['short_description'] }}</p>
+                            {% end %}
+                            <p class="flavor">Lv. {{ char.spec('ogl')['level'] }} {{ char.spec('ogl')['subclass'] }} {{ char.spec('ogl')['class'] }} - {{ char['system'] }}</p>
+                        </div>
+                    </a>
+                    {% end %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% include '_foot.html' %}
