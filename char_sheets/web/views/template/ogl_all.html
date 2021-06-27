@@ -1,0 +1,842 @@
+<div class="right-container">
+    <img class="avatar" src="{{ char.spec('general')['images'][0]}}">
+    <div class="desktop">
+        {% include 'ogl_statblock.html' %}
+    </div>
+</div>
+<h1>{{ char['full_name'] }}</h1>
+<p class="flavor">{{ char['short_description'] }}</p>
+<div class="char-container">
+    <!-- General Info -->
+    <div class="tablec">
+        <table>
+        <tr>
+            <th>Level</th>
+            <th>Subclass</th>
+            <th>Class</th>
+            <th colspan="{{ char.spec('general').count_optional() }}">Race</th>
+        </tr>
+        <tr>
+            <td class="important big centered" rowspan="3">{{ char.spec('ogl')['level'] }}</td>
+            <td>{{ p(char.spec('ogl')['subclass']) }}</td>
+            <td>{{ p(char.spec('ogl')['class']) }}</td>
+            <td  colspan="{{ char.spec('general').count_optional() }}">{{ p(char.spec('ogl')['race']) }}</td>
+        </tr>
+        <tr>
+            <th>Gender</th>
+            {% if char.has_spec('dnd5e') %}<th>Background</th>{% end %}
+            {% if 'home' in char.spec('general') %}<th>Home</th>{% end %}
+            {% if 'size' in char.spec('general') %}<th>Size</th>{% end %}
+            {% if 'weight' in char.spec('general') %}<th>Weight</th>{% end %}
+            {% if 'eye_color' in char.spec('general') %}<th>Eye Color</th>{% end %}
+            {% if 'hair_color' in char.spec('general') %}<th>Hair Color</th>{% end %}
+            {% if 'age' in char.spec('general') %}<th>Age</th>{% end %}
+        </tr>
+        <tr>
+            <td>{{ p(char.spec('general')['gender']) }}</td>
+            {% if char.has_spec('dnd5e') %}<td>{{ p(char.spec('dnd5e')['background']) }}</td>{% end %}
+            {% if 'home' in char.spec('general') %}<td>{% raw p(char.spec('general')['home']) %}</td>{% end %}
+            {% if 'size' in char.spec('general') %}<td>{% raw size(char.spec('general')['size']) %}</td>{% end %}
+            {% if 'weight' in char.spec('general') %}<td>{% raw weight(char.spec('general')['weight']) %}</td>{% end %}
+            {% if 'eye_color' in char.spec('general') %}<td>{{ p(char.spec('general')['eye_color']) }}</td>{% end %}
+            {% if 'hair_color' in char.spec('general') %}<td>{{ p(char.spec('general')['hair_color']) }}</td>{% end %}
+            {% if 'age' in char.spec('general') %}<td>{{ p(char.spec('general')['age']) }}</td>{% end %}
+        </tr>
+    </table>
+    </div>
+    <div class="tablec">
+        {% if char.spec('ogl').has_complex_movement() %}
+            <table>
+                <tr>
+                    <th colspan="4">Movement</th>
+                </tr>
+                <tr>
+                    <th>Land</th>
+                    <td>{% raw size(char.spec('ogl')['movement']['land']) %}</td>
+                    <th>Swim</th>
+                    <td>{% raw size(char.spec('ogl')['movement']['swim']) if 'swim' in char.spec('ogl')['movement'] else '-' %}</td>
+                </tr>
+                <tr>
+                    <th>Fly</th>
+                    <td>{% raw size(char.spec('ogl')['movement']['fly']) if 'fly' in char.spec('ogl')['movement'] else '-' %}</td>
+                    <th>Climb</th>
+                    <td>{% raw size(char.spec('ogl')['movement']['climb']) if 'climb' in char.spec('ogl')['movement'] else '-' %}</td>
+                </tr>
+                <tr>
+                    <th>Vision</th>
+                    <td>{% raw size(char.spec('ogl')['vision']) %}</td>
+                </tr>
+            </table>
+        {% else %}
+            <table>
+                <tr>
+                    <th>Movement</th>
+                </tr>
+                <tr>
+                    <td>{% raw size(char.spec('ogl')['movement']['land']) %}</td>
+                </tr>
+                <tr>
+                    <th>Vision</th>
+                </tr>
+                <tr>
+                    <td>{% raw size(char.spec('ogl')['vision']) %}</td>
+                </tr>
+            </table>
+        {% end %}
+    </div>
+    <!-- AC, Prof., HP/PP, Hit Dice, INI, INSP, Death Saves -->
+    <div class="tablec">
+        <table>
+            <tr>
+                <th class="centered">AC</th>
+                {% if char.has_spec('dnd5e') %}<th class="centered">Prof.</th>{% end %}
+                <th class="centered" colspan="3">HP</th>
+                <th class="centered">Hit Dice</th>
+                <th class="centered">Ini.</th>
+                {% if char.has_spec('dnd5e') %}<th class="centered">Insp.</th>{% end %}
+                {% if char.has_spec('dnd5e') %}<th class="centered" colspan="2">Death Saves</th>{% end %}
+            </tr>
+            <tr>
+                <td class="important big centered" rowspan="4">{{ p(char.spec('ogl').ac()) }}</td>
+                {% if char.has_spec('dnd5e') %}<td class="important big centered" rowspan="4">{{ sp(char.spec('dnd5e')['proficiency']) }}</td>{% end %}
+                <td class="important centered" rowspan="{{ 1 if char.has_spec('dndpkmn') else 4 }}">{{ p(char.spec('ogl')['current_hp']) }}</td>
+                <th class="centered" rowspan="{{ 1 if char.has_spec('dndpkmn') else 4 }}">/</th>
+                <td class="important centered" rowspan="{{ 1 if char.has_spec('dndpkmn') else 4 }}">{{ p(char.spec('ogl')['max_hp']) }}</td>
+                <td class="centered" rowspan="4">1d{{ p(char.spec('ogl')['hit_dice']) }}</td>
+                <td class="important big centered" rowspan="4">{{ sp(char.spec('ogl').ini()) }}</td>
+                {% if char.has_spec('dnd5e') %}<td class="important big centered" rowspan="4">{{ p(char.spec('dnd5e')['inspiration']) }}</td>{% end %}
+                {% if char.has_spec('dnd5e') %}<th>Success</th>{% end %}
+                {% if char.has_spec('dnd5e') %}<td>{{ p(char.spec('dnd5e')['death_saves']['successes']) }} / 3</td>{% end %}
+            </tr>
+            <tr>
+                {% if char.has_spec('dndpkmn') %}<th class="centered" colspan="3">PP</th>{% end %}
+                {% if char.has_spec('dnd5e') %}<th>Failures</th>{% end %}
+                {% if char.has_spec('dnd5e') %}<td>{{ p(char.spec('dnd5e')['death_saves']['fails']) }} / 3</td>{% end %}
+            </tr>
+            {% if char.has_spec('dndpkmn') %}
+            <tr>
+                <td class="important centered">{{ p(char.spec('dndpkmn')['current_pp']) }}</td>
+                <th class="centered">/</th>
+                <td class="important centered">{{ p(char.spec('dndpkmn').max_pp()) }}</td>
+            </tr>
+            {% end %}
+        </table>
+    </div>
+</div>
+<div class="mobile">
+    {% include 'ogl_statblock.html' %}
+</div>
+
+<div class="char-container">
+    <!-- BAB / CMB / CMD / Passives -->
+    {% if char.has_spec('pathfinder') %}
+    <div class="tablec">
+        <table>
+        <tr>
+            <th>BAB</th>
+            <th>CMB</th>
+            <th>CMD</th>
+        </tr>
+        <tr>
+            <td class="important big centered">{{ p(char.spec('pathfinder')['bab']) }}</td>
+            <td class="important big centered">{{ sp(char.spec('pathfinder').cmb()) }}</td>
+            <td class="important big centered">{{ p(char.spec('pathfinder').cmd()) }}</td>
+        </tr>
+    </table>
+    </div>
+    {% end %}
+    {% if char.has_spec('dnd5e') %}
+    <div class="tablec">
+        <table>
+        <tr>
+            <th colspan="6">Passive Skills</th>
+        </tr>
+        <tr>
+            <th>Insight</th>
+            <td>{{ sp(char.spec('dnd5e').passive_insight()) }}</td>
+            <th>Investigation</th>
+            <td>{{ sp(char.spec('dnd5e').passive_investigation()) }}</td>
+            <th>Perception</th>
+            <td>{{ sp(char.spec('dnd5e').passive_perception()) }}</td>
+        </tr>
+    </table>
+    </div>
+    {% end %}
+</div>
+
+
+
+
+
+<h2>Weapons</h2>
+{% if char.has_spec('pathfinder') %}
+<div class="char-container">
+    <div class="tablec">
+        <table class="striped">
+            <tr>
+                <th>Name</th>
+                <th>Hit</th>
+                <th>Crit. Mod</th>
+                <th>Min for Crit.</th>
+                <th>Damage</th>
+                <th>Range</th>
+                <th>Weight</th>
+                <th>Notes</th>
+            </tr>
+            {% for w in char.spec('pathfinder')['weapons'] %}
+                <tr>
+                    <td class="important">{{ w['name'] }}</td>
+                    <td class="important">{{ sp(w.to_hit()) }}</td>
+                    <td>x{{ w['crit_mod'] }}</td>
+                    <td>{{ w['crit_min'] }}</td>
+                    <td class="important">{{ w.damage() }}</td>
+                    <td>{% raw size(w['range']) if 'range' in w else '' %}</td>
+                    <td>{{ weight(w['weight']) if 'weight' in w else '' }}</td>
+                    <td>{{ w['notes'] if 'notes' in w else '' }}</td>
+                </tr>
+            {% end %}
+        </table>
+    </div>
+</div>
+{% end %}
+{% if char.has_spec('dnd5e') %}
+<div class="char-container">
+    <div class="tablec">
+        <table class="striped">
+            <tr>
+                <th>Name</th>
+                <th>Hit</th>
+                <th>T</th>
+                <th>Attributes</th>
+                <th>Damage</th>
+                <th>Range</th>
+                <th>Ammo</th>
+                <th>Notes</th>
+            </tr>
+            {% for w in char.spec('dnd5e')['weapons'] %}
+                <tr>
+                    <td class="important">{{ w['name'] }}</td>
+                    <td class="important">{{ sp(w.to_hit()) }}</td>
+                    <td>{{ p(w['dmg_type'])[0] }}</td>
+                    <td>{{ w.attributes() }}</td>
+                    <td class="important">{{ w.damage() }}</td>
+                    <td>{{ w.range() }}</td>
+                    <td>{{ w['ammo'] if 'ammo' in w else '' }}</td>
+                    <td>{{ w['notes'] if 'notes' in w else '' }}</td>
+                </tr>
+            {% end %}
+        </table>
+    </div>
+</div>
+{% end %}
+
+
+
+
+
+{% if char.has_spec('dndpkmn') or char.has_spec('soniclink_poke5e') %}
+<h2>Attacks</h2>
+{% if char.has_spec('dndpkmn') %}
+<div class="char-container">
+    <div class="tablec">
+        <table class="striped">
+            <tr>
+                <th>Name</th>
+                <th>Hit / Save DC</th>
+                <th>PP</th>
+                <th>Target</th>
+                <th>Range</th>
+            </tr>
+            {% for a in char.spec('dndpkmn')['attacks'] %}
+                <tr>
+                    <td class="important">{{ a['name'] }}</td>
+                    <td class="important">{{ a.atk_bonus_or_save() }}</td>
+                    <td>{{ a['pp'] }}</td>
+                    <td>{{ a['target'] }}</td>
+                    <td>{% raw size(a['range']) %}</td>
+                </tr>
+                <tr>
+                    <td colspan="5">{{ a['description'] }}</td>
+                </tr>
+            {% end %}
+        </table>
+    </div>
+</div>
+{% end %}
+{% if char.has_spec('soniclink_poke5e') %}
+<div class="char-container">
+    <div class="tablec">
+        <table class="striped">
+            <tr>
+                <th>Name</th>
+                <th>PP</th>
+                <th>Target</th>
+                <th>Range</th>
+            </tr>
+            {% for a in char.spec('soniclink_poke5e')['attacks'] %}
+                <tr>
+                    <td class="important">{{ a['name'] }}</td>
+                    <td class="important">{{ a['pp']['available'] }} / {{ a['pp']['max'] }}</td>
+                    <td>{{ a['target'] }}</td>
+                    <td>{% raw size(a['range']) %}</td>
+                </tr>
+                <tr>
+                    <td colspan="5">{{ a['description'] }}</td>
+                </tr>
+            {% end %}
+        </table>
+    </div>
+</div>
+{% end %}
+{% end %}
+
+
+
+
+
+
+
+
+<h2>Armor</h2>
+<div class="char-container">
+    {% if char.has_spec('pathfinder') %}
+    <div class="tablec">
+        <table class="striped">
+            <tr>
+                <th>Name</th>
+                <th>Bonus</th>
+                <th>Penalty</th>
+                <th>Type</th>
+                <th>Max. DEX</th>
+                <th>Arc. Fail Ch.</th>
+                <th>Weight</th>
+                <th>Notes</th>
+            </tr>
+            {% for a in char.spec('pathfinder')['armor'] %}
+                <tr>
+                    <td class="important">{{ a['name'] }}</td>
+                    <td class="important">{{ sp(a['bonus']) }}</td>
+                    <td>{{ a['minus'] }}</td>
+                    <td>{{ p(a['type']) }}</td>
+                    <td>{{ a['max_dex'] }}</td>
+                    <td>{{ a['arcane_fail_chance'] }}%</td>
+                    <td>{{ a['weight'] if 'weight' in a else '' }}</td>
+                    <td>{{ a['notes'] if 'notes' in a else '' }}</td>
+                </tr>
+            {% end %}
+        </table>
+    </div>
+    {% end %}
+    {% if char.has_spec('dnd5e') %}
+    <div class="tablec">
+        <table class="striped">
+            <tr>
+                <th>Name</th>
+                <th>AC</th>
+            </tr>
+            <tr>
+                <td class="important">{{ char.spec('dnd5e')['armor']['name'] }}</td>
+                <td class="important">{{ char.spec('dnd5e')['armor']['ac'] }}</td>
+            </tr>
+        </table>
+    </div>
+    {% end %}
+</div>
+
+
+
+
+<h2>Saves</h2>
+<div class="char-container">
+    {% if char.has_spec('pathfinder') %}
+    <div class="tablec">
+        <table class="striped">
+            <tr>
+                <th>Name</th>
+                <th class="centered">Base</th>
+                <th class="centered"> + Attribute</th>
+                <th class="centered">(ATTR)</th>
+                <th class="centered">+ Magic</th>
+                <th class="centered">+ Misc.</th>
+                <th class="centered">+ Temp.</th>
+                <th class="centered">= Bonus</th>
+            </tr>
+            <tr>
+                <td class="important">Reflex</td>
+                <td class="centered">{{ char.spec('pathfinder')['save_base']['reflex'] }}</td>
+                <td class="centered">{{ sp(char.spec('pathfinder').save_attribute_bonus('reflex')) }}</td>
+                <td class="centered">{{ up(char.spec('pathfinder').save_attribute('reflex')) }}</td>
+                <td class="centered"></td>
+                <td class="centered">{{ char.spec('pathfinder').save_boon('reflex') }}</td>
+                <td class="centered"></td>
+                <td class="important centered">{{ sp(char.spec('pathfinder').save_bonus('reflex')) }}</td>
+            </tr>
+            <tr>
+                <td class="important">Will</td>
+                <td class="centered">{{ char.spec('pathfinder')['save_base']['will'] }}</td>
+                <td class="centered">{{ sp(char.spec('pathfinder').save_attribute_bonus('will')) }}</td>
+                <td class="centered">{{ up(char.spec('pathfinder').save_attribute('will')) }}</td>
+                <td class="centered"></td>
+                <td class="centered">{{ char.spec('pathfinder').save_boon('will') }}</td>
+                <td class="centered"></td>
+                <td class="important centered">{{ sp(char.spec('pathfinder').save_bonus('will')) }}</td>
+            </tr>
+            <tr>
+                <td class="important">Fortitude</td>
+                <td class="centered">{{ char.spec('pathfinder')['save_base']['fortitude'] }}</td>
+                <td class="centered">{{ sp(char.spec('pathfinder').save_attribute_bonus('fortitude')) }}</td>
+                <td class="centered">{{ up(char.spec('pathfinder').save_attribute('fortitude')) }}</td>
+                <td class="centered"></td>
+                <td class="centered">{{ char.spec('pathfinder').save_boon('fortitude') }}</td>
+                <td class="centered"></td>
+                <td class="important centered">{{ sp(char.spec('pathfinder').save_bonus('fortitude')) }}</td>
+            </tr>
+        </table>
+    </div>
+    {% end %}
+    {% if char.has_spec('dnd5e') %}
+    <div class="tablec">
+        <table class="striped">
+            <tr>
+                <th class="centered">P</th>
+                <th>Stat</th>
+                <th class="centered">Bonus</th>
+                <th></th>
+                <th class="centered">P</th>
+                <th>Stat</th>
+                <th class="centered">Bonus</th>
+            </tr>
+            <tr>
+                <td class="centered">{{ 'X' if char.spec('dnd5e')['proficiencies']['saves']['str'] else ''}}</td>
+                <td class="important">STR</td>
+                <td class="centered">{{ sp(char.spec('dnd5e').save_bonus('str')) }}</td>
+                <th></th>
+                <td class="centered">{{ 'X' if char.spec('dnd5e')['proficiencies']['saves']['dex'] else ''}}</td>
+                <td class="important">DEX</td>
+                <td class="centered">{{ sp(char.spec('dnd5e').save_bonus('dex')) }}</td>
+            </tr>
+            <tr>
+                <td class="centered">{{ 'X' if char.spec('dnd5e')['proficiencies']['saves']['con'] else ''}}</td>
+                <td class="important">CON</td>
+                <td class="centered">{{ sp(char.spec('dnd5e').save_bonus('con')) }}</td>
+                <th></th>
+                <td class="centered">{{ 'X' if char.spec('dnd5e')['proficiencies']['saves']['int'] else ''}}</td>
+                <td class="important">INT</td>
+                <td class="centered">{{ sp(char.spec('dnd5e').save_bonus('int')) }}</td>
+            </tr>
+            <tr>
+                <td class="centered">{{ 'X' if char.spec('dnd5e')['proficiencies']['saves']['wis'] else ''}}</td>
+                <td class="important">WIS</td>
+                <td class="centered">{{ sp(char.spec('dnd5e').save_bonus('wis')) }}</td>
+                <th></th>
+                <td class="centered">{{ 'X' if char.spec('dnd5e')['proficiencies']['saves']['cha'] else ''}}</td>
+                <td class="important">CHA</td>
+                <td class="centered">{{ sp(char.spec('dnd5e').save_bonus('cha')) }}</td>
+            </tr>
+        </table>
+    </div>
+    {% end %}
+</div>
+
+
+
+
+
+
+<h2>Skills</h2>
+<div class="char-container">
+    {% if char.has_spec('pathfinder') %}
+    <div class="tablec">
+        <table class="striped">
+            <tr>
+                <th class="centered">CS</th>
+                <th>Name</th>
+                <th class="centered">Attribute</th>
+                <th class="centered">(ATTR)</th>
+                <th class="centered">+ Ranks</th>
+                <th class="centered">+ Misc.</th>
+                <th class="centered">= Bonus</th>
+            </tr>
+            {% for name, s in char.spec('pathfinder')['skills'].items() %}
+                <tr>
+                    <td class="centered">{{ 'X' if s['class_skill'] else ''}}</td>
+                    <td class="important">{{ name }}{% if 'type' in s %} ({{ s['type'] }}){% end %}</td>
+                    <td class="centered">{{ sp(char.spec('pathfinder').skill_attribute_bonus(name)) }}</td>
+                    <td class="centered">{{ up(char.spec('pathfinder').skill_attribute(name)) }}</td>
+                    <td class="centered">{{ s['ranks'] if s['ranks'] > 0 else '' }}</td>
+                    <td class="centered">{{ s['boon'] if 'boon' in s else '' }}</td>
+                    <td class="important centered">{{ sp(char.spec('pathfinder').skill_bonus(name)) }}</td>
+                </tr>
+            {% end %}
+        </table>
+    </div>
+    {% end %}
+    {% if char.has_spec('dnd5e') %}
+    <div class="tablec">
+        <table class="striped">
+            <tr>
+                <th class="centered">P</th>
+                <th>Name</th>
+                <th class="centered">(ATTR)</th>
+                <th class="centered">Bonus</th>
+            </tr>
+            {% for name, s in char.spec('dnd5e')['skills'].items() %}
+                <tr>
+                    <td class="centered">{{ ('E' if 'expertise' in s and s['expertise'] else 'X' ) if s['proficiency'] else ''}}</td>
+                    <td class="important">{{ name }}</td>
+                    <td class="centered">{{ up(char.spec('dnd5e').skill_attribute(name)) }}</td>
+                    <td class="important centered">{{ sp(char.spec('dnd5e').skill_bonus(name)) }}</td>
+                </tr>
+            {% end %}
+        </table>
+    </div>
+    {% end %}
+</div>
+
+
+
+
+
+
+
+
+
+<h2>Abilities</h2>
+<!-- Class Skills, Race Skills, Feats, Prof., Langs. -->
+<div class="char-container">
+    {% if char.has_spec('dndpkmn') %}
+    <div class="tablec">
+        <table>
+        <tr>
+            <th colspan="6">Ability</th>
+        </tr>
+        <tr>
+            <td><span class="inline-h3">{{ p(char.spec('dndpkmn')['ability']['name']) }}: </span>{{ p(char.spec('dndpkmn')['ability']['description']) }}</td>
+        </tr>
+    </table>
+    </div>
+    {% end %}
+    <div class="tablec">
+        <table class="striped">
+            <tr><th>Class Abilities</th></tr>
+            {% for ab in char.spec('ogl')['class_abilities'] %}
+            <tr><td>{% raw pab(ab) %}</td></tr>
+            {% end %}
+        </table>
+    </div>
+    <div class="tablec">
+        <table class="striped">
+            <tr><th>Race Abilities</th></tr>
+            {% for ab in char.spec('ogl')['race_abilities'] %}
+            <tr><td>{% raw pab(ab) %}</td></tr>
+            {% end %}
+        </table>
+    </div>
+    {% if len(char.spec('ogl')['feats']) > 0 %}
+        <div class="tablec">
+            <table class="striped">
+                <tr><th>Feats</th></tr>
+                {% for ab in char.spec('ogl')['feats'] %}
+                <tr><td>{% raw pab(ab) %}</td></tr>
+                {% end %}
+            </table>
+        </div>
+    {% end %}
+    {% if len(char.spec('ogl')['languages']) > 0 %}
+        <div class="tablec">
+            <table class="striped">
+                <tr><th>Languages</th></tr>
+                {% for ab in char.spec('ogl')['languages'] %}
+                <tr><td>{% raw pab(ab) %}</td></tr>
+                {% end %}
+            </table>
+        </div>
+    {% end %}
+    <!-- TODO: Proficiencies -->
+</div>
+
+
+
+
+
+
+
+
+
+{% if char.spec('ogl').has_any_spells() or len(char.spec('ogl')['spells']) > 0 %}
+<h2>Spells</h2>
+<div class="char-container">
+    {% if 'known_spells' in char.spec('ogl') or (char.has_spec('dnd5e') and 'spellcasting_mod' in char.spec('ogl')) %}
+    <div class="tablec">
+        <table class="auto-width">
+            <tr>
+                {% if 'known_spells' in char.spec('ogl') %}
+                    <th>Known Spells</th>
+                    <td>{{ char.spec('ogl')['known_spells'] }}</td>
+                {% end %}
+            </tr>
+            {% if char.has_spec('dnd5e') and 'spellcasting_mod' in char.spec('ogl') %}
+            <tr>
+                <th>Spellcasting Mod.</th>
+                <td>{{ up(char.spec('ogl')['spellcasting_mod']) }}</td>
+            </tr>
+            <tr>
+                <th>Spellcasting DC</th>
+                <td class="important">{{ char.spec('dnd5e').spellcast_dc() }}</td>
+            </tr>
+            {% end %}
+        </table>
+    </div>
+    {% end %}
+    {% if char.spec('ogl').has_any_spells() %}
+    <div class="tablec">
+        <table class="auto-width">
+            <tr>
+                <th colspan="2" class="right">Spell Slots</th>
+                <th class="centered">1</th>
+                <th class="centered">2</th>
+                <th class="centered">3</th>
+                <th class="centered">4</th>
+                <th class="centered">5</th>
+                <th class="centered">6</th>
+                <th class="centered">7</th>
+                <th class="centered">8</th>
+                <th class="centered">9</th>
+            </tr>
+            <tr>
+                <th colspan="2" class="right">Maximum</th>
+                <td class="centered">{{ char.spec('ogl')['spell_slots'][1]['max'] if char.spec('ogl')['spell_slots'][1]['max'] > 0 else '' }}</td>
+                <td class="centered">{{ char.spec('ogl')['spell_slots'][2]['max'] if char.spec('ogl')['spell_slots'][2]['max'] > 0 else '' }}</td>
+                <td class="centered">{{ char.spec('ogl')['spell_slots'][3]['max'] if char.spec('ogl')['spell_slots'][3]['max'] > 0 else '' }}</td>
+                <td class="centered">{{ char.spec('ogl')['spell_slots'][4]['max'] if char.spec('ogl')['spell_slots'][4]['max'] > 0 else '' }}</td>
+                <td class="centered">{{ char.spec('ogl')['spell_slots'][5]['max'] if char.spec('ogl')['spell_slots'][5]['max'] > 0 else '' }}</td>
+                <td class="centered">{{ char.spec('ogl')['spell_slots'][6]['max'] if char.spec('ogl')['spell_slots'][6]['max'] > 0 else '' }}</td>
+                <td class="centered">{{ char.spec('ogl')['spell_slots'][7]['max'] if char.spec('ogl')['spell_slots'][7]['max'] > 0 else '' }}</td>
+                <td class="centered">{{ char.spec('ogl')['spell_slots'][8]['max'] if char.spec('ogl')['spell_slots'][8]['max'] > 0 else '' }}</td>
+                <td class="centered">{{ char.spec('ogl')['spell_slots'][9]['max'] if char.spec('ogl')['spell_slots'][9]['max'] > 0 else '' }}</td>
+            </tr>
+            <tr>
+                <th colspan="2" class="right">Available</th>
+                <td class="centered">{{ char.spec('ogl')['spell_slots'][1]['available'] if char.spec('ogl')['spell_slots'][1]['available'] > 0 else '' }}</td>
+                <td class="centered">{{ char.spec('ogl')['spell_slots'][2]['available'] if char.spec('ogl')['spell_slots'][2]['available'] > 0 else '' }}</td>
+                <td class="centered">{{ char.spec('ogl')['spell_slots'][3]['available'] if char.spec('ogl')['spell_slots'][3]['available'] > 0 else '' }}</td>
+                <td class="centered">{{ char.spec('ogl')['spell_slots'][4]['available'] if char.spec('ogl')['spell_slots'][4]['available'] > 0 else '' }}</td>
+                <td class="centered">{{ char.spec('ogl')['spell_slots'][5]['available'] if char.spec('ogl')['spell_slots'][5]['available'] > 0 else '' }}</td>
+                <td class="centered">{{ char.spec('ogl')['spell_slots'][6]['available'] if char.spec('ogl')['spell_slots'][6]['available'] > 0 else '' }}</td>
+                <td class="centered">{{ char.spec('ogl')['spell_slots'][7]['available'] if char.spec('ogl')['spell_slots'][7]['available'] > 0 else '' }}</td>
+                <td class="centered">{{ char.spec('ogl')['spell_slots'][8]['available'] if char.spec('ogl')['spell_slots'][8]['available'] > 0 else '' }}</td>
+                <td class="centered">{{ char.spec('ogl')['spell_slots'][9]['available'] if char.spec('ogl')['spell_slots'][9]['available'] > 0 else '' }}</td>
+            </tr>
+        </table>
+    </div>
+    {% end %}
+    {% if char.has_spec('pathfinder') and 'spellcasting_mod' in char.spec('ogl') %}
+    <div class="tablec">
+        <table class="auto-width">
+            <tr>
+                <th colspan="8">Spell Save DCs</th>
+                <th>Mod:</th>
+                <td>{{ up(char.spec('ogl')['spellcasting_mod']) }}</td>
+            </tr>
+            <tr>
+                <th class="centered">0</th>
+                <th class="centered">1</th>
+                <th class="centered">2</th>
+                <th class="centered">3</th>
+                <th class="centered">4</th>
+                <th class="centered">5</th>
+                <th class="centered">6</th>
+                <th class="centered">7</th>
+                <th class="centered">8</th>
+                <th class="centered">9</th>
+            </tr>
+            <tr>
+                <td class="centered">{{ char.spec('pathfinder').spellcast_dc(0) }}</td>
+                <td class="centered">{{ char.spec('pathfinder').spellcast_dc(1) }}</td>
+                <td class="centered">{{ char.spec('pathfinder').spellcast_dc(2) }}</td>
+                <td class="centered">{{ char.spec('pathfinder').spellcast_dc(3) }}</td>
+                <td class="centered">{{ char.spec('pathfinder').spellcast_dc(4) }}</td>
+                <td class="centered">{{ char.spec('pathfinder').spellcast_dc(5) }}</td>
+                <td class="centered">{{ char.spec('pathfinder').spellcast_dc(6) }}</td>
+                <td class="centered">{{ char.spec('pathfinder').spellcast_dc(7) }}</td>
+                <td class="centered">{{ char.spec('pathfinder').spellcast_dc(8) }}</td>
+                <td class="centered">{{ char.spec('pathfinder').spellcast_dc(9) }}</td>
+            </tr>
+        </table>
+    </div>
+    {% end %}
+    {% if len(char.spec('ogl')['spells']) > 0 %}
+    <div class="tablec">
+        <table class="striped">
+            <tr>
+                <th>Level</th>
+                <th>Name</th>
+                <th>Special</th>
+                <th>Components</th>
+                <th>Casting Time</th>
+                <th>Range</th>
+                <th>Duration</th>
+                <th>Save</th>
+            </tr>
+            {% for s in char.spec('ogl')['spells'] %}
+                <tr>
+                    <td class="important centered big">{{ s['level'] }}</td>
+                    <td class="important">{{ s['name'] }}</td>
+                    <td class="important">{{ s['special'] if 'special' in s else '' }}</td>
+                    <td>{{ s['components'] if 'components' in s else '' }}</td>
+                    <td>{{ s['casting_time'] }}</td>
+                    <td>{% raw s.range_text() %}</td>
+                    <td>{{ s['duration'] }}</td>
+                    <td>{{ s['save'] if 'save' in s else '' }}</td>
+                </tr>
+                <tr>
+                    <td colspan="8">{{ s['description'] }}</td>
+                </tr>
+            {% end %}
+        </table>
+    </div>
+    {% end %}
+</div>
+{% end %}
+
+
+
+
+
+
+
+{% if len(char.spec('ogl')['inventory']['on_hand']) > 0 or len(char.spec('ogl')['inventory']['stored']) > 0 %}
+<h2>Inventory</h2> <!-- & Gold -->
+{% if len(char.spec('ogl')['inventory']['on_hand']) > 0 %}
+<h3>On Hand:</h3>
+<div class="tablec">
+    <table class="striped">
+        <tr>
+            <th></th>
+            <th>Name</th>
+            {% if any('weight' in x for x in char.spec('ogl')['inventory']['on_hand'] ) %}<th>Weight</th>{% end %}
+            <th>Notes</th>
+        </tr>
+        {% for s in char.spec('ogl')['inventory']['on_hand'] %}
+            <tr>
+                <td class="important centered">{{ 'x' + str(s['count']) if 'count' in s and s['count'] > 1 else '' }}</td>
+                <td class="important">{{ s['name'] }}</td>
+                {% if any('weight' in x for x in char.spec('ogl')['inventory']['on_hand'] ) %}<td>{{ s['weight'] if 'weight' in s else '' }}</td>{% end %}
+                <td>{{ s['notes'] if 'notes' in s else '' }}</td>
+            </tr>
+        {% end %}
+    </table>
+</div>
+{% end %}
+{% if len(char.spec('ogl')['inventory']['stored']) > 0 %}
+<h3>Stored:</h3>
+<div class="tablec">
+    <table class="striped">
+        <tr>
+            <th></th>
+            <th>Name</th>
+            {% if any('weight' in x for x in char.spec('ogl')['inventory']['stored'] ) %}<th>Weight</th>{% end %}
+            <th>Notes</th>
+        </tr>
+        {% for s in char.spec('ogl')['inventory']['stored'] %}
+            <tr>
+                <td class="important centered">{{ 'x' + s['count'] if 'count' in s and s['count'] > 1 else '' }}</td>
+                <td class="important">{{ s['name'] }}</td>
+                {% if any('weight' in x for x in char.spec('ogl')['inventory']['stored'] ) %}<td>{{ s['weight'] if 'weight' in s else '' }}</td>{% end %}
+                <td>{{ s['notes'] if 'notes' in s else '' }}</td>
+            </tr>
+        {% end %}
+    </table>
+</div>
+{% end %}
+{% end %}
+
+
+
+
+
+
+
+
+{% if len(char.spec('general')['images']) > 1 %}
+<h2>Images</h2>
+<div class="char-img">
+    <ul>
+        {% for image in char.spec('general')['images'][1:] %}
+            <li><a href="{{ image }}" target="_blank"><img src="{{ image }}"></a></li>
+        {% end %}
+    </ul>
+    {% if 'image_credits' in char.spec('general') %}
+    <p class="flavor">{{ char.spec('general')['image_credits'] }}</p>
+    {% end %}
+</div>
+{% end %}
+
+
+
+
+
+
+
+
+
+{% if 'lore' in char.spec('general') %}
+<h2>Lore</h2>
+<div class="lore-disclaimer">This section contains character spoilers. DO NOT read if you are in a campaign with me.</div>
+{% if 'personality' in char.spec('general')['lore'] %}
+    <div class="tablec">
+        <table class="striped">
+            <tr><th>Personality</th></tr>
+            <tr><td>{% raw p(char.spec('general')['lore']['personality']) %}</td></tr>
+        </table>
+    </div>
+{% end %}
+{% if 'backstory' in char.spec('general')['lore'] %}
+    <div class="tablec">
+        <table class="striped">
+            <tr><th>Backstory</th></tr>
+            <tr><td>{% raw p(char.spec('general')['lore']['backstory']) %}</td></tr>
+        </table>
+    </div>
+{% end %}
+{% if 'bonds' in char.spec('general')['lore'] %}
+    <div class="tablec">
+        <table class="striped">
+            <tr><th>Bonds</th></tr>
+            <tr><td>{% raw p(char.spec('general')['lore']['bonds']) %}</td></tr>
+        </table>
+    </div>
+{% end %}
+{% if 'strengths' in char.spec('general')['lore'] %}
+    <div class="tablec">
+        <table class="striped">
+            <tr><th>Strengths</th></tr>
+            <tr><td>{% raw p(char.spec('general')['lore']['strengths']) %}</td></tr>
+        </table>
+    </div>
+{% end %}
+{% if 'flaws' in char.spec('general')['lore'] %}
+    <div class="tablec">
+        <table class="striped">
+            <tr><th>Flaws</th></tr>
+            <tr><td>{% raw p(char.spec('general')['lore']['flaws']) %}</td></tr>
+        </table>
+    </div>
+{% end %}
+{% if 'ideals' in char.spec('general')['lore'] %}
+    <div class="tablec">
+        <table class="striped">
+            <tr><th>Ideals</th></tr>
+            <tr><td>{% raw p(char.spec('general')['lore']['ideals']) %}</td></tr>
+        </table>
+    </div>
+{% end %}
+{% if 'extra' in char.spec('general')['lore'] %}
+    <div class="tablec">
+        <table class="striped">
+            <tr><th>Additional Information</th></tr>
+            <tr><td>{% raw pab(char.spec('general')['lore']['extra']) %}</td></tr>
+        </table>
+    </div>
+{% end %}
+{% end %}

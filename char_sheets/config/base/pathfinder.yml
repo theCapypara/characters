@@ -1,0 +1,45 @@
+pathfinder:
+  natural_ac: 0
+  boons:
+    cmb: 0
+    cmd: 0
+    saves:
+      reflex: 0
+      will: 0
+      fortitude: 0
+  skills:
+    Acrobatics: {class_skill: false, ranks: 0}
+    Appraise: {class_skill: false, ranks: 0}
+    Bluff: {class_skill: false, ranks: 0}
+    Climb: {class_skill: false, ranks: 0}
+    Craft: {class_skill: false, ranks: 0}
+    Diplomacy: {class_skill: false, ranks: 0}
+    Disable Device: {class_skill: false, ranks: 0}
+    Disguise: {class_skill: false, ranks: 0}
+    Escape Artist: {class_skill: false, ranks: 0}
+    Fly: {class_skill: false, ranks: 0}
+    Handle Animal: {class_skill: false, ranks: 0}
+    Heal: {class_skill: false, ranks: 0}
+    Intimidate: {class_skill: false, ranks: 0}
+    Knowledge (arcana): {class_skill: false, ranks: 0}
+    Knowledge (dungeoneering): {class_skill: false, ranks: 0}
+    Knowledge (engineering): {class_skill: false, ranks: 0}
+    Knowledge (geography): {class_skill: false, ranks: 0}
+    Knowledge (history): {class_skill: false, ranks: 0}
+    Knowledge (local): {class_skill: false, ranks: 0}
+    Knowledge (nature): {class_skill: false, ranks: 0}
+    Knowledge (nobility): {class_skill: false, ranks: 0}
+    Knowledge (planes): {class_skill: false, ranks: 0}
+    Knowledge (religion): {class_skill: false, ranks: 0}
+    Linguistics: {class_skill: false, ranks: 0}
+    Perception: {class_skill: false, ranks: 0}
+    Perform: {class_skill: false, ranks: 0}
+    Profession: {class_skill: false, ranks: 0}
+    Ride: {class_skill: false, ranks: 0}
+    Sense Motive: {class_skill: false, ranks: 0}
+    Sleight of Hand: {class_skill: false, ranks: 0}
+    Spellcraft: {class_skill: false, ranks: 0}
+    Stealth: {class_skill: false, ranks: 0}
+    Survival: {class_skill: false, ranks: 0}
+    Swim: {class_skill: false, ranks: 0}
+    Use Magic Device: {class_skill: false, ranks: 0}

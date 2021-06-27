@@ -1,0 +1,3 @@
+dndpkmn_ability:
+  name: Contrary
+  description: Once per long rest at the start of your turn you may cause advantage/disadvantage buffs to be inverted for one minute for all creatures within 20 feet. If a creature moves out of range their stats return to normal.

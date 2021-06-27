@@ -1,0 +1,6 @@
+version: '3'
+services:
+  char_sheets:
+    build: .
+    ports:
+      - 7554:7554
