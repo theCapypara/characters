@@ -366,6 +366,7 @@ characters:
             dmg_type: piercing
             damage_dice: 1d8
             range: {normal: 150, better: 600}
+            fixed_plus_atk: 2 # Archery
             ammo: 20
         armor:
           ac: 11

@@ -34,6 +34,8 @@ def build_dnd_skills():
         skls[name] = {
             'proficiency': bool,
             Optional('expertise'): bool,
+            Optional('advantage'): bool,
+            Optional('disadvantage'): bool,
             Optional('boon'): int
         }
     return skls
@@ -108,13 +110,13 @@ class Dnd5eSpec(AbstractSpec, OglAware):
         return self["armor"]["ac"] + self.armor_bonus()
 
     def passive_insight(self):
-        return 10 + self.skill_bonus("Insight") + (5 if self["skills"]["Insight"]["proficiency"] else 0)
+        return 10 + self.skill_bonus("Insight") + (5 if "advantage" in self["skills"]["Insight"] and self["skills"]["Insight"]["advantage"] else 0) + (-5 if "disadvantage" in self["skills"]["Insight"] and self["skills"]["Insight"]["disadvantage"] else 0)
 
     def passive_investigation(self):
-        return 10 + self.skill_bonus("Investigation") + (5 if self["skills"]["Investigation"]["proficiency"] else 0)
+        return 10 + self.skill_bonus("Investigation") + (5 if "advantage" in self["skills"]["Investigation"] and self["skills"]["Investigation"]["advantage"] else 0) + (-5 if "disadvantage" in self["skills"]["Investigation"] and self["skills"]["Investigation"]["disadvantage"] else 0)
 
     def passive_perception(self):
-        return 10 + self.skill_bonus("Perception") + (5 if self["skills"]["Perception"]["proficiency"] else 0)
+        return 10 + self.skill_bonus("Perception") + (5 if "advantage" in self["skills"]["Perception"] and self["skills"]["Perception"]["advantage"] else 0) + (-5 if "disadvantage" in self["skills"]["Perception"] and self["skills"]["Perception"]["disadvantage"] else 0)
 
     def armor_bonus(self):
         ac = 0

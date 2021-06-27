@@ -153,11 +153,11 @@
         </tr>
         <tr>
             <th>Insight</th>
-            <td>{{ sp(char.spec('dnd5e').passive_insight()) }}</td>
+            <td>{{ p(char.spec('dnd5e').passive_insight()) }}</td>
             <th>Investigation</th>
-            <td>{{ sp(char.spec('dnd5e').passive_investigation()) }}</td>
+            <td>{{ p(char.spec('dnd5e').passive_investigation()) }}</td>
             <th>Perception</th>
-            <td>{{ sp(char.spec('dnd5e').passive_perception()) }}</td>
+            <td>{{ p(char.spec('dnd5e').passive_perception()) }}</td>
         </tr>
     </table>
     </div>
@@ -482,7 +482,7 @@
             </tr>
             {% for name, s in char.spec('dnd5e')['skills'].items() %}
                 <tr>
-                    <td class="centered">{{ ('E' if 'expertise' in s and s['expertise'] else 'X' ) if s['proficiency'] else ''}}</td>
+                    <td class="centered">{{ ('E' if 'expertise' in s and s['expertise'] else 'X' ) if s['proficiency'] else ''}}{{ 'A' if 'advantage' in s and s['advantage'] else '' }}{{ 'D' if 'disadvantage' in s and s['disadvantage'] else '' }}</td>
                     <td class="important">{{ name }}</td>
                     <td class="centered">{{ up(char.spec('dnd5e').skill_attribute(name)) }}</td>
                     <td class="important centered">{{ sp(char.spec('dnd5e').skill_bonus(name)) }}</td>
