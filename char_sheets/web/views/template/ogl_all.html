@@ -556,6 +556,16 @@
             {% end %}
         </table>
     </div>
+    {% if len(char.spec('ogl')['extra_abilities']) > 0 %}
+        <div class="tablec">
+            <table class="striped">
+                <tr><th>Extra Abilities</th></tr>
+                {% for ab in char.spec('ogl')['extra_abilities'] %}
+                <tr><td>{% raw pab(ab) %}</td></tr>
+                {% end %}
+            </table>
+        </div>
+    {% end %}
     {% if len(char.spec('ogl')['feats']) > 0 %}
         <div class="tablec">
             <table class="striped">
@@ -576,7 +586,16 @@
             </table>
         </div>
     {% end %}
-    <!-- TODO: Proficiencies -->
+    {% if char.has_spec('dnd5e') %}
+    <div class="tablec">
+        <table class="striped">
+            <tr><th>Weapon, Armor & Tool Proficiencies</th></tr>
+            <tr><td><span class="inline-h3">Weapon: </span>{{ char.spec('dnd5e').weapon_proficiencies() }}</td></tr>
+            <tr><td><span class="inline-h3">Armor: </span>{{ char.spec('dnd5e').armor_proficiencies() }}</td></tr>
+            <tr><td><span class="inline-h3">Tools: </span>{{ char.spec('dnd5e').tool_proficiencies() }}</td></tr>
+        </table>
+    </div>
+    {% end %}
 </div>
 
 

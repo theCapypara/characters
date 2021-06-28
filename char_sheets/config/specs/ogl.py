@@ -47,6 +47,7 @@ class OglSpec(AbstractSpec, ABC):
                 'languages': [str],
                 'race_abilities': [str],
                 'class_abilities': [str],
+                'extra_abilities': [str],
                 'feats': [str],
                 'inventory': {
                     'on_hand': [DocReference(OglItem)],

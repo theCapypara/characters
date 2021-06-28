@@ -12,3 +12,4 @@ ogl:
   boons:
     ac: 0
     ini: 0
+  extra_abilities: []

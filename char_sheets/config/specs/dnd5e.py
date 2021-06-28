@@ -141,3 +141,29 @@ class Dnd5eSpec(AbstractSpec, OglAware):
 
     def spellcast_dc(self):
         return 10 + getattr(self.parent().parent().spec('ogl'), self.parent().parent().spec('ogl')['spellcasting_mod'] + '_m')() + self['proficiency']
+
+    def weapon_proficiencies(self):
+        ls = []
+        if self['proficiencies']['weapons']['simple']:
+            ls.append('Simple')
+        if self['proficiencies']['weapons']['martial']:
+            ls.append('Martial')
+        if self['proficiencies']['weapons']['unarmed']:
+            ls.append('Unarmed')
+        return ', '.join(ls)
+
+    def armor_proficiencies(self):
+        ls = []
+        if self['proficiencies']['armor']['light']:
+            ls.append('Light')
+        if self['proficiencies']['armor']['medium']:
+            ls.append('Medium')
+        if self['proficiencies']['armor']['heavy']:
+            ls.append('Heavy')
+        if self['proficiencies']['armor']['shields']:
+            ls.append('Shields')
+        return ', '.join(ls)
+
+    def tool_proficiencies(self):
+        # todo
+        return "None"

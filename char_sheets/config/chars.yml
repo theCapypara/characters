@@ -324,6 +324,17 @@ characters:
             If that attack hits, the target takes an extra 1d8 damage of the weapon's damage type.
           - "Umbral Sight: At 3rd level, you gain darkvision out to a range of 60 feet. If you already have darkvision from your race, its range increases by 30 feet. You are also adept at evading creatures that rely on darkvision. While in darkness, you are invisible to any creature that relies on darkvision to see you in that darkness."
           - "Iron Mind: By 7th level, you have honed your ability to resist the mind-altering powers of your prey. You gain proficiency in Wisdom saving throws. If you already have this proficiency, you instead gain proficiency in Intelligence or Charisma saving throws (your choice)."
+        extra_abilities:
+          - >
+            All Eyes on You (Background):
+            Your accent, mannerisms, figures of speech, and perhaps even your appearance all mark you as foreign.
+            Curious glances are directed your way wherever you go, which can be a nuisance, but you also gain the
+            friendly interest of scholars and others intrigued by far-off lands, to say nothing of everyday folk who are
+            eager to hear stories of your homeland.
+
+            You can parley this attention into access to people and places you might not otherwise have, for you and
+            your traveling companions. Noble lords, scholars, and merchant princes, to name a few, might be interested
+            in hearing about your distant homeland and people.
         feats: []
         inventory:
           on_hand:
