@@ -154,12 +154,34 @@
         <tr>
             <th>Insight</th>
             <td>{{ p(char.spec('dnd5e').passive_insight()) }}</td>
+        </tr>
+        <tr>
             <th>Investigation</th>
             <td>{{ p(char.spec('dnd5e').passive_investigation()) }}</td>
+        </tr>
+        <tr>
             <th>Perception</th>
             <td>{{ p(char.spec('dnd5e').passive_perception()) }}</td>
         </tr>
     </table>
+    </div>
+    {% end %}
+    {% if char.has_spec('extra_counters') %}
+    <div class="tablec">
+        <table class="striped">
+            <tr>
+                <th></th>
+                <th>Value / Available</th>
+                <th>Max.</th>
+            </tr>
+            {% for c in char.spec('extra_counters')['counters'] %}
+                <tr>
+                    <td class="important">{{ c['name'] }}</td>
+                    <td class="important">{{ c['available'] }}</td>
+                    <td>{{ c['max'] if 'max' in c else '' }}</td>
+                </tr>
+            {% end %}
+        </table>
     </div>
     {% end %}
 </div>

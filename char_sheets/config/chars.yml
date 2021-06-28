@@ -190,6 +190,11 @@ characters:
             target: One Creature
             range: 60
             description: Target one creature within range. Make an Intimidation check against their Wisdom Saving Throw. If you succeed, their movement speed is lowered by 15ft.
+      extra_counters:
+        counters:
+          - name: Rage
+            available: 2
+            max: 2
   tariko:
     template: dndpkmn
     system: Yeesha Stone's Pokémon D&D 5e
@@ -296,13 +301,12 @@ characters:
           - "Deft Explorer (Roving): Your walking speed increases by 5, and you gain a climbing speed and a swimming speed equal to your walking speed."
           - "Fighting Style (Archery): You gain a +2 bonus to attack rolls you make with ranged weapons."
           - >
-            Primeval Awareness: Beginning at 3rd level, you can use your action and expend one
-            ranger spell slot to focus your awareness on the region around you.
-            For 1 minute per level of the spell slot you expend, you can sense
-            whether the following types of creatures are present within 1 mile of
+            Primeval Awareness: Beginning at 3rd level, you can use your action and focus your awareness on the region around you.
+            You can do this up to your profiency bonus.
+            For 1 minute you can sense whether the following types of creatures are present within 1 mile of
             you (or within up to 6 miles if you are in your favored terrain):
             ‘Monsters’, Willowed and feral. This feature doesn’t reveal the
-            creatures’ location or number.
+            creatures’ location or number. You know in which direction they are.
           - "Extra Attack: Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn."
           - >
             Land's Stride:
@@ -437,6 +441,14 @@ characters:
           - $ref: dndpkmn/attacks/sweet-scent-7
           - $ref: dndpkmn/attacks/synthesis-7
           - $ref: dndpkmn/attacks/fury-cutter-5
+      extra_counters:
+        counters:
+          - name: Favored Foe
+            available: 3
+            max: "{{ parent().parent().spec('dnd5e')['proficiency'] }}"
+          - name: Primeval Awareness
+            available: 3
+            max: "{{ parent().parent().spec('dnd5e')['proficiency'] }}"
   khij:
     template: pathfinder
     system: Pathfinder
