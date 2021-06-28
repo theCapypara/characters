@@ -246,6 +246,7 @@
                 <th>PP</th>
                 <th>Target</th>
                 <th>Range</th>
+                <th>Save</th>
             </tr>
             {% for a in char.spec('dndpkmn')['attacks'] %}
                 <tr>
@@ -254,9 +255,10 @@
                     <td>{{ a['pp'] }}</td>
                     <td>{{ a['target'] }}</td>
                     <td>{% raw size(a['range']) %}</td>
+                    <td>{{ up(a['save']) if 'save' in a else '' }}</td>
                 </tr>
                 <tr>
-                    <td colspan="5">{{ a['description'] }}</td>
+                    <td colspan="6">{{ a['description'] }}</td>
                 </tr>
             {% end %}
         </table>

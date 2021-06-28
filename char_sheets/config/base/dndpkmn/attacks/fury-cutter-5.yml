@@ -1,0 +1,16 @@
+dndpkmn_attack:
+  name: Razor Leaf
+  type: Grass
+  description: |
+    You slash at your foe with all your might. You see your foe has already taken damage, it's only a little bit
+    more to take them out.
+    Make an unarmed strike against a single target within 5 feet. On a hit deal 1D6 slashing damage,
+    if the foe has already taken damage this round, this attack deals 1D8 slashing damage.
+  save: dex
+  atk_bonus_or_save:
+    dice: ''
+    fixed: 0
+    stats: ["dex"]
+  pp: 2
+  target: Creatures
+  range: 5

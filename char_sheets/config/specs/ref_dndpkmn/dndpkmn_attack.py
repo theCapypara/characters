@@ -20,6 +20,7 @@ class DndPkmnAttack(YamlConfigDocument):
                     Optional('fixed'): int,
                     Optional('stats'): [str]
                 },
+                Optional('save'): str,
                 'pp': int,
                 'target': str,
                 'range': int

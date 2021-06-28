@@ -1,0 +1,15 @@
+dndpkmn_attack:
+  name: Razor Leaf
+  type: Grass
+  description: |
+    All creatures within a 30 foot cone must make a Dexterity saving throw at disadvantage.
+    If failed, deal 2D6 slashing damage, if successful deal half damage.
+    Your DC save for this attack is 8+proficiency+Dexterity modifier.
+  save: dex
+  atk_bonus_or_save:
+    dice: ''
+    fixed: 8
+    stats: ["dex"]
+  pp: 2
+  target: Creatures
+  range: 30

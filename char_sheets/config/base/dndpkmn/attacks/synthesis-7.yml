@@ -1,0 +1,14 @@
+dndpkmn_attack:
+  name: Synthesis (Lv. 7)
+  type: Grass
+  description: |
+    Heal 3D6+Wisdom modifier unless there is harsh sunlight or storm effects on the battlefield.
+    During harsh sunlight heal 4D6+ Wisdom Modifier, during any other kind of storm heal 2D4.
+    You can not heal over your max HP.
+  atk_bonus_or_save:
+    dice: '3d6'
+    fixed: 0
+    stats: ["wis"]
+  pp: 5
+  target: Self
+  range: 0

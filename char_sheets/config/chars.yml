@@ -139,7 +139,7 @@ characters:
           sp: 0
           cp: 0
         spells:
-          - $ref: ogl/spells/thaumaturgy
+          - $ref: dnd5e/spells/thaumaturgy
             special: Via Type
       dnd5e:
         $ref: dnd5e
@@ -199,7 +199,7 @@ characters:
     spec:
       general:
         gender: Male
-        age: 17
+        age: 19
         images:
           - /static/assets/chars/tariko/main.png
           - /static/assets/chars/tariko/fomantis (1).jpg
@@ -255,26 +255,30 @@ characters:
             - Tariko caries an Everstone pendant around his neck. It is replaced with a silver necklace once a Fomantis has evolved at the ritual
       ogl:
         $ref: ogl
-        current_hp: 20
+        current_hp: 58
 
         class: Ranger
-        subclass: (None)
-        level: 2
+        subclass: Gloom Stalker
+        level: 8
         race: Fomantis
         alignment: LN
         size_class: Small
         spellcasting_mod: wis
         stats:
           str: 11
-          dex: 17
-          con: 14
+          dex: 18
+          con: 16
           int: 11
-          wis: 15
+          wis: 16
           cha: 8
+        boons:
+          ini: wis
         movement:
-          land: 20
+          land: 25
+          climb: 25
+          swim: 25
         vision: 60
-        max_hp: 20
+        max_hp: 58
         hit_dice: 10
         languages: ["Common", "Tribe language", "Jthooic"]
         race_abilities:
@@ -283,15 +287,39 @@ characters:
         class_abilities:
           - |
             Favored Foe:
-            This 1st-level feature replaces the Favored Enemy feature and works with the Foe Slayer feature. You gain no benefit from the replaced feature and don't qualify for anything in the game that requires it.
+            (1d6, enemy mark and add)
             When you hit a creature with an attack roll, you can call on your mystical bond with nature to mark the target as your favored enemy for 1 minute or until you lose your concentration (as if you were concentrating on a spell).
             The first time on each of your turns that you hit the favored enemy and deal damage to it, including when you mark it, you increase that damage by 1d4.
             You can use this feature to mark a favored enemy a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.
             This feature's extra damage increases when you reach certain levels in this class: to 1d6 at 6th level and to 1d8 at 14th level.
-          - |
-            Deft Explorer (Canny): Choose one of your skill proficiencies (Stealth) -> Expertise
-            Next effect at Lv. 6
+          - "Deft Explorer (Canny): Choose one of your skill proficiencies (Stealth) -> Expertise"
+          - "Deft Explorer (Roving): Your walking speed increases by 5, and you gain a climbing speed and a swimming speed equal to your walking speed."
           - "Fighting Style (Archery): You gain a +2 bonus to attack rolls you make with ranged weapons."
+          - >
+            Primeval Awareness: Beginning at 3rd level, you can use your action and expend one
+            ranger spell slot to focus your awareness on the region around you.
+            For 1 minute per level of the spell slot you expend, you can sense
+            whether the following types of creatures are present within 1 mile of
+            you (or within up to 6 miles if you are in your favored terrain):
+            ‘Monsters’, Willowed and feral. This feature doesn’t reveal the
+            creatures’ location or number.
+          - "Extra Attack: Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn."
+          - >
+            Land's Stride:
+            Starting at 8th level, moving through nonmagical difficult terrain
+            costs you no extra movement. You can also pass through nonmagical
+            plants without being slowed by them and without taking damage
+            from them if they have thorns, spines, or a similar hazard.
+            In addition, you have advantage on saving throws against plants that
+            are magically created or manipulated to impede movement, such
+            those created by the entangle spell.
+          - >
+            Dread Ambusher: At 3rd level, you master the art of the ambush. You can give yourself a bonus to your initiative rolls equal to your Wisdom modifier.
+
+            At the start of your first turn of each combat, your walking speed increases by 10 feet, which lasts until the end of that turn. If you take the Attack action on that turn, you can make one additional weapon attack as part of that action.
+            If that attack hits, the target takes an extra 1d8 damage of the weapon's damage type.
+          - "Umbral Sight: At 3rd level, you gain darkvision out to a range of 60 feet. If you already have darkvision from your race, its range increases by 30 feet. You are also adept at evading creatures that rely on darkvision. While in darkness, you are invisible to any creature that relies on darkvision to see you in that darkness."
+          - "Iron Mind: By 7th level, you have honed your ability to resist the mind-altering powers of your prey. You gain proficiency in Wisdom saving throws. If you already have this proficiency, you instead gain proficiency in Intelligence or Charisma saving throws (your choice)."
         feats: []
         inventory:
           on_hand:
@@ -307,10 +335,16 @@ characters:
             - name: Waterkin
             - name: Hempen Rope (ft.)
               count: 50
-            - name: Poorly wrought maps from your homeland
-            - name: A teal & black pendant made of crystals in shape of a flower
+            - name: Maps from your homeland
+              notes: poorly wrought
+            - name: Ascension Pendant
+              notes: >
+                Magical item, attunable. Can be activated once per long rest if attuned to.
+                TBD.
+                A teal & black pendant made of crystals in shape of a flower.
             - name: Jar of berry jam
-            - name: Woodcarver's Tools (knife, a gouge, and a small saw)
+            - name: Woodcarver's Tools
+              notes: knife, a gouge, and a small saw
             - name: Lum Berries
               count: 2
             - name: Seeds (bags)
@@ -322,18 +356,28 @@ characters:
           sp: 7
           cp: 0
         spell_slots:
-          1: { max: 2, available: 2 }
-        known_spells: 2
+          1: { max: 4, available: 4 }
+          2: { max: 3, available: 3 }
+        known_spells: 5
         spells:
-          - $ref: ogl/spells/friends
+          # 1:
+          - $ref: dnd5e/spells/friends
             special: Via Sweet Smellls
-          - $ref: ogl/spells/ensnarig-strike
-          - $ref: ogl/spells/jump
+          - $ref: dnd5e/spells/disguise-self
+            special: Gloom Stalker
+          - $ref: dnd5e/spells/ensnarig-strike
+          - $ref: dnd5e/spells/jump
+          - $ref: dnd5e/spells/hail-of-thorns
+          # 2:
+          - $ref: dnd5e/spells/rope-trick
+            special: Gloom Stalker
+          - $ref: dnd5e/spells/aid
+          - $ref: dnd5e/spells/cordon-of-arrows
       dnd5e:
         $ref: dnd5e
         background: Far Traveler
         inspiration: 0
-        proficiency: 2
+        proficiency: 3
         proficiencies:
           weapons:
             simple: true
@@ -345,6 +389,7 @@ characters:
           saves:
             str: true
             dex: true
+            wis: true
         weapons:
           - name: Dagger
             finese: true
@@ -381,14 +426,17 @@ characters:
       dndpkmn:
         evolution_level: 9
         types: ["Grass"]
-        current_pp: 5
+        current_pp: 10
         boons:
           pp: 0
         nature: focused
         ability:
           $ref: dndpkmn/abilities/contrary
         attacks:
-          - $ref: dndpkmn/attacks/razor-leaf
+          - $ref: dndpkmn/attacks/razor-leaf-5
+          - $ref: dndpkmn/attacks/sweet-scent-7
+          - $ref: dndpkmn/attacks/synthesis-7
+          - $ref: dndpkmn/attacks/fury-cutter-5
   khij:
     template: pathfinder
     system: Pathfinder

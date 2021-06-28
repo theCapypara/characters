@@ -2,7 +2,7 @@ from abc import ABC
 from math import floor
 
 from configcrunch import DocReference, REMOVE, load_subdocument
-from schema import Schema, Optional
+from schema import Schema, Optional, Or
 
 from char_sheets.config.specs import AbstractSpec
 from char_sheets.config.specs._ogl_aware import OglAware
@@ -71,7 +71,7 @@ class OglSpec(AbstractSpec, ABC):
                 Optional('known_spells'): int,
                 'boons': {
                     'ac': int,
-                    'ini': int
+                    'ini': Or(int, str)
                 },
                 'spells': [DocReference(OglSpell)]
             }
@@ -116,7 +116,10 @@ class OglSpec(AbstractSpec, ABC):
         return matched_ac
 
     def ini(self):
-        return self.dex_m()
+        ini_boon = self['boons']['ini']
+        if isinstance(ini_boon, str):
+            ini_boon = self._mod(self['stats'][ini_boon])
+        return self.dex_m() + ini_boon
 
     def str_m(self):
         return self._mod(self['stats']['str'])

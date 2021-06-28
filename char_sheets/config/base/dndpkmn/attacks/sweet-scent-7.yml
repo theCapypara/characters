@@ -1,0 +1,15 @@
+dndpkmn_attack:
+  name: Sweet Scent (Lv. 7)
+  type: Grass
+  description: |
+    Cause all hostile creatures within a 25 foot radius of you to make a Constitution saving throw. If failed they gain
+    disadvantage on all attack throws till the end of their next turn. Your DC save for this attack is
+    8 + proficiency bonus + Charisma Modifier.
+  save: con
+  atk_bonus_or_save:
+    dice: ''
+    fixed: 8
+    stats: ["cha"]
+  pp: 2
+  target: Hostile Creatures
+  range: 25
