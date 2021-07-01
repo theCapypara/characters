@@ -21,6 +21,7 @@ class Character(YamlConfigDocument):
                 'full_name': str,
                 'short_description': str,
                 'bg': str,
+                Optional('stash'): dict,
                 'spec': DocReference(Spec)
             }
         )

@@ -1,5 +1,5 @@
 dndpkmn_attack:
-  name: Sweet Scent (Lv. 7)
+  name: Sweet Scent
   type: Grass
   description: |
     Cause all hostile creatures within a 25 foot radius of you to make a Constitution saving throw. If failed they gain

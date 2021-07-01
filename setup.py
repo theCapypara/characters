@@ -8,6 +8,6 @@ setup(
     packages=find_packages(),
     description="aka. Para's insane.",
     install_requires=[
-        'configcrunch >= 0.3.4',
+        'configcrunch >= 0.3.5',
     ],
 )

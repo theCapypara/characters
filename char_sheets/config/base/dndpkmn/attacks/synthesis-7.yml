@@ -1,5 +1,5 @@
 dndpkmn_attack:
-  name: Synthesis (Lv. 7)
+  name: Synthesis
   type: Grass
   description: |
     Heal 3D6+Wisdom modifier unless there is harsh sunlight or storm effects on the battlefield.

@@ -15,6 +15,7 @@ dnd5e:
       simple: false
       martial: false
       unarmed: false
+    tools: []
     armor:
       light: false
       medium: false

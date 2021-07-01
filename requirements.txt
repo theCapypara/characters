@@ -1,2 +1,2 @@
-configcrunch==0.3.4
+configcrunch==0.3.5
 tornado==6.1

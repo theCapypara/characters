@@ -201,6 +201,17 @@ characters:
     full_name: Tariko
     short_description: A Fomantis from far away.
     bg: /static/assets/bg/char1.jpg
+    stash:
+      hp: 58
+      pp: 10
+      inspiration: 0
+      ammo: 20
+      power_dust: 3
+      favored_foe: 3
+      primeval_awareness: 3
+      spell_slots:
+        1: 4
+        2: 3
     spec:
       general:
         gender: Male
@@ -260,7 +271,7 @@ characters:
             - Tariko caries an Everstone pendant around his neck. It is replaced with a silver necklace once a Fomantis has evolved at the ritual
       ogl:
         $ref: ogl
-        current_hp: 58
+        current_hp: "{{ parent().parent()['stash']['hp'] }}"
 
         class: Ranger
         subclass: Gloom Stalker
@@ -365,14 +376,17 @@ characters:
             - name: Seeds (bags)
               count: 1
               notes: https://drive.google.com/drive/folders/19WIGDN0exDtfpiMh1IxZ9HHkDMpyUc_K
+            - name: Power Dust Flasks
+              count: "{{ parent().parent().parent()['stash']['power_dust'] }}"
+              notes: You can attach the power dust to coat the next 10 arrows you'll shoot for +1 damage per arrow
           stored: []
         money:
           gp: 7
           sp: 7
           cp: 0
         spell_slots:
-          1: { max: 4, available: 4 }
-          2: { max: 3, available: 3 }
+          1: { max: 4, available: "{{ parent().parent()['stash']['spell_slots'][1] }}" }
+          2: { max: 3, available: "{{ parent().parent()['stash']['spell_slots'][2] }}" }
         known_spells: 5
         spells:
           # 1:
@@ -391,12 +405,13 @@ characters:
       dnd5e:
         $ref: dnd5e
         background: Far Traveler
-        inspiration: 0
+        inspiration: "{{ parent().parent()['stash']['inspiration'] }}"
         proficiency: 3
         proficiencies:
           weapons:
             simple: true
             martial: true
+          tools: ["Woodcarver's Tools", "Herbalism Kit", "Poisoner's Kit"]
           armor:
             light: true
             medium: true
@@ -419,18 +434,20 @@ characters:
             wpn_type: simple
             dmg_type: bludgeoning
             damage_dice: 1d6
-          - name: Longbow
+          - name: Kamura Iron Bow
             finese: false
             ranged: true
             wpn_type: martial
             dmg_type: piercing
             damage_dice: 1d8
             range: {normal: 150, better: 600}
-            fixed_plus_atk: 2 # Archery
-            ammo: 20
+            fixed_plus_atk: 2 # Archery, +1 via Kamura Iron Bow
+            fixed_plus_dmg: 1 # +1 via Kamura Iron Bow
+            notes: As a bonus action, as long as you have some on you, you can attach dust to coat the next 10 arrows.
+            ammo: "{{ parent().parent().parent()['stash']['ammo'] }}"
         armor:
-          ac: 11
-          name: Light Leather Armor
+          ac: 12
+          name: Studded Leather
           stats: ["dex"]
         skills:
           Athletics: {proficiency: true}
@@ -441,7 +458,7 @@ characters:
       dndpkmn:
         evolution_level: 9
         types: ["Grass"]
-        current_pp: 10
+        current_pp: "{{ parent().parent()['stash']['pp'] }}"
         boons:
           pp: 0
         nature: focused
@@ -455,10 +472,10 @@ characters:
       extra_counters:
         counters:
           - name: Favored Foe
-            available: 3
+            available: "{{ parent().parent()['stash']['favored_foe'] }}"
             max: "{{ parent().parent().spec('dnd5e')['proficiency'] }}"
           - name: Primeval Awareness
-            available: 3
+            available: "{{ parent().parent()['stash']['primeval_awareness'] }}"
             max: "{{ parent().parent().spec('dnd5e')['proficiency'] }}"
   khij:
     template: pathfinder

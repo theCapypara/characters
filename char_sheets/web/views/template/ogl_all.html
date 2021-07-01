@@ -4,7 +4,7 @@
         {% include 'ogl_statblock.html' %}
     </div>
 </div>
-<h1>{{ char['full_name'] }}</h1>
+<h1 id="stats">{{ char['full_name'] }}</h1>
 <p class="flavor">{{ char['short_description'] }}</p>
 <div class="char-container">
     <!-- General Info -->
@@ -190,7 +190,7 @@
 
 
 
-<h2>Weapons</h2>
+<h2 id="weapons">Weapons</h2>
 {% if char.has_spec('pathfinder') %}
 <div class="char-container">
     <div class="tablec">
@@ -257,7 +257,7 @@
 
 
 {% if char.has_spec('dndpkmn') or char.has_spec('soniclink_poke5e') %}
-<h2>Attacks</h2>
+<h2 id="attacks">Attacks</h2>
 {% if char.has_spec('dndpkmn') %}
 <div class="char-container">
     <div class="tablec">
@@ -321,7 +321,7 @@
 
 
 
-<h2>Armor</h2>
+<h2 id="armor">Armor</h2>
 <div class="char-container">
     {% if char.has_spec('pathfinder') %}
     <div class="tablec">
@@ -370,7 +370,7 @@
 
 
 
-<h2>Saves</h2>
+<h2 id="saves">Saves</h2>
 <div class="char-container">
     {% if char.has_spec('pathfinder') %}
     <div class="tablec">
@@ -467,7 +467,7 @@
 
 
 
-<h2>Skills</h2>
+<h2 id="skills">Skills</h2>
 <div class="char-container">
     {% if char.has_spec('pathfinder') %}
     <div class="tablec">
@@ -525,7 +525,7 @@
 
 
 
-<h2>Abilities</h2>
+<h2 id="abilities">Abilities</h2>
 <!-- Class Skills, Race Skills, Feats, Prof., Langs. -->
 <div class="char-container">
     {% if char.has_spec('dndpkmn') %}
@@ -607,7 +607,7 @@
 
 
 {% if char.spec('ogl').has_any_spells() or len(char.spec('ogl')['spells']) > 0 %}
-<h2>Spells</h2>
+<h2 id="spells">Spells</h2>
 <div class="char-container">
     {% if 'known_spells' in char.spec('ogl') or (char.has_spec('dnd5e') and 'spellcasting_mod' in char.spec('ogl')) %}
     <div class="tablec">
@@ -749,7 +749,7 @@
 
 
 {% if len(char.spec('ogl')['inventory']['on_hand']) > 0 or len(char.spec('ogl')['inventory']['stored']) > 0 %}
-<h2>Inventory</h2> <!-- & Gold -->
+<h2 id="inventory">Inventory</h2> <!-- & Gold -->
 {% if len(char.spec('ogl')['inventory']['on_hand']) > 0 %}
 <h3>On Hand:</h3>
 <div class="tablec">
@@ -802,7 +802,7 @@
 
 
 {% if len(char.spec('general')['images']) > 1 %}
-<h2>Images</h2>
+<h2 id="images">Images</h2>
 <div class="char-img">
     <ul>
         {% for image in char.spec('general')['images'][1:] %}
@@ -824,7 +824,7 @@
 
 
 {% if 'lore' in char.spec('general') %}
-<h2>Lore</h2>
+<h2 id="lore">Lore</h2>
 <div class="lore-disclaimer">This section contains character spoilers. DO NOT read if you are in a campaign with me.</div>
 {% if 'personality' in char.spec('general')['lore'] %}
     <div class="tablec">

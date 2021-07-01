@@ -73,6 +73,7 @@ class Dnd5eSpec(AbstractSpec, OglAware):
                         'martial': bool,
                         'unarmed': bool
                     },
+                    'tools': [str],
                     'armor': {
                         'light': bool,
                         'medium': bool,
@@ -165,5 +166,4 @@ class Dnd5eSpec(AbstractSpec, OglAware):
         return ', '.join(ls)
 
     def tool_proficiencies(self):
-        # todo
-        return "None"
+        return ', '.join(self['proficiencies']['tools'])
