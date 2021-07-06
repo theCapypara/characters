@@ -205,13 +205,19 @@ characters:
       hp: 58
       pp: 10
       inspiration: 0
-      ammo: 20
-      power_dust: 3
+      ammo: 40
+      flasks:
+        power_dust: 3
+        empty: 9
       favored_foe: 3
       primeval_awareness: 3
       spell_slots:
         1: 4
         2: 3
+      money:
+        gp: 198
+        sp: 8
+        cp: 0
     spec:
       general:
         gender: Male
@@ -371,19 +377,28 @@ characters:
             - name: Jar of berry jam
             - name: Woodcarver's Tools
               notes: knife, a gouge, and a small saw
+            - name: Herbalism Kit
+            - name: Poisoner's Kit
             - name: Lum Berries
               count: 2
             - name: Seeds (bags)
               count: 1
               notes: https://drive.google.com/drive/folders/19WIGDN0exDtfpiMh1IxZ9HHkDMpyUc_K
             - name: Power Dust Flasks
-              count: "{{ parent().parent().parent()['stash']['power_dust'] }}"
+              count: "{{ parent().parent().parent()['stash']['flasks']['power_dust'] }}"
               notes: You can attach the power dust to coat the next 10 arrows you'll shoot for +1 damage per arrow
+            - name: Empty Flask
+              count: "{{ parent().parent().parent()['stash']['flasks']['empty'] }}"
+            - name: Flask Case
+              count: 1
+              notes: One case can hold 9 flasks. You can hold 3 flasks on you without a case.
+            - name: Medium-sized Quiver
+              notes: Can hold 40 arrows.
           stored: []
         money:
-          gp: 7
-          sp: 7
-          cp: 0
+          gp: "{{ parent().parent()['stash']['money']['gp'] }}"
+          sp: "{{ parent().parent()['stash']['money']['sp'] }}"
+          cp: "{{ parent().parent()['stash']['money']['cp'] }}"
         spell_slots:
           1: { max: 4, available: "{{ parent().parent()['stash']['spell_slots'][1] }}" }
           2: { max: 3, available: "{{ parent().parent()['stash']['spell_slots'][2] }}" }

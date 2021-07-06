@@ -166,12 +166,31 @@
     </table>
     </div>
     {% end %}
+    <div class="tablec">
+        <table class="striped">
+            <tr>
+                <th colspan="2">Money</th>
+            </tr>
+            <tr>
+                <th>GP</th>
+                <td>{{ char.spec('ogl')['money']['gp'] }}</td>
+            </tr>
+            <tr>
+                <th>SP</th>
+                <td>{{ char.spec('ogl')['money']['sp'] }}</td>
+            </tr>
+            <tr>
+                <th>CP</th>
+                <td>{{ char.spec('ogl')['money']['cp'] }}</td>
+            </tr>
+        </table>
+    </div>
     {% if char.has_spec('extra_counters') %}
     <div class="tablec">
         <table class="striped">
             <tr>
                 <th></th>
-                <th>Value / Available</th>
+                <th>Value</th>
                 <th>Max.</th>
             </tr>
             {% for c in char.spec('extra_counters')['counters'] %}
@@ -749,7 +768,7 @@
 
 
 {% if len(char.spec('ogl')['inventory']['on_hand']) > 0 or len(char.spec('ogl')['inventory']['stored']) > 0 %}
-<h2 id="inventory">Inventory</h2> <!-- & Gold -->
+<h2 id="inventory">Inventory</h2>
 {% if len(char.spec('ogl')['inventory']['on_hand']) > 0 %}
 <h3>On Hand:</h3>
 <div class="tablec">
