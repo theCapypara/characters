@@ -6,6 +6,8 @@ characters:
     short_description: A way too excited Bagon.
     bg: /static/assets/bg/char1.jpg
     spec:
+      # LEVEL 1
+      # -> LEVEL 2 HP already done
       general:
         gender: Male
         images:
@@ -66,7 +68,7 @@ characters:
 
         class: Barbarian
         subclass: (None)
-        level: 1
+        level: 2
         race: Bagon
         alignment: CG
         size_class: Small
@@ -80,7 +82,7 @@ characters:
         movement:
           land: 30
         vision: 60
-        max_hp: 16
+        max_hp: 27
         hit_dice: 12
         boons:
           ac: 1  # Pot Lid
@@ -105,6 +107,16 @@ characters:
           - >
             Unarmored Defense: While you are not wearing any armor, your Armor Class equals 10 + your
             Dexterity modifier + your Constitution modifier. You can use a shield and still gain this benefit.
+          - >
+            Danger Sense: At 2nd level, you gain an uncanny sense of when things nearby aren't as they should be,
+            giving you an edge when you dodge away from danger. You have advantage on Dexterity saving throws against
+            effects that you can see, such as traps and spells. To gain this benefit, you can't be blinded, deafened,
+            or incapacitated.
+          - >
+            Reckless Attack: Starting at 2nd level, you can throw aside all concern for defense to attack with fierce
+            desperation. When you make your first attack on your turn, you can decide to attack recklessly.
+            Doing so gives you advantage on melee weapon attack rolls using Strength during this turn, but attack
+            rolls against you have advantage until your next turn.
         feats: []
         inventory:
           on_hand:
@@ -121,8 +133,8 @@ characters:
               notes: Filled with water from the Caldwelch River so you can have a nice drink.
             - name: Recipe Book
               notes: Gives you proficiency when making checks while cooking. You aren’t sure why, but you imagine a Buneary would have liked this at some point in time.
-            #- name: Tuba
-            #  notes: You’re welcome
+            - name: Tuba
+              notes: You’re welcome
             - name: Feather Pen
               notes: A nice writing implement
             - name: Ink
@@ -133,9 +145,11 @@ characters:
               notes: While together, they’re rather bland, if you or someone else cooks them, you have about three days worth of food and rather good food at that.
             - name: Roc’s Feather
               notes: Magic item, attunable. A feather Tom gave you after seeing you jump and fall off the tree houses trying to fly. Allows you two spells per day. You can cast the Jump spell once per day, and you can also cast the Feather Fall spell once per day. The feather recharges both of these at dawn.
+            - name: Bedroll
+            - name: Guild Room Key
           stored: []
         money:
-          gp: 5
+          gp: 3
           sp: 0
           cp: 0
         spells:
@@ -202,21 +216,24 @@ characters:
     short_description: A Fomantis from far away.
     bg: /static/assets/bg/char1.jpg
     stash:
-      hp: 58
+      hp: 53
       pp: 10
       inspiration: 0
       ammo: 40
       flasks:
+        empty: 0
         power_dust: 3
-        empty: 9
+        shock_dust: 1
+        sleep_dust: 1
+        poison_dust: 1
       favored_foe: 3
       primeval_awareness: 3
       spell_slots:
         1: 4
         2: 3
       money:
-        gp: 198
-        sp: 8
+        gp: 197
+        sp: 3
         cp: 0
     spec:
       general:
@@ -387,6 +404,12 @@ characters:
             - name: Power Dust Flasks
               count: "{{ parent().parent().parent()['stash']['flasks']['power_dust'] }}"
               notes: You can attach the power dust to coat the next 10 arrows you'll shoot for +1 damage per arrow
+            - name: Shock Dust Flasks
+              count: "{{ parent().parent().parent()['stash']['flasks']['shock_dust'] }}"
+            - name: Sleep Dust Flasks
+              count: "{{ parent().parent().parent()['stash']['flasks']['sleep_dust'] }}"
+            - name: Poison Dust Flasks
+              count: "{{ parent().parent().parent()['stash']['flasks']['poison_dust'] }}"
             - name: Empty Flask
               count: "{{ parent().parent().parent()['stash']['flasks']['empty'] }}"
             - name: Flask Case
