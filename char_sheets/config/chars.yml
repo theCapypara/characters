@@ -64,7 +64,7 @@ characters:
             Anyway.... So he had to join alone...
       ogl:
         $ref: ogl
-        current_hp: 16
+        current_hp: 27
 
         class: Barbarian
         subclass: (None)
