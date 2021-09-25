@@ -1,0 +1,9 @@
+talent:
+  name: Sticky Fingers
+  description: >
+    You have great skill when it comes to swiping things from under other’s noses.
+
+    Gain +2 to all Arm skill checks when you attempt to steal or move an object without another creature
+    noticing.
+  type: arm
+  level: 2

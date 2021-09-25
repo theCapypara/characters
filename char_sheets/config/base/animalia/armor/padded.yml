@@ -1,0 +1,13 @@
+armor:
+  name: Padded Armor
+  armor: 8
+  hands: 0
+  skill_required:
+    skill: leg
+    skill_amount: 0
+  combination_possible: false
+  weakness:
+    - slashing
+    - piercing
+    - bludgeoning
+  resistance: []

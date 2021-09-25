@@ -1,0 +1,10 @@
+talent:
+  name: Shove
+  description: >
+    Using one action point, cause one creature within 5 feet to make a Leg skill check against your Arm skill
+    If failed they gain the fallen condition.
+
+    The target can not be more than twice your height or weight.
+    If they are less than half your height or weight they gain disadvantage on the check.
+  type: arm
+  level: 1

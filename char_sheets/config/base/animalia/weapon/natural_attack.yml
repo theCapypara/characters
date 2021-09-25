@@ -1,0 +1,28 @@
+weapon:
+  name: Natural Attack
+  two_handed: false
+  dice: 1d8
+  actions:
+    punch:
+      skill: none
+      skill_amount: 0
+      damage_type: bludgeoning
+    kick:
+      skill: none
+      skill_amount: 0
+      damage_type: bludgeoning
+    whip:
+      skill: none
+      skill_amount: 0
+      damage_type: slashing
+      misc_requirement: Serpentes race only
+    claw:
+      skill: none
+      skill_amount: 0
+      damage_type: slashing
+      misc_requirement: Aves or Vulpes race only
+    headbutt:
+      skill: none
+      skill_amount: 0
+      damage_type: bludgeoning
+      misc_requirement: Coleoptera race only

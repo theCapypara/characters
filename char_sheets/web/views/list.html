@@ -24,8 +24,12 @@
                             <h2>{{ char['full_name'] }}</h2>
                             {% if char.has_spec('ogl') %}
                                 <p class="flavor">{{ char['short_description'] }}</p>
+                                <p class="flavor">Lv. {{ char.spec('ogl')['level'] }} {{ char.spec('ogl')['subclass'] }} {{ char.spec('ogl')['class'] }} - {{ char['system'] }}</p>
                             {% end %}
-                            <p class="flavor">Lv. {{ char.spec('ogl')['level'] }} {{ char.spec('ogl')['subclass'] }} {{ char.spec('ogl')['class'] }} - {{ char['system'] }}</p>
+                            {% if char.has_spec('animalia') %}
+                                <p class="flavor">{{ char['short_description'] }}</p>
+                                <p class="flavor">{{ char.spec('animalia')['subspecies'] }} - {{ char['system'] }}</p>
+                            {% end %}
                         </div>
                     </a>
                     {% end %}

@@ -1,0 +1,16 @@
+weapon:
+  name: Rapier
+  two_handed: false
+  dice: 1d8
+  actions:
+    thrust:
+      skill: leg
+      skill_amount: 3
+      damage_type: piercing
+    slash:
+      skill: arm
+      skill_amount: 2
+      damage_type: slashing
+    parry:
+      skill: arm
+      skill_amount: 3

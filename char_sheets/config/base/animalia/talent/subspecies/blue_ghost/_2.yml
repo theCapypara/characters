@@ -1,0 +1,10 @@
+talent:
+  name: "?"
+  description: >
+    You have a strong connection with those that have passed on.
+    If you meditate for 20 minutes on a mostly intact corpse you can see its last moments as if they were
+    your own. If you meditate for one hour you can learn a basic outline of their life.
+
+    These memories/ visions can not be deceptive and will always tell the truth.
+  type: subspecies
+  level: 0

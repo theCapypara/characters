@@ -1,0 +1,417 @@
+<div class="desktop navbar">
+    <ul class="toc">
+        <li><a href="#stats">Stats</a></li>
+        <li><a href="#skill_talents">Skill Talents</a></li>
+        <li><a href="#stat_talents">Stat Talents</a></li>
+        <li><a href="#weapons">Weapons</a></li>
+        <li><a href="#armor">Armor</a></li>
+        {% if len(char.spec('animalia')['inventory']['on_hand']) > 0 or len(char.spec('animalia')['inventory']['stored']) > 0 %}
+        <li><a href="#inventory">Inventory</a></li>
+        {% end %}
+        <li><a href="#images">Images</a></li>
+        <li><a href="#lore">Lore</a></li>
+    </ul>
+</div>
+<div class="right-container">
+    <img class="avatar" src="{{ char.spec('general')['images'][0]}}">
+    <div class="desktop">
+        {% include 'animalia_statblock.html' %}
+    </div>
+</div>
+<h1 id="stats">{{ char['full_name'] }}</h1>
+<p class="flavor">{{ char['short_description'] }}</p>
+<div class="char-container">
+    <!-- General Info -->
+    <div class="tablec">
+        <table>
+        <tr>
+            <th>Race</th>
+            <th>Species</th>
+            <th colspan="{{ char.spec('general').count_optional() }}">Subspecies</th>
+        </tr>
+        <tr>
+            <td>{{ p(char.spec('animalia')['race']) }}</td>
+            <td class="important big centered" rowspan="3">{{ p(char.spec('animalia')['species']) }}</td>
+            <td colspan="{{ char.spec('general').count_optional() }}">{{ p(char.spec('animalia')['subspecies']) }}</td>
+        </tr>
+        <tr>
+            <th>Gender</th>
+            {% if 'home' in char.spec('general') %}<th>Home</th>{% end %}
+            {% if 'size' in char.spec('general') %}<th>Size</th>{% end %}
+            {% if 'weight' in char.spec('general') %}<th>Weight</th>{% end %}
+            {% if 'eye_color' in char.spec('general') %}<th>Eye Color</th>{% end %}
+            {% if 'hair_color' in char.spec('general') %}<th>Hair Color</th>{% end %}
+            {% if 'age' in char.spec('general') %}<th>Age</th>{% end %}
+        </tr>
+        <tr>
+            <td>{{ p(char.spec('general')['gender']) }}</td>
+            {% if 'home' in char.spec('general') %}<td>{% raw p(char.spec('general')['home']) %}</td>{% end %}
+            {% if 'size' in char.spec('general') %}<td>{% raw size(char.spec('general')['size']) %}</td>{% end %}
+            {% if 'weight' in char.spec('general') %}<td>{% raw weight(char.spec('general')['weight']) %}</td>{% end %}
+            {% if 'eye_color' in char.spec('general') %}<td>{{ p(char.spec('general')['eye_color']) }}</td>{% end %}
+            {% if 'hair_color' in char.spec('general') %}<td>{{ p(char.spec('general')['hair_color']) }}</td>{% end %}
+            {% if 'age' in char.spec('general') %}<td>{{ p(char.spec('general')['age']) }}</td>{% end %}
+        </tr>
+    </table>
+    </div>
+    <div class="tablec">
+        <table>
+            <tr>
+                <th class="centered">AC</th>
+                <th class="centered" colspan="3">HP</th>
+            </tr>
+            <tr>
+                <td class="important big centered" rowspan="4">{{ p(char.spec('animalia').ac()) }}</td>
+                <td class="important centered">{{ p(char.spec('animalia')['current_hp']) }}</td>
+                <th class="centered">/</th>
+                <td class="important centered">{{ p(char.spec('animalia')['max_hp']) }}</td>
+            </tr>
+        </table>
+    </div>
+    {% if char.has_spec('extra_counters') and len(char.spec('extra_counters')['counters']) > 0 %}
+        <div class="tablec">
+            <table class="striped">
+                <tr>
+                    <th></th>
+                    <th>Value</th>
+                    <th>Max.</th>
+                </tr>
+                {% for c in char.spec('extra_counters')['counters'] %}
+                    <tr>
+                        <td class="important">{{ c['name'] }}</td>
+                        <td class="important">{{ c['available'] }}</td>
+                        <td>{{ c['max'] if 'max' in c else '' }}</td>
+                    </tr>
+                {% end %}
+            </table>
+        </div>
+    {% end %}
+</div>
+<div class="mobile">
+    {% include 'animalia_statblock.html' %}
+</div>
+
+
+
+
+<h2 id="stat_talents">Stat Talents</h2>
+{% if len(char.spec('animalia')['talents']['species']) > 0 %}
+<h3>{{ char.spec('animalia')['species'] }}:</h3>
+<div class="tablec">
+    <table class="striped">
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+        {% for s in char.spec('animalia')['talents']['species'] %}
+            <tr>
+                <td class="important centered">{{ s['name'] }}</td>
+                <td>{{ s['description'] }}</td>
+            </tr>
+        {% end %}
+    </table>
+</div>
+{% end %}
+{% if len(char.spec('animalia')['talents']['subspecies']) > 0 %}
+<h3>{{ char.spec('animalia')['subspecies'] }}:</h3>
+<div class="tablec">
+    <table class="striped">
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+        {% for s in char.spec('animalia')['talents']['subspecies'] %}
+            <tr>
+                <td class="important centered">{{ s['name'] }}</td>
+                <td>{{ s['description'] }}</td>
+            </tr>
+        {% end %}
+    </table>
+</div>
+{% end %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="skill_talents">Skill Talents</h2>
+{% if len(char.spec('animalia')['talents']['arm']) > 0 %}
+<h3>Arm:</h3>
+<div class="tablec">
+    <table class="striped">
+        <tr>
+            <th>Level</th>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+        {% for s in char.spec('animalia')['talents']['arm'] %}
+            <tr>
+                <td>{{ s['level'] }}</td>
+                <td class="important centered">{{ s['name'] }}</td>
+                <td>{{ s['description'] }}</td>
+            </tr>
+        {% end %}
+    </table>
+</div>
+{% end %}
+{% if len(char.spec('animalia')['talents']['leg']) > 0 %}
+<h3>Leg:</h3>
+<div class="tablec">
+    <table class="striped">
+        <tr>
+            <th>Level</th>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+        {% for s in char.spec('animalia')['talents']['leg'] %}
+            <tr>
+                <td>{{ s['level'] }}</td>
+                <td class="important centered">{{ s['name'] }}</td>
+                <td>{{ s['description'] }}</td>
+            </tr>
+        {% end %}
+    </table>
+</div>
+{% end %}
+{% if len(char.spec('animalia')['talents']['head']) > 0 %}
+<h3>Head:</h3>
+<div class="tablec">
+    <table class="striped">
+        <tr>
+            <th>Level</th>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+        {% for s in char.spec('animalia')['talents']['head'] %}
+            <tr>
+                <td>{{ s['level'] }}</td>
+                <td class="important centered">{{ s['name'] }}</td>
+                <td>{{ s['description'] }}</td>
+            </tr>
+        {% end %}
+    </table>
+</div>
+{% end %}
+{% if len(char.spec('animalia')['talents']['soul']) > 0 %}
+<h3>Soul:</h3>
+<div class="tablec">
+    <table class="striped">
+        <tr>
+            <th>Level</th>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+        {% for s in char.spec('animalia')['talents']['soul'] %}
+            <tr>
+                <td>{{ s['level'] }}</td>
+                <td class="important centered">{{ s['name'] }}</td>
+                <td>{{ s['description'] }}</td>
+            </tr>
+        {% end %}
+    </table>
+</div>
+{% end %}
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="weapons">Weapons</h2>
+<div class="char-container">
+    {% for w in char.spec('animalia')['weapons'] %}
+    <div class="tablec">
+        <table class="striped">
+            <tr>
+                <th colspan="2" class="important">{{ w['name'] }}</th>
+                <td>{{ w['dice'] }}</td>
+            </tr>
+            {% if w['two_handed'] %}
+            <tr>
+                <th colspan="3" class="flavor">Two-handed</th>
+            </tr>
+            {% end %}
+            <tr>
+                <th>Action</th>
+                <th>Dmg. Type / Range</th>
+                <th>Skill Required</th>
+            </tr>
+            {% for name, action in w['actions'].items() %}
+            <tr>
+                {% if name != 'advanced'%}
+                    <td class="important">{{ p(name) }}</td>
+                    <td>
+                        {% if 'damage_type' in action %}
+                            {{ p(action['damage_type']) }}
+                        {% end %}
+                        {% if 'range' in action %}
+                            {{ size(action['range']) }}
+                        {% end %}
+                    </td>
+                    {% if action['skill'] != 'none' %}
+                        <td>{{ p(action['skill']) }} ({{ p(action['skill_amount']) }})</td>
+                    {% else %}
+                        <td>None</td>
+                    {% end %}
+                {% end %}
+            </tr>
+            {% end %}
+            {% if 'advanced' in w['actions'] %}
+                {% for name, action in w['actions']['advanced'].items() %}
+                <tr>
+                    <td class="important">{{ p(name) }}</td>
+                    <td>{{ action }}</td>
+                </tr>
+                {% end %}
+            {% end %}
+        </table>
+    </div>
+    {% end %}
+</div>
+
+
+
+
+
+
+
+<h2 id="armor">Armor</h2>
+<div class="char-container">
+
+    <div class="tablec">
+        <table class="striped">
+            <tr>
+                <th>Name</th>
+                <th>Armor</th>
+                <th>Skill</th>
+                <th>Weaknesses</th>
+                <th>Resistances</th>
+            </tr>
+            {% for a in char.spec('animalia')['armor'] %}
+            <tr>
+                <td>{{ p(a['name']) }}</td>
+                <td>{{ p(a['armor']) }}</td>
+                <td>{{ p(a['skill_required']['skill']) }} ({{ p(a['skill_required']['skill_amount']) }})</td>
+                <td>{{ p(", ".join(a['weakness'])) }}</td>
+                <td>{{ p(", ".join(a['resistance'])) }}</td>
+            </tr>
+            {% end %}
+        </table>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+{% module Template('template/common/inventory.html', spec=char.spec('animalia')) %}
+
+
+
+
+
+
+
+
+{% if len(char.spec('general')['images']) > 1 %}
+<h2 id="images">Images</h2>
+<div class="char-img">
+    <ul>
+        {% for image in char.spec('general')['images'][1:] %}
+            <li><a href="{{ image }}" target="_blank"><img src="{{ image }}"></a></li>
+        {% end %}
+    </ul>
+    {% if 'image_credits' in char.spec('general') %}
+    <p class="flavor">{{ char.spec('general')['image_credits'] }}</p>
+    {% end %}
+</div>
+{% end %}
+
+
+
+
+
+
+
+
+
+{% if 'lore' in char.spec('general') %}
+<h2 id="lore">Lore</h2>
+<div class="lore-disclaimer">This section contains character spoilers. DO NOT read if you are in a campaign with me.</div>
+{% if 'personality' in char.spec('general')['lore'] %}
+    <div class="tablec">
+        <table class="striped">
+            <tr><th>Personality</th></tr>
+            <tr><td>{% raw p(char.spec('general')['lore']['personality']) %}</td></tr>
+        </table>
+    </div>
+{% end %}
+{% if 'backstory' in char.spec('general')['lore'] %}
+    <div class="tablec">
+        <table class="striped">
+            <tr><th>Backstory</th></tr>
+            <tr><td>{% raw p(char.spec('general')['lore']['backstory']) %}</td></tr>
+        </table>
+    </div>
+{% end %}
+{% if 'bonds' in char.spec('general')['lore'] %}
+    <div class="tablec">
+        <table class="striped">
+            <tr><th>Bonds</th></tr>
+            <tr><td>{% raw p(char.spec('general')['lore']['bonds']) %}</td></tr>
+        </table>
+    </div>
+{% end %}
+{% if 'strengths' in char.spec('general')['lore'] %}
+    <div class="tablec">
+        <table class="striped">
+            <tr><th>Strengths</th></tr>
+            <tr><td>{% raw p(char.spec('general')['lore']['strengths']) %}</td></tr>
+        </table>
+    </div>
+{% end %}
+{% if 'flaws' in char.spec('general')['lore'] %}
+    <div class="tablec">
+        <table class="striped">
+            <tr><th>Flaws</th></tr>
+            <tr><td>{% raw p(char.spec('general')['lore']['flaws']) %}</td></tr>
+        </table>
+    </div>
+{% end %}
+{% if 'ideals' in char.spec('general')['lore'] %}
+    <div class="tablec">
+        <table class="striped">
+            <tr><th>Ideals</th></tr>
+            <tr><td>{% raw p(char.spec('general')['lore']['ideals']) %}</td></tr>
+        </table>
+    </div>
+{% end %}
+{% if 'extra' in char.spec('general')['lore'] %}
+    <div class="tablec">
+        <table class="striped">
+            <tr><th>Additional Information</th></tr>
+            <tr><td>{% raw pab(char.spec('general')['lore']['extra']) %}</td></tr>
+        </table>
+    </div>
+{% end %}
+{% end %}

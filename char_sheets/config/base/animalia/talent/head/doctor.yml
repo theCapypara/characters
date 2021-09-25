@@ -1,0 +1,8 @@
+talent:
+  name: Doctor
+  description: >
+    You know just what to do when you see someone in pain.
+
+    When using any medical kit items you always roll with advantage to heal HP.
+  type: head
+  level: 3

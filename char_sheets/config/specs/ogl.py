@@ -1,16 +1,16 @@
-from abc import ABC
 from math import floor
 
 from configcrunch import DocReference, REMOVE, load_subdocument
 from schema import Schema, Optional, Or
 
 from char_sheets.config.specs import AbstractSpec
+from char_sheets.config.specs._has_ogl_like_inventory_trait import HasOglLikeInventoryTrait
 from char_sheets.config.specs._ogl_aware import OglAware
 from char_sheets.config.specs.ref_ogl.ogl_item import OglItem
 from char_sheets.config.specs.ref_ogl.ogl_spell import OglSpell
 
 
-class OglSpec(AbstractSpec, ABC):
+class OglSpec(AbstractSpec, HasOglLikeInventoryTrait):
     @classmethod
     def header(cls) -> str:
         return "ogl"

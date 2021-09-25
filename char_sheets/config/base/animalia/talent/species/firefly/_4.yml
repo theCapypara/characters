@@ -1,0 +1,9 @@
+talent:
+  name: "?"
+  description: >
+    When a creature bites into you there is a chance your poisonous blood seeps into their bodies.
+
+    Any creature that bites you must make a soul skill check greater then your soul skill check.
+    If failed they take 1D4 toxic damage, if successful they take no damage.
+  type: species
+  level: 0

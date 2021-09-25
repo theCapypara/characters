@@ -1,0 +1,49 @@
+{#
+Params:
+- spec: Must have HasOglLikeInventoryTrait.
+#}
+{% if len(spec['inventory']['on_hand']) > 0 or len(spec['inventory']['stored']) > 0 %}
+<h2 id="inventory">Inventory</h2>
+{% if len(spec['inventory']['on_hand']) > 0 %}
+<h3>On Hand:</h3>
+<div class="tablec">
+    <table class="striped">
+        <tr>
+            <th></th>
+            <th>Name</th>
+            {% if any('weight' in x for x in spec['inventory']['on_hand'] ) %}<th>Weight</th>{% end %}
+            <th>Notes</th>
+        </tr>
+        {% for s in spec['inventory']['on_hand'] %}
+            <tr>
+                <td class="important centered">{{ 'x' + str(s['count']) if 'count' in s and s['count'] > 1 else '' }}</td>
+                <td class="important">{{ s['name'] }}</td>
+                {% if any('weight' in x for x in spec['inventory']['on_hand'] ) %}<td>{{ s['weight'] if 'weight' in s else '' }}</td>{% end %}
+                <td>{{ s['notes'] if 'notes' in s else '' }}</td>
+            </tr>
+        {% end %}
+    </table>
+</div>
+{% end %}
+{% if len(spec['inventory']['stored']) > 0 %}
+<h3>Stored:</h3>
+<div class="tablec">
+    <table class="striped">
+        <tr>
+            <th></th>
+            <th>Name</th>
+            {% if any('weight' in x for x in spec['inventory']['stored'] ) %}<th>Weight</th>{% end %}
+            <th>Notes</th>
+        </tr>
+        {% for s in spec['inventory']['stored'] %}
+            <tr>
+                <td class="important centered">{{ 'x' + s['count'] if 'count' in s and s['count'] > 1 else '' }}</td>
+                <td class="important">{{ s['name'] }}</td>
+                {% if any('weight' in x for x in spec['inventory']['stored'] ) %}<td>{{ s['weight'] if 'weight' in s else '' }}</td>{% end %}
+                <td>{{ s['notes'] if 'notes' in s else '' }}</td>
+            </tr>
+        {% end %}
+    </table>
+</div>
+{% end %}
+{% end %}

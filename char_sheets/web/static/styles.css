@@ -54,6 +54,7 @@ h3, .inline-h3 {
     line-height: 1.1;
     font-size: 14px;
     font-style: normal;
+    margin-top: 15px;
 }
 
 h2.no-underline {
@@ -181,6 +182,10 @@ footer {
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+
+.navbar {
+    display: none !important;  /* todo */
 }
 
 .logo {

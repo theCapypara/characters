@@ -1,0 +1,11 @@
+talent:
+  name: "?"
+  description: >
+    Once per full rest when you glow, any creature who is hostile towards
+    you must make a head check greater then 6+ your soul skill.
+
+    If failed they become frightened and can not move towards you.
+    The frightened effect wears off if they take damage, if they lose line of sight of you or if they use
+    2 action points to make the skill check again and succeed.
+  type: subspecies
+  level: 0
