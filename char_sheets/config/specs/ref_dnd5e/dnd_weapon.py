@@ -16,6 +16,7 @@ class DndWeapon(YamlConfigDocument):
                 Optional('$ref'): str,
                 'name': str,
                 'finese': bool,
+                Optional('use_int'): bool,
                 'ranged': bool,
                 'wpn_type': str,
                 'dmg_type': str,
@@ -33,15 +34,21 @@ class DndWeapon(YamlConfigDocument):
 
     def to_hit(self):
         prof = self.parent()['proficiency'] if self.parent()['proficiencies']['weapons'][self['wpn_type']] else 0
-        mstr = self.parent().parent().parent().spec('ogl').str_m() if not self['ranged'] else 0
-        mdex = self.parent().parent().parent().spec('ogl').dex_m() if self['ranged'] or self['finese'] else 0
-        m = max(mstr, mdex)
+        if 'use_int' in self and self['use_int']:
+            m = self.parent().parent().parent().spec('ogl').int_m()
+        else:
+            mstr = self.parent().parent().parent().spec('ogl').str_m() if not self['ranged'] else 0
+            mdex = self.parent().parent().parent().spec('ogl').dex_m() if self['ranged'] or self['finese'] else 0
+            m = max(mstr, mdex)
         return prof + m + (self['fixed_plus_atk'] if 'fixed_plus_atk' in self else 0)
 
     def damage(self):
-        mstr = self.parent().parent().parent().spec('ogl').str_m() if not self['ranged'] else 0
-        mdex = self.parent().parent().parent().spec('ogl').dex_m() if self['ranged'] or self['finese'] else 0
-        m = max(mstr, mdex)
+        if 'use_int' in self and self['use_int']:
+            m = self.parent().parent().parent().spec('ogl').int_m()
+        else:
+            mstr = self.parent().parent().parent().spec('ogl').str_m() if not self['ranged'] else 0
+            mdex = self.parent().parent().parent().spec('ogl').dex_m() if self['ranged'] or self['finese'] else 0
+            m = max(mstr, mdex)
         return self['damage_dice'] + '+' + str(m + (self['fixed_plus_dmg'] if 'fixed_plus_dmg' in self else 0))
 
     def attributes(self):
