@@ -114,6 +114,8 @@ class OglSpec(AbstractSpec, ABC):
                     matched_ac = ac
         if matched_ac is None:
             return 10
+        if self['boons']['ac']:
+            matched_ac += self['boons']['ac']
         return matched_ac
 
     def ini(self):

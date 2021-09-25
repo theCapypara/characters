@@ -6,8 +6,6 @@ characters:
     short_description: A way too excited Bagon.
     bg: /static/assets/bg/char1.jpg
     spec:
-      # LEVEL 1
-      # -> LEVEL 2 HP already done
       general:
         gender: Male
         images:
@@ -64,7 +62,7 @@ characters:
             Anyway.... So he had to join alone...
       ogl:
         $ref: ogl
-        current_hp: 27
+        current_hp: 10
 
         class: Barbarian
         subclass: (None)
@@ -127,7 +125,7 @@ characters:
             - name: The rest of the pot too
               notes: Given to you after Narrat realized you took the pot lid.
             - name: Gravelrock
-              count: 10
+              count: 9
               notes: A bit of a heavier throwable, but you’re strong enough that you can manage it decently well. The range is 60/100 and you deal 1d6 bludgeoning damage with your throws.
             - name: Canteen
               notes: Filled with water from the Caldwelch River so you can have a nice drink.
@@ -149,7 +147,7 @@ characters:
             - name: Guild Room Key
           stored: []
         money:
-          gp: 3
+          gp: 7
           sp: 0
           cp: 0
         spells:
@@ -207,7 +205,7 @@ characters:
       extra_counters:
         counters:
           - name: Rage
-            available: 2
+            available: 0
             max: 2
   tariko:
     template: dndpkmn
@@ -216,7 +214,7 @@ characters:
     short_description: A Fomantis from far away.
     bg: /static/assets/bg/char1.jpg
     stash:
-      hp: 53
+      hp: 58
       pp: 10
       inspiration: 0
       ammo: 40
@@ -672,7 +670,7 @@ characters:
     template: pathfinder_ac
     system: Pathfinder
     full_name: Argek
-    short_description: Tariko's trusty crocodile.
+    short_description: Khij's trusty crocodile.
     bg: /static/assets/bg/char1.jpg
     spec:
       general:

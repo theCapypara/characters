@@ -1,3 +1,24 @@
+<div class="desktop navbar">
+    <ul class="toc">
+        <li><a href="#stats">Stats</a></li>
+        <li><a href="#weapons">Weapons</a></li>
+        {% if char.has_spec('dndpkmn') or char.has_spec('soniclink_poke5e') %}
+        <li><a href="#attacks">Attacks</a></li>
+        {% end %}
+        <li><a href="#armor">Armor</a></li>
+        <li><a href="#saves">Saves</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#abilities">Abilities</a></li>
+        {% if char.spec('ogl').has_any_spells() or len(char.spec('ogl')['spells']) > 0 %}
+        <li><a href="#spells">Spells</a></li>
+        {% end %}
+        {% if len(char.spec('ogl')['inventory']['on_hand']) > 0 or len(char.spec('ogl')['inventory']['stored']) > 0 %}
+        <li><a href="#inventory">Inventory</a></li>
+        {% end %}
+        <li><a href="#images">Images</a></li>
+        <li><a href="#lore">Lore</a></li>
+    </ul>
+</div>
 <div class="right-container">
     <img class="avatar" src="{{ char.spec('general')['images'][0]}}">
     <div class="desktop">
