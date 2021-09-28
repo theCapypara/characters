@@ -1,0 +1,94 @@
+character:
+  template: pathfinder_ac
+  system: Pathfinder
+  full_name: Argek
+  short_description: Khij's trusty crocodile.
+  bg: /static/assets/bg/char1.jpg
+  spec:
+    general:
+      gender: Male
+      images:
+        - /static/assets/chars/argek/main.jpg
+      home: Suldamru
+    ogl:
+      $ref: ogl
+      current_hp: 66
+
+      class: Animal Companion
+      subclass: ''
+      level: 7
+      race: Crocodile
+      alignment: n/a
+      size_class: Medium
+      stats:
+        str: 20
+        dex: 12
+        con: 18
+        int: 1
+        wis: 12
+        cha: 2
+      boons:
+        ac: 9  # natural
+      movement:
+        land: 20
+        swim: 30
+      vision: 60
+      max_hp: 51
+      hit_dice: 8
+      languages: [ "None" ]
+      race_abilities:
+        - "Can hold breath for 4 * CON"
+      class_abilities:
+        - "Ergreifen"
+        - "Sprint"
+        - "Todesrolle"
+      feats:
+        - "Verbesserte Natürliche Rüstung: +1 natürlicher Rüstungsbonus"
+        - "Verbesserter Natürlicher Angriff: 1W8 Biss → 2W6"
+        - "Umgang mit Rüstungen, leicht: Rüstungsmalus nur für Stärke/GE Fertigkeitswürfe (bereits eingerechn.)"
+        - "Angreifen: Greift Feinde an; kann befohlen werden; nur Humanoide"
+        - "Verteidigen: Das Tier verteidigt dich (oder ist verteidigungsbereit, falls es gerade keine offensichtliche Bedrohung gibt), auch wenn es Keinen Befehl dazu erhält. Alternativ kannst du dem Tier auch befehlen, einen anderen Charakter zu verteidigen."
+        - "Bei Fuß gehen: Das Tier folgt dir in geringem Abstand selbst an Orte,  an die es normalerweise nicht gehen würde"
+      inventory:
+        on_hand: [ ]
+        stored: [ ]
+      money:
+        gp: 0
+        sp: 0
+        cp: 0
+      spells: [ ]
+    pathfinder:
+      $ref: pathfinder
+      bab: 4
+      natural_ac: 9
+      save_base:
+        reflex: 5
+        will: 2
+        fortitude: 5
+      weapons:
+        - name: Bite
+          crit_mod: 2
+          crit_min: 20
+          damage_dice: 1d8
+        - name: Tail Whip
+          crit_mod: 2
+          crit_min: 20
+          damage_dice: 2d8+1d4
+      armor:
+        - name: Beschl. LedR., meist.
+          bonus: 2
+          minus: 0
+          max_dex: 5
+          arcane_fail_chance: 10
+          weight: 15
+          type: armor
+          notes: Fire Resistence
+      skills:
+        Acrobatics: { class_skill: true }
+        Intimidate: { ranks: 1 }
+        Fly: { class_skill: true }
+        Stealth: { class_skill: true, ranks: 2 }
+        Climb: { class_skill: true }
+        Swim: { class_skill: true, ranks: 1 }
+        Survival: { ranks: 1 }
+        Perception: { ranks: 1 }

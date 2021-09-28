@@ -1,0 +1,306 @@
+character:
+  template: dndpkmn
+  system: Yeesha Stone's Pokémon D&D 5e
+  full_name: Tariko
+  short_description: A Fomantis from far away.
+  bg: /static/assets/bg/char1.jpg
+  stash:
+    hp: 58
+    pp: 10
+    inspiration: 0
+    ammo: 40
+    flasks:
+      empty: 0
+      power_dust: 3
+      shock_dust: 1
+      sleep_dust: 1
+      poison_dust: 1
+    favored_foe: 3
+    primeval_awareness: 3
+    spell_slots:
+      1: 4
+      2: 3
+    money:
+      gp: 197
+      sp: 3
+      cp: 0
+  spec:
+    general:
+      gender: Male
+      age: 19
+      images:
+        - /static/assets/chars/tariko/main.png
+        - /static/assets/chars/tariko/fomantis (1).jpg
+        - /static/assets/chars/tariko/image0-6.png
+        - /static/assets/chars/tariko/PXL_20210121_211647038.jpg
+        - /static/assets/chars/tariko/PXL_20210122_224047831.jpg
+        - /static/assets/chars/tariko/sketch1609297555960.png
+        - /static/assets/chars/tariko/tariko-cosplay-commission.png
+      image_credits: Image credits are pending, sorry, I need to look it up again :( - please contact Para for credits!
+      home: Everstone Forest, Laloa
+      lore:
+        bonds: |
+          Father: Ezemir: High ranking army officer
+          Mother: Miranir
+          Sister: Liraleir (“outcast”, see above) - she is a normal colored Fomantis, however due to a race genetic condition, her eyes are shiny green
+          Best friend / blood brother: Zaluko (Fomantis): Best friends since childhood. During one of the training missions Tariko almost got killed and Zaluko saved his life. In general it is tradition to form a kind of blood bond with people outside your family you are very close with and that you trust with all your life. He asked Zaluko if he wanted to join him, but he declined, however he seemed supportive of Tarikos mission.
+        personality: |
+          - Comes from an authoritative political and military system with clear hierarchies, if nobody challenges him, he will try to take the lead. If he feels challenged he might try to assert his authority
+          - Doesn’t know anything about the stuff that has happened outside of the tribe, such as about multiple worlds
+          - Doesn't talk much
+          - Common isn’t his native tongue, he speaks a bit strange
+          - Is very loyal
+          - Is direct and honest
+          - Curious about new things, but also suspicious and cautious
+          - Nocturnal
+          - Sleeps outside in the sun
+          - His tribe is everything to him
+          - Hates the bugs that invaded his forest
+          - Has some small rituals or quirks from his home that might seem strange to other people
+          - Generally hates bugs
+          - Has almost no sense of humor / weird sense of it
+          - Convinced of the superiority of his own culture
+
+        backstory: >
+          Tariko the Fomantis lived in a forest far away, called Everstone Forest (in Laloa), where he was part of a tribe of Fomantis and Lurantis, called Son'nebel.
+          Life has been peaceful, but since a few years things have changed. More and more bug-type Pokémon infested the forest and threatened the fragile ecosystem, slowly eating up the plants and trees and harassing the Lurantis (or so they felt like).
+          Because of this the Lurantis started becoming a warrior/hunter tribe over the years, hunting for bugs at night to reclaim the forest. In general the tribe-structure became quite authoritarian over time and this is the world Tariko grew up in. The tribe was also pretty much isolated from the rest of the world. As all of the Fomantis, Tariko was trained from his youth to become a hunter. His father trained him and soon he would become a hunter just like him.
+
+          Tariko has an older sister. One day when he was eight and she was 12, she just disappeared one day. His parents never explained why and didn’t want to talk about it, just saying that she was a disgrace for the family. Tariko didn’t really understand.
+          One day when he was out in the woods for training on his own, he spotted a hooded figure that seemed to want his attention. He was lured into a deep part of the woods that was overgrown. The hooded mask turned out to be his sister. She thought she travelled the world outside, and told Tariko of the wonders beyond the forest. He couldn’t really believe what he was hearing, never did the thought of leaving the forest cross his mind.
+          Over the next few months they met in secret and she told him vague stories of a world beyond. Never anything too specific, saying it would be “too dangerous”, and that she knew he had to one day find out on his own.
+          She tought him a language she learnt from a “place far away” so that they could communicate in secret and she also told him “he would one day need it” [Jthooic]. [She told him vague stories, that basically were supposed to give him hints of where the bugs came from, and that maybe they weren’t that bad after all, and that maybe something bigger was going on? Open for (other) ideas though! - Whatever it was, he certainly didn’t connect the dots yet]
+          One day she didn’t arrive at the usual time at their meeting place. This was the last he heard of her.
+
+          One day when he found a flyer for the GoW that the wind had somehow guided into the forest, he for the first time realized that there was a world outside the forest. The thought of going on an adventure to explore the world occupied his mind more and more. Maybe he would learn something about where and why those bugs came from? One day, he decided he wanted to join.
+          Despite his controversial decision to leave, he is still very loyal to his tribe and generally him leaving also wasn’t a huge problem for most of the tribe, except for a couple of people (most notably his father did not speak to him ever since he made this decision). He promised he would come back one day with all the knowledge he gathered and maybe even a plan to get rid of the bug pest once and for all. Maybe he would also find out, what happened to his sister? What all those stories meant?
+        extra: |
+          Evolution:
+          - Tariko is from Everstone Forest, the forest is called that because of it's rather big amount of naturally occuring Everstones.
+          - In his tribe nobody is allowed to elolve until they are ready for a special ritual.
+          - Traditionally to be able to qualify for this ritual, you had to prove an act of braveness. Practically it's almost always been granted after the first "successful hunt" a hunter does on their own; ever since those bugs arrived - you also had to pass the physical requirement (level + sunlight)
+          - The ritual is done once a year on the longest day of the year on top the biggest hill in the forest (in a clearing) at noon. It involves drums being played and a ceremonial dance. At the end of the ceremony the Fomantis gets their necklace removed and evolve
+          - Tariko caries an Everstone pendant around his neck. It is replaced with a silver necklace once a Fomantis has evolved at the ritual
+    ogl:
+      $ref: ogl
+      current_hp: "{{ parent().parent()['stash']['hp'] }}"
+
+      class: Ranger
+      subclass: Gloom Stalker
+      level: 8
+      race: Fomantis
+      alignment: LN
+      size_class: Small
+      spellcasting_mod: wis
+      stats:
+        str: 11
+        dex: 18
+        con: 16
+        int: 11
+        wis: 16
+        cha: 8
+      boons:
+        ini: wis
+      movement:
+        land: 25
+        climb: 25
+        swim: 25
+      vision: 60
+      max_hp: 58
+      hit_dice: 10
+      languages: ["Common", "Tribe language", "Jthooic"]
+      race_abilities:
+        - "Sweet Smells: The smell that wafts off of you causes those around you to be more friendly towards you, however it doesn’t last forever. You can use the Friends cantrip and do not need any components to do so. This is a temporary trait, when the sheet is finished it will be updated."
+        - "Sunlight Nap: Sleeping in the sun helps you to feel more alive, more awake. If you take a long or short rest in the sunlight you regain all levels of exhaustion and gain proficiency on your first skill check after waking up. This is a temporary trait, when the sheet is finished it will be updated."
+      class_abilities:
+        - |
+          Favored Foe:
+          (1d6, enemy mark and add)
+          When you hit a creature with an attack roll, you can call on your mystical bond with nature to mark the target as your favored enemy for 1 minute or until you lose your concentration (as if you were concentrating on a spell).
+          The first time on each of your turns that you hit the favored enemy and deal damage to it, including when you mark it, you increase that damage by 1d4.
+          You can use this feature to mark a favored enemy a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.
+          This feature's extra damage increases when you reach certain levels in this class: to 1d6 at 6th level and to 1d8 at 14th level.
+        - "Deft Explorer (Canny): Choose one of your skill proficiencies (Stealth) -> Expertise"
+        - "Deft Explorer (Roving): Your walking speed increases by 5, and you gain a climbing speed and a swimming speed equal to your walking speed."
+        - "Fighting Style (Archery): You gain a +2 bonus to attack rolls you make with ranged weapons."
+        - >
+          Primeval Awareness: Beginning at 3rd level, you can use your action and focus your awareness on the region around you.
+          You can do this up to your profiency bonus.
+          For 1 minute you can sense whether the following types of creatures are present within 1 mile of
+          you (or within up to 6 miles if you are in your favored terrain):
+          ‘Monsters’, Willowed and feral. This feature doesn’t reveal the
+          creatures’ location or number. You know in which direction they are.
+        - "Extra Attack: Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn."
+        - >
+          Land's Stride:
+          Starting at 8th level, moving through nonmagical difficult terrain
+          costs you no extra movement. You can also pass through nonmagical
+          plants without being slowed by them and without taking damage
+          from them if they have thorns, spines, or a similar hazard.
+          In addition, you have advantage on saving throws against plants that
+          are magically created or manipulated to impede movement, such
+          those created by the entangle spell.
+        - >
+          Dread Ambusher: At 3rd level, you master the art of the ambush. You can give yourself a bonus to your initiative rolls equal to your Wisdom modifier.
+
+          At the start of your first turn of each combat, your walking speed increases by 10 feet, which lasts until the end of that turn. If you take the Attack action on that turn, you can make one additional weapon attack as part of that action.
+          If that attack hits, the target takes an extra 1d8 damage of the weapon's damage type.
+        - "Umbral Sight: At 3rd level, you gain darkvision out to a range of 60 feet. If you already have darkvision from your race, its range increases by 30 feet. You are also adept at evading creatures that rely on darkvision. While in darkness, you are invisible to any creature that relies on darkvision to see you in that darkness."
+        - "Iron Mind: By 7th level, you have honed your ability to resist the mind-altering powers of your prey. You gain proficiency in Wisdom saving throws. If you already have this proficiency, you instead gain proficiency in Intelligence or Charisma saving throws (your choice)."
+      extra_abilities:
+        - >
+          All Eyes on You (Background):
+          Your accent, mannerisms, figures of speech, and perhaps even your appearance all mark you as foreign.
+          Curious glances are directed your way wherever you go, which can be a nuisance, but you also gain the
+          friendly interest of scholars and others intrigued by far-off lands, to say nothing of everyday folk who are
+          eager to hear stories of your homeland.
+
+          You can parley this attention into access to people and places you might not otherwise have, for you and
+          your traveling companions. Noble lords, scholars, and merchant princes, to name a few, might be interested
+          in hearing about your distant homeland and people.
+      feats: []
+      inventory:
+        on_hand:
+          - name: Light Leather Armor
+          - name: Backpack
+          - name: Bedroll
+          - name: Mess kit
+          - name: Tinderbox
+          - name: Torches
+            count: 10
+          - name: Rations (days)
+            count: 10
+          - name: Waterkin
+          - name: Hempen Rope (ft.)
+            count: 50
+          - name: Maps from your homeland
+            notes: poorly wrought
+          - name: Ascension Pendant
+            notes: >
+              Magical item, attunable. Can be activated once per long rest if attuned to.
+              TBD.
+              A teal & black pendant made of crystals in shape of a flower.
+          - name: Jar of berry jam
+          - name: Woodcarver's Tools
+            notes: knife, a gouge, and a small saw
+          - name: Herbalism Kit
+          - name: Poisoner's Kit
+          - name: Lum Berries
+            count: 2
+          - name: Seeds (bags)
+            count: 1
+            notes: https://drive.google.com/drive/folders/19WIGDN0exDtfpiMh1IxZ9HHkDMpyUc_K
+          - name: Power Dust Flasks
+            count: "{{ parent().parent().parent()['stash']['flasks']['power_dust'] }}"
+            notes: You can attach the power dust to coat the next 10 arrows you'll shoot for +1 damage per arrow
+          - name: Shock Dust Flasks
+            count: "{{ parent().parent().parent()['stash']['flasks']['shock_dust'] }}"
+          - name: Sleep Dust Flasks
+            count: "{{ parent().parent().parent()['stash']['flasks']['sleep_dust'] }}"
+          - name: Poison Dust Flasks
+            count: "{{ parent().parent().parent()['stash']['flasks']['poison_dust'] }}"
+          - name: Empty Flask
+            count: "{{ parent().parent().parent()['stash']['flasks']['empty'] }}"
+          - name: Flask Case
+            count: 1
+            notes: One case can hold 9 flasks. You can hold 3 flasks on you without a case.
+          - name: Medium-sized Quiver
+            notes: Can hold 40 arrows.
+        stored: []
+      money:
+        gp: "{{ parent().parent()['stash']['money']['gp'] }}"
+        sp: "{{ parent().parent()['stash']['money']['sp'] }}"
+        cp: "{{ parent().parent()['stash']['money']['cp'] }}"
+      spell_slots:
+        1: { max: 4, available: "{{ parent().parent()['stash']['spell_slots'][1] }}" }
+        2: { max: 3, available: "{{ parent().parent()['stash']['spell_slots'][2] }}" }
+      known_spells: 5
+      spells:
+        # 1:
+        - $ref: dnd5e/spells/friends
+          special: Via Sweet Smellls
+        - $ref: dnd5e/spells/disguise-self
+          special: Gloom Stalker
+        - $ref: dnd5e/spells/ensnarig-strike
+        - $ref: dnd5e/spells/jump
+        - $ref: dnd5e/spells/hail-of-thorns
+        # 2:
+        - $ref: dnd5e/spells/rope-trick
+          special: Gloom Stalker
+        - $ref: dnd5e/spells/aid
+        - $ref: dnd5e/spells/cordon-of-arrows
+    dnd5e:
+      $ref: dnd5e
+      background: Far Traveler
+      inspiration: "{{ parent().parent()['stash']['inspiration'] }}"
+      proficiency: 3
+      proficiencies:
+        weapons:
+          simple: true
+          martial: true
+        tools: ["Woodcarver's Tools", "Herbalism Kit", "Poisoner's Kit"]
+        armor:
+          light: true
+          medium: true
+          shields: true
+        saves:
+          str: true
+          dex: true
+          wis: true
+      weapons:
+        - name: Dagger
+          finese: true
+          ranged: false
+          wpn_type: simple
+          dmg_type: piercing
+          damage_dice: 1d4
+          range: {normal: 20, better: 60}
+        - name: Mace
+          finese: false
+          ranged: false
+          wpn_type: simple
+          dmg_type: bludgeoning
+          damage_dice: 1d6
+        - name: Kamura Iron Bow
+          finese: false
+          ranged: true
+          wpn_type: martial
+          dmg_type: piercing
+          damage_dice: 1d8
+          range: {normal: 150, better: 600}
+          fixed_plus_atk: 2 # Archery, +1 via Kamura Iron Bow
+          fixed_plus_dmg: 1 # +1 via Kamura Iron Bow
+          notes: As a bonus action, as long as you have some on you, you can attach dust to coat the next 10 arrows.
+          ammo: "{{ parent().parent().parent()['stash']['ammo'] }}"
+      armor:
+        ac: 12
+        name: Studded Leather
+        stats: ["dex"]
+      skills:
+        Athletics: {proficiency: true}
+        Insight: {proficiency: true}
+        Nature: {proficiency: true}
+        Perception: {proficiency: true}
+        Stealth: {proficiency: true, expertise: true}
+    dndpkmn:
+      evolution_level: 9
+      types: ["Grass"]
+      current_pp: "{{ parent().parent()['stash']['pp'] }}"
+      boons:
+        pp: 0
+      nature: focused
+      ability:
+        $ref: dndpkmn/abilities/contrary
+      attacks:
+        - $ref: dndpkmn/attacks/razor-leaf-5
+        - $ref: dndpkmn/attacks/sweet-scent-7
+        - $ref: dndpkmn/attacks/synthesis-7
+        - $ref: dndpkmn/attacks/fury-cutter-5
+    extra_counters:
+      counters:
+        - name: Favored Foe
+          available: "{{ parent().parent()['stash']['favored_foe'] }}"
+          max: "{{ parent().parent().spec('dnd5e')['proficiency'] }}"
+        - name: Primeval Awareness
+          available: "{{ parent().parent()['stash']['primeval_awareness'] }}"
+          max: "{{ parent().parent().spec('dnd5e')['proficiency'] }}"

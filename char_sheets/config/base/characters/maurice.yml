@@ -1,0 +1,90 @@
+character:
+  template: animalia
+  system: Animalia
+  full_name: Dr. Maurice Prometeus
+  short_description: A overly curious scientist.
+  bg: /static/assets/bg/char1.jpg
+  stash: { }
+  spec:
+    general:
+      gender: Male
+      age: 21
+      images:
+        - /static/assets/chars/maurice/reticulata.jpg
+      image_credits: https://www.pinterest.de/pin/339247784425071248/
+      home: TBD
+      lore:
+        bonds: TBD
+        personality: |
+          - A bit crazy
+          - Touches everything he sees
+          - Talks way too much
+          - Analyzes things a lot
+        backstory: |
+          From a young age Maurice was a curious boy, always wanting to understand everything.
+          Once he grew up, he became a scientist, mostly involved in studying spirits and ghosts, and how the
+          body and soul function together. He is working on a way to enter the world of afterlife without dying.
+    animalia:
+      race: Coleoptera
+      species: Lampyridae | Firefly
+      subspecies: Phausis reticulata | Blue Ghost
+      current_hp: 20
+      max_hp: 20
+      stats:
+        arm: 3
+        leg: 0
+        head: 3
+        soul: 0
+      house: Filiform
+      languages:
+        - Filiform
+        - Animalian
+      talents:
+        arm:
+          - $ref: /animalia/talent/arm/shove
+          - $ref: /animalia/talent/arm/sticky_fingers
+          - $ref: /animalia/talent/arm/grapple
+        leg: [ ]
+        head:
+          - $ref: /animalia/talent/head/silver_tongue
+          - $ref: /animalia/talent/head/blade_master
+          - $ref: /animalia/talent/head/doctor
+        soul: [ ]
+        species:
+          - $ref: /animalia/talent/species/firefly/_1
+          - $ref: /animalia/talent/species/firefly/_2
+          - $ref: /animalia/talent/species/firefly/_3
+          - $ref: /animalia/talent/species/firefly/_4
+        subspecies:
+          - $ref: /animalia/talent/subspecies/blue_ghost/_1
+          - $ref: /animalia/talent/subspecies/blue_ghost/_2
+      weapons:
+        - $ref: /animalia/weapon/natural_attack
+          actions:
+            whip: $remove
+            claw: $remove
+        - $ref: /animalia/weapon/rapier
+      armor:
+        - $ref: /animalia/armor/padded
+        - $ref: /animalia/armor/shield
+      inventory:
+        on_hand:
+          - name: Medical Kit (Bandages)
+            notes: Take 3 action points to use. Heals HP equal to 1D10 + the users Head skill
+          - name: Medical Kit (Cleaning solution)
+            notes: Take 2action points to use. Heals HP equal to 1D6 + the users Head skill
+          - name: Medical Kit (Needle and thread)
+            notes: Take 3 action points to use. Heals HP equal to 2D6 + the user's head skill but takes 1D4 damage after healing.
+          - name: Medical Kit (Gauze)
+            notes: Take 1 action point to use. Heals HP equal to 1D4 + the user’s head skill
+          - name: Medical Kit (Splint)
+            notes: Take 4 action points to use. Heals HP equal to 2D8 + the users head skill
+        stored: [ ]
+      money:
+        gp: 0
+        sp: 0
+        cp: 0
+      boons:
+        ac: 0
+    extra_counters:
+      counters: [ ]
