@@ -35,8 +35,8 @@ class DndPdfTemplate(AbstractPdfTemplate):
             'Ideals': pdf_get(self.character.spec('general'), 'lore', 'ideals'),
             'Bonds': pdf_get(self.character.spec('general'), 'lore', 'bonds'),
             'Flaws': pdf_get(self.character.spec('general'), 'lore', 'flaws'),
-            'HPMax': pdf_get(self.character.spec('ogl'), 'hp_max'),
-            'HPCurrent': pdf_get(self.character.spec('ogl'), 'hp_current'),
+            'HPMax': pdf_get(self.character.spec('ogl'), 'max_hp'),
+            'HPCurrent': pdf_get(self.character.spec('ogl'), 'current_hp'),
             'HD': pdf_get(self.character.spec('ogl'), 'hit_dice'),  # hit dice
             'Check Box 12': self.character.spec('dnd5e')['death_saves']['successes'] > 0,  # Death Save Success 1
             'Check Box 13': self.character.spec('dnd5e')['death_saves']['successes'] > 1,  # Death Save Success 2
