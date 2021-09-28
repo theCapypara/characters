@@ -8,23 +8,11 @@ from tornado.web import Application
 
 from char_sheets import ui_methods
 from char_sheets.config import load_config
+from char_sheets.pdf.handler import CharacterPdfHandler
+from char_sheets.util import make_head
 
 logger = logging.getLogger(__name__)
 PORT = 7554
-
-
-def make_head(subtitle=None, char=None):
-    if subtitle:
-        subtitle = ' - ' + subtitle
-    else:
-        subtitle = ''
-    return {
-        'title': "Para's Characters" + subtitle,
-        'description': char['short_description'] if char else "An index of Parakoopa's TTRPG characters",
-        'og_title': subtitle if subtitle else "Para's Characters",
-        'og_site_name': "Para's Characters",
-        'og_image': char.spec('general')['images'][0] if char else '/static/android-icon-192x192.png'
-    }
 
 
 # noinspection PyAbstractClass
@@ -58,6 +46,7 @@ class CharacterHandler(tornado.web.RequestHandler):
 
 routes = [
     (r"/", ListHandler),
+    (r"/character/(?P<character_id>[^\/]+).pdf", CharacterPdfHandler),
     (r"/character/(?P<character_id>[^\/]+)/?", CharacterHandler),
 ]
 logger.info('Starting!')

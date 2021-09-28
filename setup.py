@@ -9,5 +9,7 @@ setup(
     description="aka. Para's insane.",
     install_requires=[
         'configcrunch >= 0.3.5',
+        'tornado >= 6.1',
+        'pdfrw >= 0.4'
     ],
 )

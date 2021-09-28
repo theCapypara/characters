@@ -1,5 +1,6 @@
 character:
   template: dnd
+  pdf_template: dnd
   system: D&D 5e
   full_name: Taida Kibbles
   short_description: A sloth :).
@@ -18,6 +19,7 @@ character:
     general:
       gender: Male
       age: 16
+      size: 2.75
       images:
         - /static/assets/chars/taida/tmp.png
       image_credits: n/a
@@ -183,7 +185,7 @@ character:
       proficiencies:
         weapons:
           simple: true
-        tools: ["Thieves’ tools", "Tinker’s tools", "Smith's tools", "One type of artisan’s tools of your choice"]
+        tools: ["Thieves' tools", "Tinker's tools", "Smith's tools", "One type of artisan's tools of your choice"]
         armor:
           light: true
           medium: true

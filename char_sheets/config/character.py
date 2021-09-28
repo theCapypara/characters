@@ -17,6 +17,7 @@ class Character(YamlConfigDocument):
             {
                 Optional('$ref'): str,
                 'template': str,
+                Optional('pdf_template'): str,
                 'system': str,
                 'full_name': str,
                 'short_description': str,
