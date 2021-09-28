@@ -62,7 +62,7 @@ class DndPdfTemplate(AbstractPdfTemplate):
             'SP': pdf_get(self.character.spec('ogl'), 'money', 'sp'),
             'GP': pdf_get(self.character.spec('ogl'), 'money', 'gp'),
             'Equipment': self._equipment(),
-            'Feat+Traits': self._features(),
+            'Features and Traits': self._features(),
             'Backstory': pdf_get(self.character.spec('general'), 'lore', 'backstory'),
             # Saves:
             'ST Strength': self.character.spec('dnd5e').save_bonus('str'), 'Check Box 11': self.character.spec('dnd5e')['proficiencies']['saves']['str'],
