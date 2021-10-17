@@ -162,11 +162,11 @@ character:
       feats: []
       inventory:
         on_hand:
-          - A quill
-          - A belt pouch
-          - A small knife
-          - A bottle of black ink
-          - A letter from a dead colleague posing a question which you have not yet been able to answer
+          - name: A quill
+          - name: A belt pouch
+          - name: A small knife
+          - name: A bottle of black ink
+          - name: A letter from a dead colleague posing a question which you have not yet been able to answer
         stored: []
       money:
         gp: "{{ parent().parent()['stash']['money']['gp'] }}"
