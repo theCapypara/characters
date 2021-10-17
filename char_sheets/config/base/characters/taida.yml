@@ -61,7 +61,7 @@ character:
       vision: 30
       max_hp: 20
       hit_dice: 8
-      languages: ["Common", "Folivoran", "+1", "+2"]
+      languages: ["Common", "Folivoran", "+1|str", "+2|str"]
       race_abilities:
         - >
           Quick To Help: Folivorans are ever ready to lend a close
