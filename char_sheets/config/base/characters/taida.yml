@@ -12,7 +12,7 @@ character:
     spell_slots:
       1: 3
     money:
-      gp: 0
+      gp: 10
       sp: 0
       cp: 0
   spec:
@@ -61,7 +61,7 @@ character:
       vision: 30
       max_hp: 20
       hit_dice: 8
-      languages: ["Common", "Folivoran"]
+      languages: ["Common", "Folivoran", "+1", "+2"]
       race_abilities:
         - >
           Quick To Help: Folivorans are ever ready to lend a close
@@ -161,8 +161,12 @@ character:
           expended uses when you finish a long rest.
       feats: []
       inventory:
-        # TODO
-        on_hand: []
+        on_hand:
+          - A quill
+          - A belt pouch
+          - A small knife
+          - A bottle of black ink
+          - A letter from a dead colleague posing a question which you have not yet been able to answer
         stored: []
       money:
         gp: "{{ parent().parent()['stash']['money']['gp'] }}"
@@ -179,7 +183,7 @@ character:
         # + Magic Missile, Thunderwave
     dnd5e:
       $ref: dnd5e
-      background: ???
+      background: Sage
       inspiration: "{{ parent().parent()['stash']['inspiration'] }}"
       proficiency: 2
       proficiencies:
@@ -231,6 +235,8 @@ character:
       skills:
         Persuasion: {proficiency: true}
         Arcana: {proficiency: true}
+        History: {proficiency: true}
+        Investigation: {proficiency: true}
         Perception: {proficiency: true}
     extra_counters:
       counters:
