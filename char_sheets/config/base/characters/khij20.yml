@@ -1,0 +1,161 @@
+character:
+  template: pathfinder
+  system: Pathfinder
+  full_name: Khij 20
+  short_description: An Undine looking looking for an artifact to save his people.
+  bg: /static/assets/bg/char1.jpg
+  spec:
+    general:
+      gender: Male
+      images:
+        - /static/assets/chars/khij/main.png
+      home: Suldamru
+    ogl:
+      $ref: ogl
+      current_hp: 122
+
+      class: Druid
+      subclass: Undine Adept
+      level: 20
+      race: Undine
+      spellcasting_mod: wis
+      alignment: LN
+      size_class: Medium
+      stats:
+        str: 8
+        dex: 16
+        con: 12
+        int: 15
+        wis: 20
+        cha: 11
+      movement:
+        land: 30
+        swim: 30
+      vision: 60
+      max_hp: 82
+      hit_dice: 8
+      languages: [ "Common", "Aqua", "Druid", "Elvish", "Terral", "Sylvan" ]
+      race_abilities:
+        - "Flesh Chameleon: Some undines can change their coloration to match human skin tones. As a standard action, an undine with this racial trait can change her natural blue hue to match any normal human skin tone, and can revert to normal as a free action. This grants a +4 racial bonus on Disguise checks to appear human. This racial trait replaces energy resistance."
+        - "Swim is a class ability"
+        - "Hydrated Vitality: An undine with this racial trait gains fast healing 2 for 1 round anytime she submerges completely within a body of natural salt water, fresh water, or brackish water. Stagnant, poisoned, or trapped water (such as an artificial pit or a bag of holding) does not activate this ability. The undine can heal up to 2 hit points per level per day with this ability, after which it ceases to function. This racial trait replaces water affinity."
+        - "Amphibious: Some undines are born with a permanent bond to water. Undines with this racial trait gain the aquatic subtype and amphibious special quality. This racial trait replaces the spell-like ability racial trait."
+      class_abilities:
+        - "Favored Class: +1 for rolls on Handle Animal for aquatic animals"
+        - "Connected with Argek: Can move freely, +4 on Handle Animal, can share magic with Argek"
+        - "Nature Sense: A druid gains a +2 bonus on Knowledge (nature) and Survival checks."
+        - "Wild Empathy: The druid rolls 1d20 and adds her druid level and her Charisma modifier to determine the wild empathy check result."
+        - "Verstärkte Herbeizauberung: Jede Kreatur der Unterart Wasser, w. herbeizaubert, die Vorteile des Talents Verstärkte Herbeizauberung. => Verbesserungsbonus +4 auf Stärke und Konstitution."
+        - "Wild Shape: 2x"
+      feats:
+        - "Water Skin: Standard-Aktion ein kleines, nichtmagisches Feuer mit einer Berührung löschen (max. gr. Lagerfeuer)"
+        - "Flusskämpfer: Schwimmst du flussabwärts oder quer durch einen Strom, kannst du einen Sturmangriff durchführen, wenn du den HG für Schwimmen mit 5 oder mehr bewältigst."
+        - "Stiller Beobachter (Region): Du kannst die Stimmung einer Menge erkennen… +1 auf Fertigkeitswürfe für Motiv erkennen in einer Menge; +1 auf Fertigkeitswürfe für Heimlichkeit in den Straßen"
+        - "Pride: When someone threatens, accuses, or challenges you, you take a –2 penalty on Diplomacy checks and Sense Motive. Checks involving that creature until the creature apologizes to you."
+        - "Dampfzauberer: Zauber VA statt SA: Alle Feuerzauber werden stattdessen zu Wasser/Dampfzauber. Können unter Wasser gewirkt werden. Können nicht in Brand stecken.  Gelten zur Gruppe Wasser, verursachen weiterhin Feuerschaden."
+        - "Zauberfokus: +1 auf RW Beschwörung (meine Zauber!)"
+        - "Natural Spell: You can complete the verbal and somatic components of spells while using wild shape. You substitute various noises and gestures for the normal verbal and somatic components of a spell."
+      inventory:
+        on_hand:
+          - name: Sichel
+          - name: Fellrüstung
+          - name: Rucksack
+          - name: Schlafsack
+          - name: Journal + Stift
+          - name: Reisekleidung + Handschuhe
+          - name: Kreide
+          - name: leichtes Holzschild
+          - name: Karten
+          - name: Handschellen (ohne Schlüssel)
+          - name: Pinke Muschel
+          - name: Gutschein über ein Buch
+          - name: Tieflingswurz
+          - name: Bolzen
+          - name: Satz Feuerwuth-Schuppen
+          - name: Luftelementar Essenz
+          - name: Luftelementar Kern
+          - name: Schlüssel der Elemente
+          - name: Seltsame Karte
+          - name: Karte Herz des Feuers
+          - name: "Buch: Magische Dinge und Artefakte der Wasermagie"
+          - name: "Buch: Arkane Geschütze i. 5 Schr."
+          - name: Karte von Inseln, früher
+          - name: Heiltrank, mittel
+          - name: Halluzenogene Pilze
+          - name: Froschpilz
+          - name: 2x Schlüssel HDF
+          - name: Otari? (wie Hayot aber für Feuer)
+          - name: Stein von Grisnelda, Nachtvettel
+          - name: Stein, Ruhestein, teleportiert uns 1/Tag
+          - name: Staff of the Woodlands
+          - name: Vorrat halluzinogene Pilze und Drogen
+          - name: Magische Schleuder
+          - name: Weinflasche
+        stored: [ ]
+      money:
+        gp: 2301
+        sp: 79
+        cp: 0
+      spell_slots:
+        1: { max: 5, available: 5 }
+        2: { max: 5, available: 5 }
+        3: { max: 5, available: 5 }
+        4: { max: 4, available: 4 }
+        5: { max: 4, available: 4 }
+        6: { max: 4, available: 4 }
+        7: { max: 4, available: 4 }
+        8: { max: 4, available: 4 }
+        9: { max: 4, available: 4 }
+      spells: [ ]
+    pathfinder:
+      $ref: pathfinder
+      bab: 15
+      save_base:
+        reflex: 6
+        will: 12
+        fortitude: 12
+      weapons:
+        - name: Sichel
+          crit_mod: 2
+          crit_min: 20
+          damage_dice: 1d6
+      armor:
+        - name: leichtes Holzschild
+          bonus: 1
+          minus: 1
+          max_dex: -1
+          arcane_fail_chance: 5
+          weight: 5
+          type: shield
+        - name: Elem. Schp.panz.
+          bonus: 6
+          minus: 0
+          max_dex: 4
+          arcane_fail_chance: 10
+          weight: 25
+          type: armor
+          notes: Res. gg. el. Sch. -10
+      skills:
+        Acrobatics: { ranks: 8 }
+        Profession: { class_skill: true, ranks: 3, type: "Seafaring" }
+        Bluff: { class_skill: true, boon: 2, ranks: 4 }
+        Diplomacy: { ranks: 6 }
+        Fly: { class_skill: true }
+        Craft: { class_skill: true, ranks: 1 }
+        Heal: { class_skill: true, ranks: 12 }
+        Stealth: { ranks: 10 }
+        Climb: { class_skill: true, ranks: 4 }
+        Handle Animal: { class_skill: true, ranks: 12 }
+        Ride: { class_skill: true, ranks: 11 }
+        Swim: { class_skill: true, ranks: 1 }
+        Linguistics: { ranks: 1 }
+        Survival: { class_skill: true, ranks: 2, boon: 2 }
+        Disguise: { ranks: 2, boon: 2 }
+        Perception: { class_skill: true, ranks: 12 }
+        Knowledge (geography): { class_skill: true, ranks: 2 }
+        Knowledge (history): { ranks: 1 }
+        Knowledge (nature): { class_skill: true, ranks: 3, boon: 2 }
+        Knowledge (religion): { ranks: 1 }
+        Spellcraft: { class_skill: true, ranks: 10 }
+        Sense Motive: { ranks: 6 }
+        Escape Artist: { ranks: 8 }

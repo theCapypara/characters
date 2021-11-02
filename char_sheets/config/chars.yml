@@ -11,3 +11,7 @@ characters:
     $ref: /characters/khij
   argek:
     $ref: /characters/argek
+  khij20:
+    $ref: /characters/khij20
+  argek20:
+    $ref: /characters/argek20
