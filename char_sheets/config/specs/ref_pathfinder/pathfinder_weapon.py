@@ -24,6 +24,10 @@ class PathfinderWeapon(YamlConfigDocument):
             }
         )
 
+    @classmethod
+    def subdocuments(cls):
+        return []
+
     def to_hit(self):
         return self.parent()['bab'] + self.parent().parent().parent().spec('ogl').str_m() + (self['fixed_plus_atk'] if 'fixed_plus_atk' in self else 0)
 

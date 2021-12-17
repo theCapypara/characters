@@ -26,6 +26,10 @@ class OglSpell(YamlConfigDocument):
             }
         )
 
+    @classmethod
+    def subdocuments(cls):
+        return []
+
     def range_text(self):
         if self['range'] == 0:
             return 'Touch'

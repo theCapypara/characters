@@ -1,4 +1,4 @@
-from configcrunch import DocReference, load_subdocument, REMOVE
+from configcrunch import DocReference
 from schema import Schema, Optional
 
 from char_sheets.config.specs import AbstractSpec
@@ -99,13 +99,11 @@ class Dnd5eSpec(AbstractSpec, OglAware):
             }
         )
 
-    def _load_subdocuments(self, lookup_paths):
-        if "weapons" in self.doc and self["weapons"] != REMOVE:
-            lst = []
-            for x in self["weapons"]:
-                lst.append(load_subdocument(x, self, DndWeapon, lookup_paths))
-            self["weapons"] = lst
-        return self
+    @classmethod
+    def subdocuments(cls):
+        return [
+            ("weapons[]", DndWeapon),
+        ]
 
     def ac(self):
         return self["armor"]["ac"] + self.armor_bonus()

@@ -8,7 +8,7 @@ setup(
     packages=find_packages(),
     description="aka. Para's insane.",
     install_requires=[
-        'configcrunch >= 0.3.5',
+        'configcrunch >= 1.0.0',
         'tornado >= 6.1',
         'pdfrw >= 0.4'
     ],

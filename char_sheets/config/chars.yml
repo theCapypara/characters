@@ -1,17 +1,18 @@
 characters:
-  maurice:
-    $ref: /characters/maurice
-  taida:
-    $ref: /characters/taida
-  arran:
-    $ref: /characters/arran
-  tariko:
-    $ref: /characters/tariko
-  khij:
-    $ref: /characters/khij
-  argek:
-    $ref: /characters/argek
-  khij20:
-    $ref: /characters/khij20
-  argek20:
-    $ref: /characters/argek20
+  characters:
+    maurice:
+      $ref: /characters/maurice
+    taida:
+      $ref: /characters/taida
+    arran:
+      $ref: /characters/arran
+    tariko:
+      $ref: /characters/tariko
+    khij:
+      $ref: /characters/khij
+    argek:
+      $ref: /characters/argek
+    khij20:
+      $ref: /characters/khij20
+    argek20:
+      $ref: /characters/argek20

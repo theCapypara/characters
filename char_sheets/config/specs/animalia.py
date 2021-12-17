@@ -1,6 +1,6 @@
 from typing import List
 
-from configcrunch import DocReference, REMOVE, load_subdocument
+from configcrunch import DocReference
 from schema import Schema, Optional
 
 from char_sheets.config.specs import AbstractSpec
@@ -59,60 +59,20 @@ class AnimaliaSpec(AbstractSpec, HasOglLikeInventoryTrait):
             }
         )
 
-    def _load_subdocuments(self, lookup_paths):
-        if "inventory" in self.doc and self["inventory"] != REMOVE:
-            if "on_hand" in self.doc["inventory"] and self["inventory"]["on_hand"] != REMOVE:
-                lst = []
-                for x in self["inventory"]["on_hand"]:
-                    lst.append(load_subdocument(x, self, OglItem, lookup_paths))
-                self["inventory"]["on_hand"] = lst
-            if "stored" in self.doc["inventory"] and self["inventory"]["stored"] != REMOVE:
-                lst = []
-                for x in self["inventory"]["stored"]:
-                    lst.append(load_subdocument(x, self, OglItem, lookup_paths))
-                self["inventory"]["stored"] = lst
-        if "weapons" in self.doc and self["weapons"] != REMOVE:
-            lst = []
-            for x in self["weapons"]:
-                lst.append(load_subdocument(x, self, AnimaliaWeapon, lookup_paths))
-            self["weapons"] = lst
-        if "armor" in self.doc and self["armor"] != REMOVE:
-            lst = []
-            for x in self["armor"]:
-                lst.append(load_subdocument(x, self, AnimaliaArmor, lookup_paths))
-            self["armor"] = lst
-        if "talents" in self.doc and self["talents"] != REMOVE:
-            if "arm" in self.doc["talents"] and self["talents"]["arm"] != REMOVE:
-                lst = []
-                for x in self["talents"]["arm"]:
-                    lst.append(load_subdocument(x, self, AnimaliaTalent, lookup_paths))
-                self["talents"]["arm"] = lst
-            if "leg" in self.doc["talents"] and self["talents"]["leg"] != REMOVE:
-                lst = []
-                for x in self["talents"]["leg"]:
-                    lst.append(load_subdocument(x, self, AnimaliaTalent, lookup_paths))
-                self["talents"]["leg"] = lst
-            if "head" in self.doc["talents"] and self["talents"]["head"] != REMOVE:
-                lst = []
-                for x in self["talents"]["head"]:
-                    lst.append(load_subdocument(x, self, AnimaliaTalent, lookup_paths))
-                self["talents"]["head"] = lst
-            if "soul" in self.doc["talents"] and self["talents"]["soul"] != REMOVE:
-                lst = []
-                for x in self["talents"]["soul"]:
-                    lst.append(load_subdocument(x, self, AnimaliaTalent, lookup_paths))
-                self["talents"]["soul"] = lst
-            if "species" in self.doc["talents"] and self["talents"]["species"] != REMOVE:
-                lst = []
-                for x in self["talents"]["species"]:
-                    lst.append(load_subdocument(x, self, AnimaliaTalent, lookup_paths))
-                self["talents"]["species"] = lst
-            if "subspecies" in self.doc["talents"] and self["talents"]["subspecies"] != REMOVE:
-                lst = []
-                for x in self["talents"]["subspecies"]:
-                    lst.append(load_subdocument(x, self, AnimaliaTalent, lookup_paths))
-                self["talents"]["subspecies"] = lst
-        return self
+    @classmethod
+    def subdocuments(cls):
+        return [
+            ("inventory/on_hand[]", OglItem),
+            ("inventory/stored[]", OglItem),
+            ("weapons[]", AnimaliaWeapon),
+            ("armor[]", AnimaliaArmor),
+            ("talents/arm[]", AnimaliaTalent),
+            ("talents/leg[]", AnimaliaTalent),
+            ("talents/head[]", AnimaliaTalent),
+            ("talents/soul[]", AnimaliaTalent),
+            ("talents/species[]", AnimaliaTalent),
+            ("talents/subspecies[]", AnimaliaTalent),
+        ]
 
     def ac(self):
         base = self["boons"]["ac"]

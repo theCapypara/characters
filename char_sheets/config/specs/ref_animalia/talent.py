@@ -18,3 +18,7 @@ class AnimaliaTalent(YamlConfigDocument):
                 'level': int,
             }
         )
+
+    @classmethod
+    def subdocuments(cls):
+        return []

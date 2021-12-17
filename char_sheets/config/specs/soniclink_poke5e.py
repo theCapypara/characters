@@ -1,4 +1,4 @@
-from configcrunch import DocReference, REMOVE, load_subdocument
+from configcrunch import DocReference, REMOVE
 from schema import Schema, Optional
 
 from char_sheets.config.specs import AbstractSpec
@@ -19,10 +19,8 @@ class Poke5e(AbstractSpec):
             }
         )
 
-    def _load_subdocuments(self, lookup_paths):
-        if "attacks" in self.doc and self["attacks"] != REMOVE:
-            lst = []
-            for x in self["attacks"]:
-                lst.append(load_subdocument(x, self, SoniclinkPoke5eAttack, lookup_paths))
-            self["attacks"] = lst
-        return self
+    @classmethod
+    def subdocuments(cls):
+        return [
+            ("attacks[]", SoniclinkPoke5eAttack),
+        ]

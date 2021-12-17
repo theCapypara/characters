@@ -16,3 +16,7 @@ class StoryLog(YamlConfigDocument):
                 'text': str,
             }
         )
+
+    @classmethod
+    def subdocuments(cls):
+        return []

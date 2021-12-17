@@ -23,3 +23,7 @@ class AnimaliaArmor(YamlConfigDocument):
                 'resistance': [str],
             }
         )
+
+    @classmethod
+    def subdocuments(cls):
+        return []

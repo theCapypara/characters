@@ -17,7 +17,7 @@
                             A list of all my TTRPG characters.
                         </span>
                     </div>
-                    {% for key, char in characters.doc.items() %}
+                    {% for key, char in sorted(characters.items()) %}
                     <a class="character-pin" href="/character/{{ key }}">
                         <img src="{{ char.spec('general')['images'][0] }}">
                         <div>

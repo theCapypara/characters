@@ -97,10 +97,10 @@ character:
         sp: 79
         cp: 0
       spell_slots:
-        1: { max: 5, available: 5 }
-        2: { max: 4, available: 4 }
-        3: { max: 3, available: 3 }
-        4: { max: 2, available: 2 }
+        "1": { max: 5, available: 5 }
+        "2": { max: 4, available: 4 }
+        "3": { max: 3, available: 3 }
+        "4": { max: 2, available: 2 }
       spells: [ ]
     pathfinder:
       $ref: pathfinder

@@ -1,7 +1,8 @@
+import pkgutil
 from abc import ABC
 from typing import Type
 
-from configcrunch import YamlConfigDocument, load_subdocument, REMOVE, DocReference
+from configcrunch import YamlConfigDocument, DocReference
 from schema import Schema, Optional
 
 from char_sheets.config.specs import AbstractSpec
@@ -32,8 +33,12 @@ class Spec(YamlConfigDocument, ABC):
             }
         )
 
-    def _load_subdocuments(self, lookup_paths):
-        for key, doc in self.items():
-            if doc != REMOVE:
-                self[key] = load_subdocument(doc, self, get_spec_reference_type(key), lookup_paths)
-        return self
+    @classmethod
+    def subdocuments(cls):
+        lst = []
+        for m in pkgutil.iter_modules(__import__("char_sheets.config.specs", fromlist=['']).__path__):
+            try:
+                lst.append((m.name, get_spec_reference_type(m.name)))
+            except Exception:
+                pass
+        return lst

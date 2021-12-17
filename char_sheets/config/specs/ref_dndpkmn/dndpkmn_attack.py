@@ -27,6 +27,10 @@ class DndPkmnAttack(YamlConfigDocument):
             }
         )
 
+    @classmethod
+    def subdocuments(cls):
+        return []
+
     def atk_bonus_or_save(self):
         dice = self['atk_bonus_or_save']['dice'] + '+' if 'dice' in self['atk_bonus_or_save'] else ''
         fixed = self['atk_bonus_or_save']['fixed'] if 'dice' in self['atk_bonus_or_save'] else 0

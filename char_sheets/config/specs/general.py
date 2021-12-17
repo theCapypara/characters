@@ -1,4 +1,4 @@
-from configcrunch import DocReference, REMOVE, load_subdocument
+from configcrunch import DocReference
 from schema import Schema, Optional, Or
 
 from char_sheets.config.specs import AbstractSpec
@@ -32,19 +32,16 @@ class GeneralSpec(AbstractSpec):
                     Optional('flaws'): str,
                     Optional('ideals'): str,
                     Optional('extra'): str,
-                    Optional('story_log'): [DocReference(StoryLog)],
+                    #Optional('story_log'): [DocReference(StoryLog)],
                 }
             }
         )
 
-    def _load_subdocuments(self, lookup_paths):
-        if "lore" in self.doc and self["lore"] != REMOVE:
-            if "story_log" in self.doc["lore"] and self["lore"]["story_log"] != REMOVE:
-                lst = []
-                for x in self["lore"]["story_log"]:
-                    lst.append(load_subdocument(x, self, StoryLog, lookup_paths))
-                self["lore"]["story_log"] = lst
-        return self
+    @classmethod
+    def subdocuments(cls):
+        return [
+            #("lore/story_log", StoryLog)
+        ]
 
     def count_optional(self):
         count = 0

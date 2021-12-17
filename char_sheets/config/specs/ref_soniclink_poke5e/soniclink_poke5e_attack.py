@@ -22,3 +22,7 @@ class SoniclinkPoke5eAttack(YamlConfigDocument):
                 'description': str,
             }
         )
+
+    @classmethod
+    def subdocuments(cls):
+        return []

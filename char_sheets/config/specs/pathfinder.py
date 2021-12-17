@@ -1,4 +1,4 @@
-from configcrunch import DocReference, REMOVE, load_subdocument
+from configcrunch import DocReference, REMOVE
 from schema import Schema, Optional
 
 from char_sheets.config.specs import AbstractSpec
@@ -88,18 +88,12 @@ class PathfinderSpec(AbstractSpec, OglAware):
             }
         )
 
-    def _load_subdocuments(self, lookup_paths):
-        if "weapons" in self.doc and self["weapons"] != REMOVE:
-            lst = []
-            for x in self["weapons"]:
-                lst.append(load_subdocument(x, self, PathfinderWeapon, lookup_paths))
-            self["weapons"] = lst
-        if "armor" in self.doc and self["armor"] != REMOVE:
-            lst = []
-            for x in self["armor"]:
-                lst.append(load_subdocument(x, self, PathfinderArmor, lookup_paths))
-            self["armor"] = lst
-        return self
+    @classmethod
+    def subdocuments(cls):
+        return [
+            ("weapons[]", PathfinderWeapon),
+            ("armor[]", PathfinderArmor),
+        ]
 
     def ac(self):
         # TODO Size mod

@@ -32,6 +32,10 @@ class DndWeapon(YamlConfigDocument):
             }
         )
 
+    @classmethod
+    def subdocuments(cls):
+        return []
+
     def to_hit(self):
         prof = self.parent()['proficiency'] if self.parent()['proficiencies']['weapons'][self['wpn_type']] else 0
         if 'use_int' in self and self['use_int']:

@@ -46,3 +46,7 @@ class AnimaliaWeapon(YamlConfigDocument):
                 }
             }
         )
+
+    @classmethod
+    def subdocuments(cls):
+        return []

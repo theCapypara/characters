@@ -16,3 +16,7 @@ class DndPkmnAbility(YamlConfigDocument):
                 'description': str
             }
         )
+
+    @classmethod
+    def subdocuments(cls):
+        return []

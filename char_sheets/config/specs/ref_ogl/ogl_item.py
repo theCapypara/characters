@@ -18,3 +18,7 @@ class OglItem(YamlConfigDocument):
                 Optional('notes'): str,
             }
         )
+
+    @classmethod
+    def subdocuments(cls):
+        return []

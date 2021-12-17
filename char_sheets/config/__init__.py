@@ -8,4 +8,5 @@ def load_config() -> Characters:
     doc.resolve_and_merge_references([os.path.join(os.path.dirname(__file__), 'base')])
     doc.process_vars()
     doc.validate()
-    return doc
+    doc.freeze()
+    return doc['characters']

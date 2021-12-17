@@ -18,8 +18,8 @@ character:
     favored_foe: 3
     primeval_awareness: 3
     spell_slots:
-      1: 4
-      2: 3
+      "1": 4
+      "2": 3
     money:
       gp: 197
       sp: 3
@@ -212,8 +212,8 @@ character:
         sp: "{{ parent().parent()['stash']['money']['sp'] }}"
         cp: "{{ parent().parent()['stash']['money']['cp'] }}"
       spell_slots:
-        1: { max: 4, available: "{{ parent().parent()['stash']['spell_slots'][1] }}" }
-        2: { max: 3, available: "{{ parent().parent()['stash']['spell_slots'][2] }}" }
+        "1": { max: 4, available: "{{ parent().parent()['stash']['spell_slots']['1'] }}" }
+        "2": { max: 3, available: "{{ parent().parent()['stash']['spell_slots']['2'] }}" }
       known_spells: 5
       spells:
         # 1:
@@ -299,8 +299,8 @@ character:
     extra_counters:
       counters:
         - name: Favored Foe
-          available: "{{ parent().parent()['stash']['favored_foe'] }}"
-          max: "{{ parent().parent().spec('dnd5e')['proficiency'] }}"
+          available: "{{ parent().parent().stash.favored_foe }}"
+          max: "{{ parent().parent().spec('dnd5e').proficiency }}"
         - name: Primeval Awareness
-          available: "{{ parent().parent()['stash']['primeval_awareness'] }}"
-          max: "{{ parent().parent().spec('dnd5e')['proficiency'] }}"
+          available: "{{ parent().parent().stash.primeval_awareness }}"
+          max: "{{ parent().parent().spec('dnd5e').proficiency }}"

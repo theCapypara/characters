@@ -1,6 +1,6 @@
 from math import floor
 
-from configcrunch import DocReference, REMOVE, load_subdocument
+from configcrunch import DocReference, variable_helper
 from schema import Schema, Optional, Or
 
 from char_sheets.config.specs import AbstractSpec
@@ -59,15 +59,15 @@ class OglSpec(AbstractSpec, HasOglLikeInventoryTrait):
                     'cp': int,
                 },
                 'spell_slots': {
-                    1: {'max': int, 'available': int},
-                    2: {'max': int, 'available': int},
-                    3: {'max': int, 'available': int},
-                    4: {'max': int, 'available': int},
-                    5: {'max': int, 'available': int},
-                    6: {'max': int, 'available': int},
-                    7: {'max': int, 'available': int},
-                    8: {'max': int, 'available': int},
-                    9: {'max': int, 'available': int},
+                    '1': {'max': int, 'available': int},
+                    '2': {'max': int, 'available': int},
+                    '3': {'max': int, 'available': int},
+                    '4': {'max': int, 'available': int},
+                    '5': {'max': int, 'available': int},
+                    '6': {'max': int, 'available': int},
+                    '7': {'max': int, 'available': int},
+                    '8': {'max': int, 'available': int},
+                    '9': {'max': int, 'available': int},
                 },
                 Optional('known_spells'): int,
                 'boons': {
@@ -78,24 +78,13 @@ class OglSpec(AbstractSpec, HasOglLikeInventoryTrait):
             }
         )
 
-    def _load_subdocuments(self, lookup_paths):
-        if "inventory" in self.doc and self["inventory"] != REMOVE:
-            if "on_hand" in self.doc["inventory"] and self["inventory"]["on_hand"] != REMOVE:
-                lst = []
-                for x in self["inventory"]["on_hand"]:
-                    lst.append(load_subdocument(x, self, OglItem, lookup_paths))
-                self["inventory"]["on_hand"] = lst
-            if "stored" in self.doc["inventory"] and self["inventory"]["stored"] != REMOVE:
-                lst = []
-                for x in self["inventory"]["stored"]:
-                    lst.append(load_subdocument(x, self, OglItem, lookup_paths))
-                self["inventory"]["stored"] = lst
-        if "spells" in self.doc and self["spells"] != REMOVE:
-            lst = []
-            for x in self["spells"]:
-                lst.append(load_subdocument(x, self, OglSpell, lookup_paths))
-            self["spells"] = lst
-        return self
+    @classmethod
+    def subdocuments(cls):
+        return [
+            ("inventory/on_hand[]", OglItem),
+            ("inventory/stored[]", OglItem),
+            ("spells[]", OglSpell),
+        ]
 
     def has_any_spells(self):
         for spell_slot in self['spell_slots'].values():
@@ -124,23 +113,29 @@ class OglSpec(AbstractSpec, HasOglLikeInventoryTrait):
             ini_boon = self._mod(self['stats'][ini_boon])
         return self.dex_m() + ini_boon
 
+    @variable_helper
     def str_m(self):
-        return self._mod(self['stats']['str'])
+        return self._mod(self.internal_get('stats')['str'])
 
+    @variable_helper
     def dex_m(self):
-        return self._mod(self['stats']['dex'])
+        return self._mod(self.internal_get('stats')['dex'])
 
+    @variable_helper
     def con_m(self):
-        return self._mod(self['stats']['con'])
+        return self._mod(self.internal_get('stats')['con'])
 
+    @variable_helper
     def int_m(self):
-        return self._mod(self['stats']['int'])
+        return self._mod(self.internal_get('stats')['int'])
 
+    @variable_helper
     def wis_m(self):
-        return self._mod(self['stats']['wis'])
+        return self._mod(self.internal_get('stats')['wis'])
 
+    @variable_helper
     def cha_m(self):
-        return self._mod(self['stats']['cha'])
+        return self._mod(self.internal_get('stats')['cha'])
 
     def _mod(self, x):
         return floor((x - 10) / 2)

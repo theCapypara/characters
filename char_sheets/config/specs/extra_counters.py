@@ -1,11 +1,6 @@
-from math import ceil, floor
-
-from configcrunch import DocReference, REMOVE, load_subdocument
 from schema import Schema, Optional, Or
 
 from char_sheets.config.specs import AbstractSpec
-from char_sheets.config.specs.ref_dndpkmn.dndpkmn_ability import DndPkmnAbility
-from char_sheets.config.specs.ref_dndpkmn.dndpkmn_attack import DndPkmnAttack
 
 
 class ExtraCountersSpec(AbstractSpec):
@@ -24,3 +19,7 @@ class ExtraCountersSpec(AbstractSpec):
                 }]
             }
         )
+
+    @classmethod
+    def subdocuments(cls):
+        return []

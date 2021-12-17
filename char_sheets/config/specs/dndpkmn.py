@@ -1,6 +1,6 @@
 from math import ceil, floor
 
-from configcrunch import DocReference, REMOVE, load_subdocument
+from configcrunch import DocReference
 from schema import Schema, Optional
 
 from char_sheets.config.specs import AbstractSpec
@@ -63,15 +63,12 @@ class DndPkmn(AbstractSpec):
             }
         )
 
-    def _load_subdocuments(self, lookup_paths):
-        if "ability" in self.doc and self["ability"] != REMOVE:
-            self["ability"] = load_subdocument(self["ability"], self, DndPkmnAbility, lookup_paths)
-        if "attacks" in self.doc and self["attacks"] != REMOVE:
-            lst = []
-            for x in self["attacks"]:
-                lst.append(load_subdocument(x, self, DndPkmnAttack, lookup_paths))
-            self["attacks"] = lst
-        return self
+    @classmethod
+    def subdocuments(cls):
+        return [
+            ("ability", DndPkmnAbility),
+            ("attacks[]", DndPkmnAttack)
+        ]
 
     def nature_plus(self):
         return NATURE_MAP[self['nature']][0]
