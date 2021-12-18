@@ -1,0 +1,10 @@
+talent:
+  name: Insomnia
+  description: >
+    No matter what you do you find it near impossible to sleep.
+    You can not gain the benefits from a full rest, however you can use this newfound down time to do other
+    things that are calming and relaxing such as doing activities with your gear or studying.
+    After doing down time activities for at least 6 hours all effects that are reset with a full rest become reset
+    such as talents or items with limited uses. This does not reset HP.
+  type: soul
+  level: 2

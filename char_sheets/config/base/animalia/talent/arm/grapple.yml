@@ -1,11 +1,9 @@
 talent:
   name: Grapple
   description: >
-    You hold on tight to your target and attempt to keep them in place.
-
-    By using one action point you can cause a creature ,no larger than twice your size,
-    within 5 feet to make an Arm skill check contested by your Arm skill.
-
+    You hold on tight to your target and attempt to keep them in place. By using one action point you can cause a creature,
+    no larger than twice your size, within 5 feet to make an Arm skill check contested by your Arm skill.
     If failed they become grappled.
+
   type: arm
-  level: 3
+  level: 5

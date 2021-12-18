@@ -36,9 +36,9 @@ character:
       max_hp: 20
       stats:
         arm: 3
-        leg: 0
-        head: 3
-        soul: 1
+        leg: 3
+        head: 5
+        soul: 2
       house: Filiform
       languages:
         - Filiform
@@ -46,14 +46,12 @@ character:
       talents:
         arm:
           - $ref: /animalia/talent/arm/shove
-          - $ref: /animalia/talent/arm/sticky_fingers
-          - $ref: /animalia/talent/arm/grapple
-        leg: [ ]
+        leg:
+          - $ref: /animalia/talent/leg/acrobat
         head:
-          - $ref: /animalia/talent/head/silver_tongue
-          - $ref: /animalia/talent/head/blade_master
           - $ref: /animalia/talent/head/doctor
-        soul: [ ]
+        soul:
+          - $ref: /animalia/talent/soul/insomnia
         subspecies:
           - $ref: /animalia/talent/subspecies/blue_ghost/_1
           - $ref: /animalia/talent/subspecies/blue_ghost/_2

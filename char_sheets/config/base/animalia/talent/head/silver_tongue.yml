@@ -2,7 +2,6 @@ talent:
   name: Silver Tongue
   description: >
     You are good at using your words to get others to side with you.
-
     Gain +1 on skill checks when attempting to persuade a non hostile creature.
   type: head
-  level: 1
+  level: 3

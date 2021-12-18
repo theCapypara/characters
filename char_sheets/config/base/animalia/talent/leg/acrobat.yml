@@ -1,0 +1,7 @@
+talent:
+  name: Acrobat
+  description: >
+    Your balance and skill always seems to come in handy on your adventures.
+    Gain +1 to any skill check involving balance or acrobatics.
+  type: leg
+  level: 3

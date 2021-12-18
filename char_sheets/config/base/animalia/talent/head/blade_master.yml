@@ -1,7 +1,7 @@
 talent:
   name: Blade Master
   description: >
-    You have the skills and knowledge to use all bladed weapons without need for having the proper arm
-    skill level. (bladed weapons include but not limited to, long sword, short sword, dagger, axe and rapier)
+    You have the skills and knowledge to use all bladed weapons without need for having the proper arm skill level.
+    (bladed weapons include but not limited to, long sword, short sword, dagger, axe and rapier)
   type: head
-  level: 2
+  level: 4
