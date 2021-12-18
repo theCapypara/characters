@@ -22,11 +22,16 @@ class AnimaliaWeapon(YamlConfigDocument):
                 'name': str,
                 'two_handed': bool,
                 'dice': str,
+                Optional('range'): {
+                    'min': int,
+                    'max': int
+                },
                 'actions': {
                     Optional('thrust'): SkillRequiredSpec,
                     Optional('slash'): SkillRequiredSpec,
                     Optional('stab'): SkillRequiredSpec,
 
+                    Optional('bite'): SkillRequiredSpec,
                     Optional('punch'): SkillRequiredSpec,
                     Optional('kick'): SkillRequiredSpec,
                     Optional('whip'): SkillRequiredSpec,
@@ -35,10 +40,6 @@ class AnimaliaWeapon(YamlConfigDocument):
 
                     Optional('pierce'): SkillRequiredSpec,
                     Optional('throw'): RangedSkillRequiredSpec,
-
-                    Optional('parry'): {
-                        'skill': str, 'skill_amount': int
-                    },
 
                     Optional('advanced'): {
                         str: str

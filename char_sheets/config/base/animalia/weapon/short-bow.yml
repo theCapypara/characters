@@ -1,9 +1,12 @@
 weapon:
-  name: Rapier
-  two_handed: false
-  dice: 1d8
+  name: Short Bow
+  range:
+    min: 60
+    max: 320
+  two_handed: true
+  dice: 1d6
   actions:
-    thrust:
+    pierce:
       skill: leg
       skill_amount: 5
       damage_type: piercing

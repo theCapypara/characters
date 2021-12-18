@@ -2,7 +2,7 @@ character:
   template: animalia
   system: Animalia
   full_name: Dr. Maurice Prometeus
-  short_description: A overly curious scientist.
+  short_description: Overly curious scientist.
   bg: /static/assets/bg/char1.jpg
   stash: { }
   spec:
@@ -32,8 +32,8 @@ character:
       race: Coleoptera
       species: Lampyridae | Firefly
       subspecies: Phausis reticulata | Blue Ghost
-      current_hp: 20
-      max_hp: 20
+      current_hp: 30
+      max_hp: 30
       stats:
         arm: 3
         leg: 3
@@ -62,22 +62,21 @@ character:
           actions:
             whip: $remove
             claw: $remove
-        - $ref: /animalia/weapon/rapier
+        - $ref: /animalia/weapon/short-bow
       armor:
         - $ref: /animalia/armor/padded
-        - $ref: /animalia/armor/shield
       inventory:
         on_hand:
           - name: Medical Kit (Bandages)
-            notes: Take 3 action points to use. Heals HP equal to 1D10 + the users Head skill
+            notes: Takes 3 action points to use. Heals HP equal to 1D10 + the users Head skill
           - name: Medical Kit (Cleaning solution)
-            notes: Take 2action points to use. Heals HP equal to 1D6 + the users Head skill
+            notes: Takes 2 action points to use. Heals HP equal to 1D6 + the users Head skill
           - name: Medical Kit (Needle and thread)
-            notes: Take 3 action points to use. Heals HP equal to 2D6 + the user's head skill but takes 1D4 damage after healing.
+            notes: Takes 3 action points to use. Heals HP equal to 2D6 + the user's head skill but takes 1D4 damage after healing.
           - name: Medical Kit (Gauze)
-            notes: Take 1 action point to use. Heals HP equal to 1D4 + the user’s head skill
+            notes: Takes 1 action point to use. Heals HP equal to 1D4 + the user’s head skill
           - name: Medical Kit (Splint)
-            notes: Take 4 action points to use. Heals HP equal to 2D8 + the users head skill
+            notes: Takes 4 action points to use. Heals HP equal to 2D8 + the users head skill
         stored: [ ]
       money:
         gp: 0

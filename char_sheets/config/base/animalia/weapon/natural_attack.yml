@@ -1,8 +1,12 @@
 weapon:
   name: Natural Attack
   two_handed: false
-  dice: 1d8
+  dice: 1d4
   actions:
+    bite:
+      skill: none
+      skill_amount: 0
+      damage_type: piercing
     punch:
       skill: none
       skill_amount: 0
