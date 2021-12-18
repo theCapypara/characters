@@ -1,10 +1,11 @@
 talent:
-  name: "?"
+  name: "2"
   description: >
-    You have a strong connection with those that have passed on.
-    If you meditate for 20 minutes on a mostly intact corpse you can see its last moments as if they were
-    your own. If you meditate for one hour you can learn a basic outline of their life.
+    You can cause your abdomen to glow brightly lighting up the area around.
+    Using one action point you can activate your light (it can be either green or blue).
 
-    These memories/ visions can not be deceptive and will always tell the truth.
+    This glow lights up the area around you for 30 feet as if it were bright light and an additional 20 feet after
+    that as if it were dim light. If you glow for over 2 hours your glow will fade and you will be unable to glow till
+    the end of your next full rest. You can change your glow's color without using action points once per round.
   type: subspecies
   level: 0

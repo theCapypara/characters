@@ -1,7 +1,6 @@
 from abc import ABC, abstractmethod
-from collections import Callable
 from tempfile import SpooledTemporaryFile
-from typing import Union
+from typing import Union, Callable
 
 import pdfrw
 

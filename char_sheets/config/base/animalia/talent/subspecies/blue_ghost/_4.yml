@@ -1,0 +1,11 @@
+talent:
+  name: "4"
+  description: >
+    You have a toxic saliva in your mouth that allows you to melt food and paralyze foes.
+    When taking the bite attack action you may use one extra action point to lace your bite with poison.
+    This action is consumed after you succeed the to hit roll.
+
+    Any creature who you bite must make a Soul skill check greater than a DT of 7 + your head skill.
+    If failed they gain the paralized condition. You may use this talent up to 4 times per long rest.
+  type: subspecies
+  level: 0

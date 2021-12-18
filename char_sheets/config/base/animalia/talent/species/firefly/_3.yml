@@ -1,9 +1,0 @@
-talent:
-  name: "?"
-  description: >
-    Your species has its own unique language that it can read and understand.
-    It consists of flashing lights for different lengths of time.
-
-    You can read and communicate in morse code.
-  type: species
-  level: 0

@@ -1,11 +1,12 @@
 talent:
-  name: "?"
+  name: "1"
   description: >
-    Once per full rest when you glow, any creature who is hostile towards
-    you must make a head check greater then 6+ your soul skill.
+    Eyesight is important for all creatures, male Reticulata have this talent in spades.
 
-    If failed they become frightened and can not move towards you.
-    The frightened effect wears off if they take damage, if they lose line of sight of you or if they use
-    2 action points to make the skill check again and succeed.
+    If you are a male Reticulata you can see in the dark.
+    In pitch black you can see things as if it were mid day. You can not see color, but rather everything is in black and white.
+
+    If you are a female Reticulata then you have great skills when it comes to digging.
+    You add twice your arm skill when digging rather than adding it once. You also can dig a minimum of 2 cubed feet in half an hour.
   type: subspecies
   level: 0

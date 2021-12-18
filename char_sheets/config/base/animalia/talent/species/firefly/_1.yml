@@ -1,9 +1,0 @@
-talent:
-  name: "?"
-  description: >
-    Your lower abdomen can radiate light in even the darkest of times.
-    Use an action point to turn your light on or off.
-
-    When your light is on you illuminate 20 feet around you in dim light.
-  type: species
-  level: 0

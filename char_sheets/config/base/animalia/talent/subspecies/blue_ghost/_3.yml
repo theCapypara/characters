@@ -1,0 +1,7 @@
+talent:
+  name: "3"
+  description: >
+    Your blue glow can cause others to be weary around you.
+    When you are glowing blue gain advantage on all intimidation skill checks against hostile creatures.
+  type: subspecies
+  level: 0

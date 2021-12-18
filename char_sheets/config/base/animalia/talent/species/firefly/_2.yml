@@ -1,9 +1,0 @@
-talent:
-  name: "?"
-  description: >
-    Your eyes are good at seeing in low lighting.
-    In pitch black you can see things as if it were mid day.
-
-    You can not see color, but rather everything is in black and white.
-  type: species
-  level: 0

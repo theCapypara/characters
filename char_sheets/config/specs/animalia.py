@@ -39,7 +39,6 @@ class AnimaliaSpec(AbstractSpec, HasOglLikeInventoryTrait):
                     'leg': [DocReference(AnimaliaTalent)],
                     'head': [DocReference(AnimaliaTalent)],
                     'soul': [DocReference(AnimaliaTalent)],
-                    'species': [DocReference(AnimaliaTalent)],
                     'subspecies': [DocReference(AnimaliaTalent)],
                 },
                 'weapons': [DocReference(AnimaliaWeapon)],
@@ -70,7 +69,6 @@ class AnimaliaSpec(AbstractSpec, HasOglLikeInventoryTrait):
             ("talents/leg[]", AnimaliaTalent),
             ("talents/head[]", AnimaliaTalent),
             ("talents/soul[]", AnimaliaTalent),
-            ("talents/species[]", AnimaliaTalent),
             ("talents/subspecies[]", AnimaliaTalent),
         ]
 

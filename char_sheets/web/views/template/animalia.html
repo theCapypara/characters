@@ -94,24 +94,7 @@
 
 
 
-<h2 id="stat_talents">Stat Talents</h2>
-{% if len(char.spec('animalia')['talents']['species']) > 0 %}
-<h3>{{ char.spec('animalia')['species'] }}:</h3>
-<div class="tablec">
-    <table class="striped">
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-        </tr>
-        {% for s in char.spec('animalia')['talents']['species'] %}
-            <tr>
-                <td class="important centered">{{ s['name'] }}</td>
-                <td>{{ s['description'] }}</td>
-            </tr>
-        {% end %}
-    </table>
-</div>
-{% end %}
+<h2 id="stat_talents">Species Talents</h2>
 {% if len(char.spec('animalia')['talents']['subspecies']) > 0 %}
 <h3>{{ char.spec('animalia')['subspecies'] }}:</h3>
 <div class="tablec">

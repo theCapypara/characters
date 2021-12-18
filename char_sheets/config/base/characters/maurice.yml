@@ -38,7 +38,7 @@ character:
         arm: 3
         leg: 0
         head: 3
-        soul: 0
+        soul: 1
       house: Filiform
       languages:
         - Filiform
@@ -54,14 +54,11 @@ character:
           - $ref: /animalia/talent/head/blade_master
           - $ref: /animalia/talent/head/doctor
         soul: [ ]
-        species:
-          - $ref: /animalia/talent/species/firefly/_1
-          - $ref: /animalia/talent/species/firefly/_2
-          - $ref: /animalia/talent/species/firefly/_3
-          - $ref: /animalia/talent/species/firefly/_4
         subspecies:
           - $ref: /animalia/talent/subspecies/blue_ghost/_1
           - $ref: /animalia/talent/subspecies/blue_ghost/_2
+          - $ref: /animalia/talent/subspecies/blue_ghost/_3
+          - $ref: /animalia/talent/subspecies/blue_ghost/_4
       weapons:
         - $ref: /animalia/weapon/natural_attack
           actions:
