@@ -1,0 +1,235 @@
+character:
+  template: dndpkmn
+  system: Yeesha Stone's Pokémon D&D 5e
+  full_name: Roowk Flintbeak
+  short_description: A healer that has a hard time remembering things.
+  bg: /static/assets/bg/char1.jpg
+  stash:
+    hp: 8
+    pp: 5
+    inspiration: 0
+    spell_slots:
+      "1": 3
+    money:
+      gp: 10
+      sp: 0
+      cp: 0
+    abilities:
+      detect_poison: 2
+      healer: 2
+  spec:
+    general:
+      gender: Male
+      age: 24
+      images:
+        - /static/assets/chars/roowk/duskako_1.png
+        - /static/assets/chars/roowk/duskako_2.png
+      image_credits: "Artist: Orbelune. The pictures are generic to the race."
+      home: Unknown
+      lore:
+        bonds: |
+          - (From Background, rolled: My family, clan, or tribe is the most important thing in my life, even when they are far from me.)
+          - Ritairri Flintbeak: Father, he remembers spending most of his time with him, learning his skills from him. He remembers him being an important person, not just for him.
+          - Qatia Flintbeak: Mother, he doesn't remember much about her, in fact he isn't sure he ever really saw her much.  
+          - Kuayuk (male): Roowk remembers this name fondly, he's thinking he may have been a very good front of him. Turns out this is just his trauma from why he even ended up stranded without memory here at the first place. Kuayuk is the reason. (Note to DM: I leave up to you why and what happened and whether or not the reason was an accident or malice).
+          - Icean (female): He is very familiar to that name, but can't remember exactly who she is. It turns out she was his best friend and he had a crush on her.
+        personality: |
+          - Absolutely loves to read and aborbs knowledge. Very curious.
+          - Doesn't talk too much, but when he does, he speaks very fast and sometimes trips over his own words.
+          - Has a natural tendency to mistrust others in unknown situations.
+          - Has selective issues with short-term memory (Note to DM: maybe roll for that in some crucial situations?). 
+            This generally mostly seems to affect information related to him/his situation or sorroundings, 
+            so he can usually remember facts etc. This also affects his navigating skills sometimes (compare 'Wanderer' extra ability).
+          - Hides when he senses danger.
+          - Very protective of others in his group, maybe even overly so. Cares for others who are sick.
+          -	I watch over my friends as if they were a litter of newborn pups. (Outlander Background) 
+          -	I remember every insult I've received and nurse a silent resentment toward anyone who's ever wronged me. (Outlander Background Flaw, rolled (except 6))
+        backstory: >
+          Roowk was a healer in a flock of Duskako that traveled far and wide across the world.
+          Roowk vaguely recalls that his flock were a group of nomads.
+
+          It isn't entirely sure how he ended up in this place specifically, he just woke up a few days
+          before the adventure, seemingly having crashed into a tree. He kinda most things, but he has
+          absolutely no recollection of the journey he was on, who he was travelling with, or how he
+          ended up here. He also doesn't remember details of his home flock, other than names of his 
+          parents and close friends.
+
+          He has an instinct to heal and protect others, but doesn't really know why. He also has
+          other magical abilities, and remembers being trained in those, but not why.
+
+          Roowk seems to be "sick spells", having to cough and take breaks regularly when having one, he doesn't really know why. 
+          He is not aware of how his natural ability to absorb sickness works and that this makes him sicker.
+
+          He doesn't know the name of his race, his race is also not known across these lands.
+        extra: |
+          Origin (Background): Pilgrim
+          Ideal (Background, rolled): Nature. The natural world is more important than all the constructs of civilization. (Neutral)
+
+          Roowk wants to find out how he ended up here and where he even came from.
+
+          Note to DM regarding bonds and backstory: 
+          If you want you can use this as a hook and make up more details. 
+          I can also give you a bit more if you want, but I kinda would also love to learn along with my character.
+    ogl:
+      $ref: ogl
+      current_hp: "{{ parent().parent()['stash']['hp'] }}"
+
+      class: Wizard
+      subclass: School of Abjuration
+      level: 2
+      race: Duskako
+      alignment: NG
+      size_class: Tiny
+      spellcasting_mod: int
+      stats:
+        str: 10
+        dex: 13
+        con: 9
+        int: 19
+        wis: 15
+        cha: 11
+      boons: {}
+      movement:
+        land: 30
+        climb: 15
+        fly: 60
+      vision: 3000
+      max_hp: 8
+      hit_dice: 6
+      languages: ["Common", "Eknamish", "?"]
+      race_abilities:
+        - "Detect Poisons and Diseases: May cast 'Detect Poison and Diseases' 2 times per long rest."
+      class_abilities:
+        - >
+          Spellbook: http://dnd5e.wikidot.com/wizard
+        - >
+          Preparing and Casting Spells: http://dnd5e.wikidot.com/wizard
+        - >
+          Ritual Casting:
+          You can cast a wizard spell as a ritual if that spell has the ritual tag and you have the spell in your spellbook. You don't need to have the spell prepared.
+        - >
+          Spellcasting Focus:
+          You can use an arcane focus as a spellcasting focus for your wizard spells.
+          Learning Spells of 1st Level and Higher
+
+          Each time you gain a wizard level, you can add two wizard spells of your choice to your spellbook. Each of these spells must be of a level for which you have spell slots, as shown on the Wizard table. On your adventures, you might find other spells that you can add to your spellbook.
+        - >
+          Arcane Recovery:
+          You have learned to regain some of your magical energy by studying your spellbook. Once per day when you finish a short rest, you can choose expended spell slots to recover. The spell slots can have a combined level that is equal to or less than half your wizard level (rounded up), and none of the slots can be 6th level or higher.
+
+          For example, if you're a 4th-level wizard, you can recover up to two levels worth of spell slots. You can recover either a 2nd-level spell slot or two 1st-level spell slots.
+        - >
+          Abjuration Savant:
+          Beginning when you select this school at 2nd level, the gold and time you must spend to copy a abjuration spell into your spellbook is halved.
+        - >
+          Arcane Ward:
+          Starting at 2nd level, you can weave magic around yourself for protection. When you cast an abjuration spell of 1st level or higher, you can simultaneously use a strand of the spell's magic to create a magical ward on yourself that lasts until you finish a long rest. The ward has hit points equal to twice your wizard level + your Intelligence modifier. Whenever you take damage, the ward takes the damage instead. If this damage reduces the ward to 0 hit points, you take any remaining damage.
+
+          While the ward has 0 hit points, it can't absorb damage, but its magic remains. Whenever you cast an abjuration spell of 1st level or higher, the ward regains a number of hit points equal to twice the level of the spell.
+
+          Once you create the ward, you can't create it again until you finish a long rest.
+      extra_abilities:
+        - >
+          Wanderer (Background):
+          You have an excellent memory for maps and geography, and you can always recall the general layout of terrain, settlements, and other features around you. 
+          In addition, you can find food and fresh water for yourself and up to five other people each day, provided that the land offers berries, small game, water, 
+          and so forth.
+      feats: 
+        - >
+          Healer:
+          You can stabilize a creature and restore it to 1 hp, or restore [1d6+4+its number of Hit Dice] hp to it.
+      inventory:
+        on_hand:
+          - name: Traveler's Clothes
+          - name: Staff (Arcane Focus)
+          - name: Backpack
+          - name: Empty Book
+            notes: It seems like there used to be text in it, but it's not readable anymore.
+          - name: Bottle of Ink
+          - name: Ink Pen
+          - name: Bag of Sand
+          - name: Small Nnife
+          - name: Hunting Trap
+          - name: Small Skull?
+            notes: He is not sure why he has this.
+        stored: []
+      money:
+        gp: "{{ parent().parent()['stash']['money']['gp'] }}"
+        sp: "{{ parent().parent()['stash']['money']['sp'] }}"
+        cp: "{{ parent().parent()['stash']['money']['cp'] }}"
+      spell_slots:
+        "1": { max: 3, available: "{{ parent().parent()['stash']['spell_slots']['1'] }}" }
+      spells:
+        # Cantrips (3):
+        - $ref: dnd5e/spells/chill-touch
+        - $ref: dnd5e/spells/gust
+        - $ref: dnd5e/spells/minor-illusion
+        # 1 (6):
+        - $ref: dnd5e/spells/sleep
+        - $ref: dnd5e/spells/cause-fear
+        - $ref: dnd5e/spells/charm-person
+        - $ref: dnd5e/spells/mage-armor
+        - $ref: dnd5e/spells/ray-of-sickness
+        - $ref: dnd5e/spells/shield
+        # Extras:
+        - $ref: dnd5e/spells/detect-poison-and-disease
+          special: Via Race
+        - $ref: dnd5e/spells/lesser-restoration
+          special: "Via Ability: WIS Mod!"
+    dnd5e:
+      $ref: dnd5e
+      background: Outlander
+      inspiration: "{{ parent().parent()['stash']['inspiration'] }}"
+      proficiency: 2
+      proficiencies:
+        weapons_named:
+          - Daggers
+          - Darts
+          - Slings
+          - Quarterstaffs
+          - Light Crossbows
+        saves:
+          int: true
+          wis: true
+      weapons:
+        - name: Quarterstaff
+          finese: false
+          ranged: false
+          wpn_type: simple
+          dmg_type: bludgeoning
+          damage_dice: 1d6
+      armor:
+        ac: 10
+        name: No Armor
+        stats: ["dex"]
+      skills:
+        Medicine: {proficiency: true}
+        Investigation: {proficiency: true}
+        Athletics: {proficiency: true}
+        Survival: {proficiency: true}
+      prepared_spells:
+        - Sleep
+        - Cause Fear
+        - Charm Person
+        - Mage Armor
+        - Ray of Sickness
+        - Shield
+    dndpkmn:
+      types: ["Ghost", "Flying"]
+      current_pp: "{{ parent().parent()['stash']['pp'] }}"
+      boons:
+        pp: 0
+      nature: modest
+      ability:
+        name: Healer
+        description: May cast 'Lesser Restoration' 1 time per long rest with WIS as spellcasting modifier.
+      attacks:
+        - $ref: dndpkmn/attacks/defog
+    extra_counters:
+      counters:
+        - name: Detect Poison/Disases
+          available: "{{ parent().parent().stash.abilities.detect_poison }}"
+          max: "2"
+        - name: Healer
+          available: "{{ parent().parent().stash.abilities.healer }}"
+          max: "2"

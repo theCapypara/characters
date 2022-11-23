@@ -6,6 +6,8 @@ characters:
       $ref: /characters/taida
     arran:
       $ref: /characters/arran
+    roowk:
+      $ref: /characters/roowk
     tariko:
       $ref: /characters/tariko
     khij:

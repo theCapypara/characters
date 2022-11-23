@@ -73,6 +73,7 @@ class Dnd5eSpec(AbstractSpec, OglAware):
                         'martial': bool,
                         'unarmed': bool
                     },
+                    'weapons_named': [str],
                     'tools': [str],
                     'armor': {
                         'light': bool,
@@ -96,6 +97,7 @@ class Dnd5eSpec(AbstractSpec, OglAware):
                     'stats': [str],
                 },
                 'skills': build_dnd_skills(),
+                Optional('prepared_spells'): [str],
             }
         )
 
@@ -149,6 +151,7 @@ class Dnd5eSpec(AbstractSpec, OglAware):
             ls.append('Martial')
         if self['proficiencies']['weapons']['unarmed']:
             ls.append('Unarmed')
+        ls.extend(self['proficiencies']['weapons_named'])
         return ', '.join(ls)
 
     def armor_proficiencies(self):
@@ -162,6 +165,13 @@ class Dnd5eSpec(AbstractSpec, OglAware):
         if self['proficiencies']['armor']['shields']:
             ls.append('Shields')
         return ', '.join(ls)
+
+    def prepared_spells_count(self):
+        # TODO: just wizard level!
+        return getattr(self.parent().parent().spec('ogl'), self.parent().parent().spec('ogl')['spellcasting_mod'] + '_m')() + self.parent().parent().spec('ogl')['level']
+
+    def prepared_spells_list(self):
+        return ', '.join(self['prepared_spells'])
 
     def tool_proficiencies(self):
         return ', '.join(self['proficiencies']['tools'])

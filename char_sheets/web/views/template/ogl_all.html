@@ -668,6 +668,12 @@
                 <td class="important">{{ char.spec('dnd5e').spellcast_dc() }}</td>
             </tr>
             {% end %}
+            {% if char.has_spec('dnd5e') and 'prepared_spells' in char.spec('dnd5e') %}
+            <tr>
+                <th>Prepared Spells (max {{ char.spec('dnd5e').prepared_spells_count() }})</th>
+                <td>{{ char.spec('dnd5e').prepared_spells_list() }}</td>
+            </tr>
+            {% end %}
         </table>
     </div>
     {% end %}

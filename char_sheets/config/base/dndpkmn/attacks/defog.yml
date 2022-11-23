@@ -1,0 +1,19 @@
+dndpkmn_attack:
+  name: Defog
+  type: Fyling
+  description: |
+    You focus and cause the air in front of a creature to become hazzy and hard to see out of. 
+    Only you can cause it to disappear.
+    
+    All creatures, besides you, within 30 feet must make a Wisdom saving throw. If they are a willing creature they 
+    may choose to fail the save. If failed all advantages or disadvantages created from spells or racial attacks are reset. 
+    
+    Your DC save for this attack is 8+ proficiency bonus + Wisdom Modifier.
+  atk_bonus_or_save:
+    dice: ''
+    fixed: 8
+    stats: ["wis"]
+  save: wis
+  pp: 3
+  target: Area
+  range: 30
