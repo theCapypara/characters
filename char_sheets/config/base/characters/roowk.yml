@@ -24,7 +24,8 @@ character:
       images:
         - /static/assets/chars/roowk/duskako_1.png
         - /static/assets/chars/roowk/duskako_2.png
-      image_credits: "Artist: Orbelune. The pictures are generic to the race."
+        - /static/assets/chars/roowk/DuskakoMusic.png
+      image_credits: "First two images: [ Artist: Orbelune. The pictures are generic to the race. ] - Third image: [ Artist: Charburst. Illustration for SkyTemple, not specific to this character. ]"
       home: Unknown
       lore:
         bonds: |
@@ -70,6 +71,13 @@ character:
           Note to DM regarding bonds and backstory: 
           If you want you can use this as a hook and make up more details. 
           I can also give you a bit more if you want, but I kinda would also love to learn along with my character.
+        appearance: |
+          He is wearing a pointy dark purple Wizard's hat with a round base with a pattern faintly visible stars on it, 
+          it's slightly too big for his head. His ears have holes in the hat.
+          
+          He isn't wearing much except a belt with a holder for potions and other smaller items, see first image 
+          (note to DM - unless that doesn't fit into the world, in that case he is wearing a light dark purple / grayish 
+          wizard's robe underneath it).
     ogl:
       $ref: ogl
       current_hp: "{{ parent().parent()['stash']['hp'] }}"
@@ -134,6 +142,10 @@ character:
           You have an excellent memory for maps and geography, and you can always recall the general layout of terrain, settlements, and other features around you. 
           In addition, you can find food and fresh water for yourself and up to five other people each day, provided that the land offers berries, small game, water, 
           and so forth.
+        - >
+          Size (Tiny):
+          Your physical interactions with creatures medium creatures will usually be at disadvantage.
+          You carry half the weight. You get to move through enemy spaces, it just counts as difficult terrain.
       feats: 
         - >
           Healer:
@@ -141,7 +153,8 @@ character:
       inventory:
         on_hand:
           - name: Traveler's Clothes
-          - name: Staff (Arcane Focus)
+          - name: Wand (Arcane Focus)
+            notes: Can cast cantrip Light on it.
           - name: Backpack
           - name: Empty Book
             notes: It seems like there used to be text in it, but it's not readable anymore.

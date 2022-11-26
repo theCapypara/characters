@@ -32,6 +32,7 @@ class GeneralSpec(AbstractSpec):
                     Optional('flaws'): str,
                     Optional('ideals'): str,
                     Optional('extra'): str,
+                    Optional('appearance'): str,
                     #Optional('story_log'): [DocReference(StoryLog)],
                 }
             }

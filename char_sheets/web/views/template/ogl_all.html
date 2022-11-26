@@ -803,11 +803,11 @@
 
 
 
-{% if len(char.spec('general')['images']) > 1 %}
+{% if len(char.spec('general')['images']) > 0 %}
 <h2 id="images">Images</h2>
 <div class="char-img">
     <ul>
-        {% for image in char.spec('general')['images'][1:] %}
+        {% for image in char.spec('general')['images'] %}
             <li><a href="{{ image }}" target="_blank"><img src="{{ image }}"></a></li>
         {% end %}
     </ul>
@@ -873,6 +873,14 @@
         <table class="striped">
             <tr><th>Ideals</th></tr>
             <tr><td>{% raw p(char.spec('general')['lore']['ideals']) %}</td></tr>
+        </table>
+    </div>
+{% end %}
+{% if 'appearance' in char.spec('general')['lore'] %}
+    <div class="tablec">
+        <table class="striped">
+            <tr><th>Appearance</th></tr>
+            <tr><td>{% raw pab(char.spec('general')['lore']['appearance']) %}</td></tr>
         </table>
     </div>
 {% end %}
