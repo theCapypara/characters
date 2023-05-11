@@ -1,0 +1,9 @@
+talent:
+  name: "Seeing Red"
+  description: >
+    Your foe dares to challenge you!? Nothing will stop you from taking them down. 
+    You may use 1 action point to target a single creature you can see within 30 feet. 
+    You gain +1 on all damage rolls against them. If you target another creature, this talent is no 
+    longer active.
+  type: subspecies
+  level: 0

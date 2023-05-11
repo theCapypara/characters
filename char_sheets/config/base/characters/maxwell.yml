@@ -1,0 +1,51 @@
+character:
+  template: animalia
+  system: Animalia
+  full_name: Maxwell Brightgaze
+  short_description: <under construction>
+  bg: /static/assets/bg/char1.jpg
+  stash: { }
+  spec:
+    general:
+      gender: Male
+      images:
+        - https://yeeshastone.com/images/pics/subspecies/CardinalisImg1.png
+      image_credits: ""
+      lore:
+        bonds: TBD
+        personality: TBD
+        backstory: TBD
+    animalia:
+      species: Aves
+      subspecies: Cardinalis
+      current_hp: 30
+      max_hp: 30
+      stats:
+        arm: 2
+        leg: 1
+        head: 2
+        soul: 1
+      languages:
+        - TBD
+      talents:
+        arm: []
+        leg: []
+        head: []
+        soul: []
+        subspecies:
+          - $ref: /animalia/talent/subspecies/sweet_nothings
+          - $ref: /animalia/talent/subspecies/seeing_red
+          - $ref: /animalia/talent/subspecies/protection_from_the_cold
+      weapons: []
+      armor: []
+      inventory:
+        on_hand: []
+        stored: [ ]
+      money:
+        gp: 0
+        sp: 0
+        cp: 0
+      boons:
+        ac: 0
+    extra_counters:
+      counters: [ ]

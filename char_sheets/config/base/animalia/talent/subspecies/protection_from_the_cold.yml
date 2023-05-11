@@ -1,0 +1,9 @@
+talent:
+  name: "Protection from the Cold"
+  description: >
+    You are used to the cold weather. 
+    When traveling through extreme terrain that is cold, you gain no negative 
+    effects. However, you can still get cold if other outside factors affect you, 
+    such as wearing wet clothing.
+  type: subspecies
+  level: 0

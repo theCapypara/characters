@@ -25,14 +25,12 @@
     <div class="tablec">
         <table>
         <tr>
-            <th>Race</th>
-            <th>Species</th>
-            <th colspan="{{ char.spec('general').count_optional() }}">Subspecies</th>
+            <th>Subspecies</th>
+            <th colspan="{{ char.spec('general').count_optional() + 1 }}">Species</th>
         </tr>
         <tr>
-            <td>{{ p(char.spec('animalia')['race']) }}</td>
-            <td class="important big centered" rowspan="3">{{ p(char.spec('animalia')['species']) }}</td>
-            <td colspan="{{ char.spec('general').count_optional() }}">{{ p(char.spec('animalia')['subspecies']) }}</td>
+            <td class="important big centered" rowspan="3">{{ p(char.spec('animalia')['subspecies']) }}</td>
+            <td colspan="{{ char.spec('general').count_optional() + 1 }}">{{ p(char.spec('animalia')['species']) }}</td>
         </tr>
         <tr>
             <th>Gender</th>

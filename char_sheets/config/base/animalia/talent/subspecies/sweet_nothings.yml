@@ -1,0 +1,8 @@
+talent:
+  name: "Sweet Nothings"
+  description: >
+    Your songs can make even the most hard hearted of Aves swoon. 
+    When you sing any performance head skill checks you make gain +2. Any Aves who here hears your song and 
+    attempts to resist its allure with a skill check, gains -2 on their roll.
+  type: subspecies
+  level: 0

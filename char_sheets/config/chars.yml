@@ -1,7 +1,9 @@
 characters:
   characters:
-    maurice:
-      $ref: /characters/maurice
+    maxwell:
+      $ref: /characters/maxwell
+    #maurice:
+    #  $ref: /characters/maurice
     taida:
       $ref: /characters/taida
     arran:

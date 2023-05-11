@@ -21,7 +21,6 @@ class AnimaliaSpec(AbstractSpec, HasOglLikeInventoryTrait):
     def schema(cls) -> Schema:
         return Schema(
             {
-                'race': str,
                 'species': str,
                 'subspecies': str,
                 'current_hp': int,
@@ -32,7 +31,6 @@ class AnimaliaSpec(AbstractSpec, HasOglLikeInventoryTrait):
                     'head': int,
                     'soul': int
                 },
-                'house': str,
                 'languages': [str],
                 'talents': {
                     'arm': [DocReference(AnimaliaTalent)],

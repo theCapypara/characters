@@ -2,7 +2,7 @@ character:
   template: animalia
   system: Animalia
   full_name: Dr. Maurice Prometeus
-  short_description: Overly curious scientist.
+  short_description: <beta charatcer> Overly curious scientist.
   bg: /static/assets/bg/char1.jpg
   stash: { }
   spec:
