@@ -1,0 +1,3 @@
+ogl_spell:
+  $ref: ../base/resistance
+  level: 0

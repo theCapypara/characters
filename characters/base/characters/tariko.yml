@@ -109,6 +109,7 @@ character:
       max_hp: 58
       hit_dice: 10
       languages: ["Common", "Tribe language", "Jthooic"]
+      inspiration: "{{ parent().parent()['stash']['inspiration'] }}"
       race_abilities:
         - "Sweet Smells: The smell that wafts off of you causes those around you to be more friendly towards you, however it doesn’t last forever. You can use the Friends cantrip and do not need any components to do so. This is a temporary trait, when the sheet is finished it will be updated."
         - "Sunlight Nap: Sleeping in the sun helps you to feel more alive, more awake. If you take a long or short rest in the sunlight you regain all levels of exhaustion and gain proficiency on your first skill check after waking up. This is a temporary trait, when the sheet is finished it will be updated."
@@ -232,7 +233,6 @@ character:
     dnd5e:
       $ref: dnd5e
       background: Far Traveler
-      inspiration: "{{ parent().parent()['stash']['inspiration'] }}"
       proficiency: 3
       proficiencies:
         weapons:

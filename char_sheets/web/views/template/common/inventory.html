@@ -17,7 +17,13 @@ Params:
         {% for s in spec['inventory']['on_hand'] %}
             <tr>
                 <td class="important centered">{{ 'x' + str(s['count']) if 'count' in s and s['count'] > 1 else '' }}</td>
-                <td class="important">{{ s['name'] }}</td>
+                <td class="important">
+                    {% if 'link' in s %}
+                    <a href="{{ s['link'] }}" target="_blank">{{ s['name'] }}</a>
+                    {% else %}
+                    {{ s['name'] }}
+                    {% end %}
+                </td>
                 {% if any('weight' in x for x in spec['inventory']['on_hand'] ) %}<td>{{ s['weight'] if 'weight' in s else '' }}</td>{% end %}
                 <td>{{ s['notes'] if 'notes' in s else '' }}</td>
             </tr>
@@ -38,7 +44,13 @@ Params:
         {% for s in spec['inventory']['stored'] %}
             <tr>
                 <td class="important centered">{{ 'x' + s['count'] if 'count' in s and s['count'] > 1 else '' }}</td>
-                <td class="important">{{ s['name'] }}</td>
+                <td class="important">
+                    {% if 'link' in s %}
+                    <a href="{{ s['link'] }}" target="_blank">{{ s['name'] }}</a>
+                    {% else %}
+                    {{ s['name'] }}
+                    {% end %}
+                </td>
                 {% if any('weight' in x for x in spec['inventory']['stored'] ) %}<td>{{ s['weight'] if 'weight' in s else '' }}</td>{% end %}
                 <td>{{ s['notes'] if 'notes' in s else '' }}</td>
             </tr>

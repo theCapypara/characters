@@ -7,41 +7,41 @@ from char_sheets.config.specs.ref_pathfinder.pathfinder_armor import PathfinderA
 from char_sheets.config.specs.ref_pathfinder.pathfinder_weapon import PathfinderWeapon
 
 SKILL_MAP = {
-    "Acrobatics":                   ("dex", True,  "Akrobatik"),
+    "Acrobatics":                   ("dex", False, "Akrobatik"),
     "Appraise":                     ("int", False, "Schätzen"),
     "Bluff":                        ("cha", False, "Bluffen"),
-    "Climb":                        ("str", True,  "Klettern"),
+    "Climb":                        ("str", False, "Klettern"),
     "Craft":                        ("int", False, "Handwerk"),
     "Diplomacy":                    ("cha", False, "Diplomatie"),
     "Disable Device":               ("dex", True,  "Mechanismus ausschalten"),
     "Disguise":                     ("cha", False, "Verkleiden"),
-    "Escape Artist":                ("dex", True,  "Entfesselungskunst"),
-    "Fly":                          ("dex", True,  "Fliegen"),
-    "Handle Animal":                ("cha", False, "Mit Tieren umgehen"),
+    "Escape Artist":                ("dex", False, "Entfesselungskunst"),
+    "Fly":                          ("dex", False, "Fliegen"),
+    "Handle Animal":                ("cha", True,  "Mit Tieren umgehen"),
     "Heal":                         ("wis", False, "Heilkunde"),
     "Intimidate":                   ("cha", False, "Einschüchtern"),
-    "Knowledge (arcana)":           ("int", False, "Wissen (Arkanes)"),
-    "Knowledge (dungeoneering)":    ("int", False, "Wissen (Gewölbekunde)"),
-    "Knowledge (engineering)":      ("int", False, "Wissen (Baukunst)"),
-    "Knowledge (geography)":        ("int", False, "Wissen (Geographie)"),
-    "Knowledge (history)":          ("int", False, "Wissen (Geschichte)"),
-    "Knowledge (local)":            ("int", False, "Wissen (Lokales)"),
-    "Knowledge (nature)":           ("int", False, "Wissen (Natur)"),
-    "Knowledge (nobility)":         ("int", False, "Wissen (Adel und Königshäuser)"),
-    "Knowledge (planes)":           ("int", False, "Wissen (Die Ebenen)"),
-    "Knowledge (religion)":         ("int", False, "Wissen (Religion)"),
+    "Knowledge (arcana)":           ("int", True,  "Wissen (Arkanes)"),
+    "Knowledge (dungeoneering)":    ("int", True,  "Wissen (Gewölbekunde)"),
+    "Knowledge (engineering)":      ("int", True,  "Wissen (Baukunst)"),
+    "Knowledge (geography)":        ("int", True,  "Wissen (Geographie)"),
+    "Knowledge (history)":          ("int", True,  "Wissen (Geschichte)"),
+    "Knowledge (local)":            ("int", True,  "Wissen (Lokales)"),
+    "Knowledge (nature)":           ("int", True,  "Wissen (Natur)"),
+    "Knowledge (nobility)":         ("int", True,  "Wissen (Adel und Königshäuser)"),
+    "Knowledge (planes)":           ("int", True,  "Wissen (Die Ebenen)"),
+    "Knowledge (religion)":         ("int", True,  "Wissen (Religion)"),
     "Linguistics":                  ("int", False, "Sprachenkunde"),
     "Perception":                   ("wis", False, "Wahrnehmung"),
     "Perform":                      ("cha", False, "Auftreten"),
-    "Profession":                   ("wis", False, "Beruf"),
-    "Ride":                         ("dex", True,  "Reiten"),
+    "Profession":                   ("wis", True,  "Beruf"),
+    "Ride":                         ("dex", False, "Reiten"),
     "Sense Motive":                 ("wis", False, "Motiv erkennen"),
     "Sleight of Hand":              ("dex", True,  "Fingerfertigkeit"),
-    "Spellcraft":                   ("int", False, "Zauberkunde"),
-    "Stealth":                      ("dex", True,  "Heimlichkeit"),
+    "Spellcraft":                   ("int", True,  "Zauberkunde"),
+    "Stealth":                      ("dex", False, "Heimlichkeit"),
     "Survival":                     ("wis", False, "Überlebenskunst"),
-    "Swim":                         ("str", True,  "Schwimmen"),
-    "Use Magic Device":             ("cha", False, "Magischen Gegenstand benutzen"),
+    "Swim":                         ("str", False, "Schwimmen"),
+    "Use Magic Device":             ("cha", True,  "Magischen Gegenstand benutzen"),
 }
 
 
@@ -53,6 +53,7 @@ def build_pathfinder_skills():
             'ranks': int,
             Optional('boon'): int,
             Optional('type'): str,
+            Optional('usable_untrained'): bool
         }
     return skls
 
@@ -81,6 +82,18 @@ class PathfinderSpec(AbstractSpec, OglAware):
                         'will': int,
                         'fortitude': int
                     }
+                },
+                Optional('known_spells'): {
+                    Optional('0'): int,
+                    Optional('1'): int,
+                    Optional('2'): int,
+                    Optional('3'): int,
+                    Optional('4'): int,
+                    Optional('5'): int,
+                    Optional('6'): int,
+                    Optional('7'): int,
+                    Optional('8'): int,
+                    Optional('9'): int,
                 },
                 'weapons': [DocReference(PathfinderWeapon)],
                 'armor': [DocReference(PathfinderArmor)],
@@ -141,8 +154,8 @@ class PathfinderSpec(AbstractSpec, OglAware):
     def skill_bonus(self, skill_name):
         skill = self["skills"][skill_name]
         class_bonus = 3 if skill['ranks'] > 0 and skill['class_skill'] else 0
-        if SKILL_MAP[skill_name][1] and skill['ranks'] < 1:  # Needs training
-            return 0
+        if not ("usable_untrained" in skill and skill["usable_untrained"]) and SKILL_MAP[skill_name][1] and skill['ranks'] < 1:  # Needs training
+            return -99
         return self.skill_attribute_bonus(skill_name) + skill['ranks'] + (skill['boon'] if 'boon' in skill else 0) + class_bonus
 
     def spellcast_dc(self, level: int):

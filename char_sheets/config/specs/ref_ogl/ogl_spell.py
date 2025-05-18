@@ -1,5 +1,5 @@
 from configcrunch import YamlConfigDocument
-from schema import Schema, Optional
+from schema import Schema, Optional, Or
 
 from char_sheets.ui_methods import size
 
@@ -15,13 +15,15 @@ class OglSpell(YamlConfigDocument):
             {
                 Optional('$ref'): str,
                 'name': str,
+                Optional('link'): str,
                 Optional('special'): str,
                 'level': int,
                 Optional('components'): str,
                 'casting_time': str,
-                'range': int,
+                'range': Or(int, str),
                 'duration': str,
                 Optional('save'): str,
+                Optional('resistance'): str,
                 'description': str,
             }
         )
@@ -31,6 +33,8 @@ class OglSpell(YamlConfigDocument):
         return []
 
     def range_text(self):
+        if isinstance(self['range'], str):
+            return self['range']
         if self['range'] == 0:
             return 'Touch'
         if self['range'] == -1:

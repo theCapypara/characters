@@ -19,6 +19,7 @@ class PathfinderArmor(YamlConfigDocument):
                 'arcane_fail_chance': int,
                 Optional('weight'): int,
                 'type': str,
+                Optional('link'): str,
                 Optional('notes'): str,
             }
         )

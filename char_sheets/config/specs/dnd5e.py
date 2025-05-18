@@ -51,7 +51,6 @@ class Dnd5eSpec(AbstractSpec, OglAware):
         return Schema(
             {
                 'background': str,
-                'inspiration': int,
                 'proficiency': int,
                 'boons': {
                     'saves': {

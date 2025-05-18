@@ -1,5 +1,5 @@
 from configcrunch import YamlConfigDocument
-from schema import Schema, Optional
+from schema import Schema, Optional, Or
 
 
 class OglItem(YamlConfigDocument):
@@ -14,8 +14,9 @@ class OglItem(YamlConfigDocument):
                 Optional('$ref'): str,
                 'name': str,
                 Optional('count'): int,
-                Optional('weight'): int,  # per piece
+                Optional('weight'): Or(int, float),  # per piece
                 Optional('notes'): str,
+                Optional('link'): str,
             }
         )
 

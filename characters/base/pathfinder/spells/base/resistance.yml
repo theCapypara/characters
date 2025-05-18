@@ -1,0 +1,15 @@
+ogl_spell:
+  name: Resistance
+  link: https://www.d20pfsrd.com/magic/all-spells/r/resistance/
+  level: 0 # See other directories for class levels!
+  casting_time: 1 SA
+  range: 0
+  duration: 1min.
+  components: V, S, M/DF
+  save: Will
+  resistance: yes
+  description: >
+    DF: a miniature cloak
+    
+    You imbue the subject with magical energy that protects it from harm, granting it a +1 resistance bonus on saves.
+  

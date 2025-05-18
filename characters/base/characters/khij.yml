@@ -1,7 +1,7 @@
 character:
   template: pathfinder
   system: Pathfinder
-  full_name: Khij
+  full_name: Khij 1e
   short_description: An Undine looking looking for an artifact to save his people.
   bg: /static/assets/bg/char1.jpg
   spec:

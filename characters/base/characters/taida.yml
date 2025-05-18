@@ -64,6 +64,7 @@ character:
       max_hp: 20
       hit_dice: 8
       languages: ["Common", "Folivoran", "+1|str", "+2|str"]
+      inspiration: "{{ parent().parent()['stash']['inspiration'] }}"
       race_abilities:
         - >
           Quick To Help: Folivorans are ever ready to lend a close
@@ -197,7 +198,6 @@ character:
     dnd5e:
       $ref: dnd5e
       background: Sage
-      inspiration: "{{ parent().parent()['stash']['inspiration'] }}"
       proficiency: 2
       proficiencies:
         weapons:

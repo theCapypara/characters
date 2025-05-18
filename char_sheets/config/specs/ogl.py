@@ -40,7 +40,7 @@ class OglSpec(AbstractSpec, HasOglLikeInventoryTrait):
                     Optional('swim'): int,
                     Optional('climb'): int
                 },
-                'vision': int,
+                Optional('vision'): int,
                 'current_hp': int,
                 'max_hp': int,
                 'hit_dice': int,
@@ -74,7 +74,8 @@ class OglSpec(AbstractSpec, HasOglLikeInventoryTrait):
                     'ac': int,
                     'ini': Or(int, str)
                 },
-                'spells': [DocReference(OglSpell)]
+                'spells': [DocReference(OglSpell)],
+                'inspiration': int
             }
         )
 

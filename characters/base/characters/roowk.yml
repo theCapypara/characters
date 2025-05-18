@@ -107,6 +107,7 @@ character:
       max_hp: 13
       hit_dice: 6
       languages: ["Common", "Eknamish", "?"]
+      inspiration: "{{ parent().parent()['stash']['inspiration'] }}"
       race_abilities:
         - "Detect Poisons and Diseases: May cast 'Detect Poison and Diseases' 2 times per long rest."
       class_abilities:
@@ -199,7 +200,6 @@ character:
     dnd5e:
       $ref: dnd5e
       background: Outlander
-      inspiration: "{{ parent().parent()['stash']['inspiration'] }}"
       proficiency: 2
       proficiencies:
         weapons_named:

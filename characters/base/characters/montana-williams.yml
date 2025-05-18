@@ -1,0 +1,325 @@
+character:
+  # 4707 (=2007) in Varisia -> Sandpoint
+  # Traits: Goblin Watcher? Merchant Family? Family Ties?
+  # 2 Background traits (wenn ein negativen dann 3 pos + 1 neg)
+  # 
+  # Explorers: As the campaign moves throughout the
+  #   frontier of Varisia, the player characters encounter
+  #   lost ruins. Characters with skill sets appropriate for
+  #   adventuring in dungeons and crumbling ruins can
+  #   give the party an edge. Knowledge (dungeoneering)
+  #   and racial low-light vision or darkvison would be
+  #   helpful in those dank and dark places. Since many of
+  #   these locations have been warded and secured by their
+  #   builders, a character who can bypass some of those
+  #   protections just might help the party live to fight
+  #   another day.
+  # 
+  # 150gp für Ausrüstung - 13 W/S (OK)
+  template: pathfinder
+  system: Pathfinder 1e
+  full_name: Montana Williams
+  short_description: "Daring adventurer and archeologist, real name: Dr. Richard Williams"
+  bg: /static/assets/bg/char1.jpg
+  stash:
+    hp: 8 # max 8
+    inspiration: 0
+    money:
+      gp: 79
+      sp: 33
+      cp: 30
+    spell_slots:
+      "1": 1 # max 1
+    abilities:
+      archaeologis_luck: "14" # max 14
+  spec:
+    general:
+      gender: Male
+      images:
+        - /static/assets/chars/montana-williams/montana-aigen1zoom.png
+        - /static/assets/chars/montana-williams/montana-aigen1.png
+        - /static/assets/chars/montana-williams/montana-aigen2.png
+        - /static/assets/chars/montana-williams/montana-aigen3.png
+      image_credits: |
+        AI generated, Flux .1 Dev - 
+        pos. Prompt: "drawing of an adventurer, holding a whip in one hand and a rope in the other, like indiana jones, wearing an adventurer's hat, exploring a dungeon, dnd human character, charming archeologist, brown hair, man," -
+        neg. Prompt: "wizard"
+      home: Varisia
+      size: 5.3
+      weight: 180
+      hair_color: Brown
+      age: 32
+      lore:
+        personality: >
+          Ist sehr von sich überzeugt, sehr neugierig, sehr charmant & überzeugend - wird leicht sauer, wenn es nicht so läuft, 
+          wie er sich das vorstellt. Überheblich aber nicht leichtsinnig.
+        backstory: >
+          Montana ist in einer Familie von Gelehrten in Varisia aufgewachsen. Er hat sich schon früh viel für Archälogie und die 
+          Geheminisse, die das Land und seine Geschichte mitbringen konzentriert. 
+          Schon lange wollte er die berühmten Ruinen auch praktisch besuchen. Er hat gehört, dass böse Mächte aus sind auf die Ruinen
+          und Schätze des Landes und hat daher jetzt entschieden, selbst jene Orte zu erkunden.
+        strengths: >
+          Sehr wortgewandt und extrem gut im Navigieren von Dungeons. Durch seine Art hat er in Varisia viele Kontakte aufgebaut 
+          und ist vielen Wohlgesonnen (s. Merchant Families).
+        flaws: >
+          Hat Klaustrophobie, diese hat er aber über die Jahre gut in den Griff gekriegt, auf sehr engem Raum kann er aber 
+          eine Panikattacke bekommen. Er hat bisher wenig praktische Erfahrung, bisher steckte er die meiste Zeit mit seiner 
+          Nase in Büchern. Er will sich aber nicht anmerken lassen, dass er erst seit kurzem auf "Feldeinsätzen" unterwegs ist.
+        ideals: >
+          Weiß, dass alte Ruinen starke Geheimnisse mit sich bringen und will auf jeden Fall verhindern, dass diese in die 
+          falschen Hände fallen.
+        appearance: Trägt ein Archäologen-Hemd und einen Fedora.
+    ogl:
+      $ref: ogl
+      current_hp: "{{ parent().parent()['stash']['hp'] }}"
+      inspiration: "{{ parent().parent()['stash']['inspiration'] }}"
+
+      class: Bard
+      subclass: Archeologist
+      level: 1
+      race: Human
+      spellcasting_mod: cha
+      alignment: NG
+      size_class: Medium
+      stats:
+        # 4 + 3 + 2 = 9
+        # 4 + 5 + 5 = 14
+        # 4 + 4 + 2 = 10
+        # 6 + 5 + 4 = 15
+        # 5 + 5 + 3 = 13
+        # 6 + 6 + 4 = 16 (+2)
+        str: 9
+        dex: 14
+        con: 10
+        int: 15
+        wis: 13
+        cha: 18
+      movement:
+        land: 30
+      max_hp: 8
+      hit_dice: 8
+      languages: [ "Common", "Taldan", "Thassilonian" ]
+      race_abilities:
+        - "Bonustalent: Menschen wählen ein zusätzliches Talent auf der 1. Stufe."
+        - "Geschult: Menschen erhalten einen zusätzlichen Fertigkeitsrang auf der 1. Stufe und einen weiteren zusätzlichen Fertigkeitsrang bei jedem Stufenaufstieg."
+        - "Sprachen: Zu Spielbeginn sprechen Menschen die Gemeinsprache. Menschen mit hohen Intelligenzwerten können jede andere Sprache zusätzlich auswählen (mit Ausnahme geheimer Sprachen wie Druidisch)."
+      class_abilities:
+        - >
+          Bardenwissen: Ein Barde addiert seine halbe Bardenstufe (mindestens 1) auf alle 
+          Wissensproben und er kann jede Wissensfertigkeit ungeübt benutzen.
+        - >
+          Archaeologist’s Luck (Ex): 
+          Fortune favors the archaeologist. As a swift action, an archaeologist can call on fortune’s favor, 
+          giving him a +1 luck bonus on attack rolls, saving throws, skill checks, and weapon damage rolls. 
+          He can use this ability for a number of rounds per day equal to 4 + his Charisma modifier. 
+          Maintaining this bonus is a free action, but it ends immediately if the archaeologist is killed, 
+          paralyzed, stunned, knocked unconscious, or otherwise prevented from taking a free action to maintain 
+          it each round. Archaeologist’s luck is treated as bardic performance for the purposes of feats, 
+          abilities, effects, and the like that affect bardic performance. Like bardic performance, it cannot 
+          be maintained at the same time as other performance abilities. This bonus increases to +2 at 5th level, 
+          +3 at 11th level, and +4 at 17th level.
+        - >
+          Umgang mit Waffen und Rüstungen: Ein Barde ist im Umgang mit allen einfachen Waffen geschult.
+          Zudem kann er mit Kurzbogen, Kurzschwert, Langschwert, Peitsche, Rapier und Totschläger umgehen.
+          Barden können leichte Rüstungen tragen und sind im Umgang mit Schilden (außer Turmschilden) geübt.
+      extra_abilities:
+        - >
+          Merchant Family (trait): You are related to one of the
+          four noble families from Magnimar who founded the
+          Mercantile League of Sandpoint. You either grew up
+          in Magnimar as a cousin in the Valdemar or Deverin
+          family or were born and raised in Sandpoint*. Education
+          in running a business and years of looking after the
+          family enterprise have given you a knack for trade. You
+          increase the gp limit of any settlement by 20% and can
+          resell items at an additional 10% over the amount of gp
+          you normally would get from selling off treasure.
+
+          *: Siehe Backstory
+        - >
+          Scholar of the Ancients (trait): Growing up with your nose
+          in books, you’ve had a great interest in past cultures
+          and ancient history. Furthermore, having grown up
+          in Varisia, you know the monuments dotting the
+          landscape belong to an ancient civilization known as
+          Thassilon. From your life of study and dogged research,
+          you’ve pieced together the language and partial history
+          of this once-great empire. You gain a +1 trait bonus on
+          Knowledge (arcana) and Knowledge (history) checks,
+          and begin play able to speak and read Thassilonian.
+      feats:
+        - >
+          Waffenfinesse [Kampf]: 
+          Du bist darin geübt, anstelle reiner Kraft deine Wendigkeit im Kampf einzusetzen.
+          
+          Vorteil: Wenn du eine leichte Waffe, ein Rapier, ein elfisches Krummschwert, eine Peitsche oder eine 
+          Stachelkette einsetzt, die für ein Wesen deiner Größe gefertigt ist, kannst du anstelle deines Stärke-, 
+          deinen Geschicklichkeitsmodifikator auf deine Angriffswürfe addieren. Wenn du einen Schild trägst, wird 
+          dessen Rüstungsmalus auf deine Angriffswürfe angerechnet.
+          
+          Speziell: Natürliche Waffen gelten immer als leichte Waffen.
+        - >
+          Zusätzlicher Bardenauftritt: Du kannst Bardenauftritt sechs weitere Runden pro Tag einsetzen.
+
+          Speziell: Du kannst das Talent Zusätzlicher-Bardenauftritt mehrfach erwerben. Jedes Mal verlängert sich 
+          die Wirkungsdauer von Bardenauftritt um sechs Runden pro Tag.
+      inventory:
+        on_hand:
+          - name: Reisekleidung
+            count: 1
+            weight: 5
+            link: http://prd.5footstep.de/Grundregelwerk/Ausruestung/Reisekleidung
+          - name: Rucksack
+            count: 1
+            weight: 2
+            notes: "55l"
+            link: http://prd.5footstep.de/Grundregelwerk/Ausruestung/Rucksack
+          - name: Reiseproviant
+            count: 5
+            weight: 1
+            notes: pro Tag
+            link: http://prd.5footstep.de/Grundregelwerk/Ausruestung/Reiseproviant
+          - name: Schlafsack
+            count: 1
+            weight: 5
+            link: http://prd.5footstep.de/Grundregelwerk/Ausruestung/Schlafsack
+          - name: Abdeckbare Laterne 
+            count: 1
+            weight: 2
+            notes: Radius von 9m
+            link: http://prd.5footstep.de/Grundregelwerk/Ausruestung/AbdeckbareLaterne
+          - name: Öl (1/2L)
+            count: 5
+            weight: 1
+            notes: Brennt 6 Stunden lang. Auch als Waffe verwendb.
+            link: http://prd.5footstep.de/Grundregelwerk/Ausruestung/Oel
+          - name: Hanfseil (15 m)
+            count: 1
+            weight: 10
+            link: http://prd.5footstep.de/Grundregelwerk/Ausruestung/Hanfseil
+          - name: Kletterhaken
+            count: 1
+            weight: 0.5
+            link: http://prd.5footstep.de/Grundregelwerk/Ausruestung/Kletterhaken
+          - name: Pergament
+            count: 5
+            weight: 0
+            link: http://prd.5footstep.de/Grundregelwerk/Ausruestung/Pergament
+          - name: Kreide
+            count: 10
+            weight: 0
+            link: http://prd.5footstep.de/Grundregelwerk/Ausruestung/Kreide
+          - name: Tinte (30ml)
+            count: 1
+            weight: 0
+            link: http://prd.5footstep.de/Grundregelwerk/Ausruestung/Tinte
+          - name: Tintenschreiber
+            count: 1
+            weight: 0
+            link: http://prd.5footstep.de/Grundregelwerk/Ausruestung/Tintenschreiber
+          - name: Signalpfeife
+            count: 1
+            weight: 0
+            link: http://prd.5footstep.de/Grundregelwerk/Ausruestung/Signalpfeife
+          - name: Kristallprisma
+            count: 1
+            weight: 0
+            notes: F für Magie lesen
+            link: http://prd.5footstep.de/AusbauregelnVIIOkkultes/Ausruestung/Kristallprisma
+        stored: [ ]
+      money:
+        gp: "{{ parent().parent()['stash']['money']['gp'] }}"
+        sp: "{{ parent().parent()['stash']['money']['sp'] }}"
+        cp: "{{ parent().parent()['stash']['money']['cp'] }}"
+      spell_slots:
+        "1": { max: 1, available: "{{ parent().parent()['stash']['spell_slots']['1'] }}" }
+      spells:
+        # 0
+        - $ref: pathfinder/spells/bard/detect-magic
+        - $ref: pathfinder/spells/bard/mage-hand
+        - $ref: pathfinder/spells/bard/read-magic
+        - $ref: pathfinder/spells/bard/resistance
+        # 1
+        - $ref: pathfinder/spells/bard/animate-rope
+        - $ref: pathfinder/spells/bard/cure-light-wounds
+          # https://www.d20pfsrd.com/magic/all-spells/a/abjuring-step/
+          # https://www.d20pfsrd.com/magic/all-spells/c/cause-fear/
+          # https://www.d20pfsrd.com/magic/all-spells/c/confusion/
+          # https://www.d20pfsrd.com/magic/all-spells/d/detect-secret-doors/
+    pathfinder:
+      $ref: pathfinder
+      bab: 0
+      save_base:
+        reflex: 2
+        will: 2
+        fortitude: 0
+      weapons:
+        - name: Peitsche
+          crit_mod: 2
+          crit_min: 20
+          damage_dice: 1d3
+          weight: 2
+          range: 10
+          hit_stat: dex
+          link: http://prd.5footstep.de/Grundregelwerk/Ausruestung/Peitsche
+          notes: >
+            Art: H, Entwaffnen, Nicht Tödlich, Reichweite, Zu-Fall-bringen
+        - name: Dolch
+          crit_mod: 2
+          crit_min: 19
+          damage_dice: 1d4
+          weight: 1
+          range: 10
+          hit_stat: dex
+          link: http://prd.5footstep.de/Grundregelwerk/Ausruestung/Dolch
+          notes: >
+            Art: H/S
+      armor:
+        - name: Lederrüstung
+          bonus: 2
+          minus: 0
+          max_dex: +6
+          arcane_fail_chance: 10
+          weight: 15
+          type: light
+      known_spells:
+        "0": 4
+        "1": 2
+      skills:
+        # per Level: 6 + INT + 1 (Human)
+        Acrobatics: { class_skill: true, ranks: 0 }
+        Perform: { class_skill: true, ranks: 1 }
+        Profession: { class_skill: true, ranks: 1, type: "Archaeologist" }
+        Bluff: { class_skill: true, ranks: 1 }
+        Diplomacy: { class_skill: true, ranks: 1 }
+        Intimidate: { class_skill: true, ranks: 0 }
+        Escape Artist: { class_skill: true, ranks: 0 }
+        Sleight of Hand: { class_skill: true, ranks: 1 }
+        Craft: { class_skill: true, ranks: 0 }
+        Stealth: { class_skill: true, ranks: 0 }
+        Climb: { class_skill: true, ranks: 1 }
+        Use Magic Device: { class_skill: true, ranks: 1 }
+        Sense Motive: { class_skill: true, ranks: 0 }
+        Appraise: { class_skill: true, ranks: 0 }
+        Linguistics: { class_skill: true, ranks: 0 }
+        Disguise: { class_skill: true, ranks: 0 }
+        Perception: { class_skill: true, ranks: 1 }
+        # Bardenwissen: Ein Barde addiert seine halbe Bardenstufe (mindestens 1) auf alle Wissensproben und er
+        #               kann jede Wissensfertigkeit ungeübt benutzen.
+        Knowledge (arcana): { class_skill: true, ranks: 0, boon: 2, usable_untrained: true }
+        Knowledge (dungeoneering): { class_skill: true, ranks: 1, boon: 1, usable_untrained: true }
+        Knowledge (engineering): { class_skill: true, ranks: 0, boon: 1, usable_untrained: true }
+        Knowledge (geography): { class_skill: true, ranks: 0, boon: 1, usable_untrained: true }
+        Knowledge (history): { class_skill: true, ranks: 0, boon: 2, usable_untrained: true }
+        Knowledge (local): { class_skill: true, ranks: 0, boon: 1, usable_untrained: true }
+        Knowledge (nature): { class_skill: true, ranks: 0, boon: 1, usable_untrained: true }
+        Knowledge (nobility): { class_skill: true, ranks: 0, boon: 1, usable_untrained: true }
+        Knowledge (planes): { class_skill: true, ranks: 0, boon: 1, usable_untrained: true }
+        Knowledge (religion): { class_skill: true, ranks: 0, boon: 1, usable_untrained: true }
+        Spellcraft: { class_skill: true, ranks: 0 }
+        Disable Device: { class_skill: false, ranks: 1 }
+    extra_counters:
+      counters:
+        - name: Archaeologist’s Luck 
+          available: "{{ parent().parent().stash.abilities.archaeologis_luck }}"
+          max: "14" # 4 + INT mod (4) + (Zusätzlicher Bardenauftritt 6)

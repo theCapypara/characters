@@ -1,7 +1,7 @@
 import logging
 import traceback
 
-import pkg_resources
+import importlib.resources
 import tornado
 from tornado.ioloop import IOLoop
 from tornado.web import Application
@@ -44,16 +44,21 @@ class CharacterHandler(tornado.web.RequestHandler):
                               trace=traceback.format_exc(), err=err)
 
 
-routes = [
-    (r"/", ListHandler),
-    (r"/character/(?P<character_id>[^\/]+).pdf", CharacterPdfHandler),
-    (r"/character/(?P<character_id>[^\/]+)/?", CharacterHandler),
-]
-logger.info('Starting!')
+def main():
+    routes = [
+        (r"/", ListHandler),
+        (r"/character/(?P<character_id>[^\/]+).pdf", CharacterPdfHandler),
+        (r"/character/(?P<character_id>[^\/]+)/?", CharacterHandler),
+    ]
+    logger.info('Starting!')
 
-app = Application(routes,
-                  template_path=pkg_resources.resource_filename(__name__, 'web/views'),
-                  static_path=pkg_resources.resource_filename(__name__, 'web/static'),
-                  debug=True, ui_methods=ui_methods)
-app.listen(PORT)
-IOLoop.current().start()
+    app = Application(routes,
+                    template_path=importlib.resources.files(__name__) / 'web/views',
+                    static_path=importlib.resources.files(__name__) / 'web/static',
+                    debug=True, ui_methods=ui_methods)
+    app.listen(PORT)
+    IOLoop.current().start()
+
+
+if __name__ == '__main__':
+    main()

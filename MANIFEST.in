@@ -1,0 +1,2 @@
+graft char_sheets/web/views
+graft char_sheets/web/static

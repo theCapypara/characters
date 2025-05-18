@@ -152,10 +152,10 @@ character:
       spells:
         - $ref: dnd5e/spells/thaumaturgy
           special: Via Type
+      inspiration: 0
     dnd5e:
       $ref: dnd5e
       background: Adopted
-      inspiration: 0
       proficiency: 2
       proficiencies:
         weapons:

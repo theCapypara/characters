@@ -27,14 +27,17 @@ def up(data: any, string: any):
 
 
 def size(data: any, feet: int):
-    meter = round(feet / 3.281, 1)
+    if feet == 30:
+        meter = 9
+    else:
+        meter = round(feet / 3.281, 1)
     return f'''
         <span class="unitc">
             <span class="main">
                 <span class="amount">{feet}</span><span class="unit">ft.</span>
             </span>
             <span class="converted">
-                <span class="amount">{meter}</span><span class="unit">m</span>
+                (<span class="amount">{meter}</span><span class="unit">m</span>)
             </span>
         </span>'''
 
@@ -47,7 +50,7 @@ def weight(data: any, pound: int):
                 <span class="amount">{pound}</span><span class="unit">lbs.</span>
             </span>
             <span class="converted">
-                <span class="amount">{kg}</span><span class="unit">kg</span>
+                (<span class="amount">{kg}</span><span class="unit">kg</span>)
             </span>
         </span>'''
 

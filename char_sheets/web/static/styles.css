@@ -15,7 +15,6 @@ body {
 
 h2 {
     font-size: 20px;
-    color: ;
     border-bottom: 1px solid #753527;
     margin: 2px;
     text-indent: 10px;
@@ -46,7 +45,8 @@ hr {
     border-bottom: 1px solid #753527;
 }
 
-h3, .inline-h3 {
+h3,
+.inline-h3 {
     font-family: 'Stardos Stencil', cursive;
     color: #753527;
     text-transform: uppercase;
@@ -185,7 +185,8 @@ footer {
 }
 
 .navbar {
-    display: none !important;  /* todo */
+    display: none !important;
+    /* todo */
 }
 
 .logo {
@@ -250,7 +251,7 @@ header p .button {
     align-items: center;
 }
 
-.iflex-vert > * {
+.iflex-vert>* {
     flex: 0 0 auto;
 }
 
@@ -332,7 +333,7 @@ header p .button {
     column-count: 1;
 }
 
-.sheet .content-inner > * {
+.sheet .content-inner>* {
     position: relative;
     z-index: 100;
 }
@@ -507,7 +508,7 @@ header p .button {
     padding: 320px 30px 0 30px;
 }
 
-.sheet.sheet--odd.page1 .content-inner > h2:first-of-type {
+.sheet.sheet--odd.page1 .content-inner>h2:first-of-type {
     padding-top: 60px;
 }
 
@@ -515,12 +516,15 @@ header p .button {
 .sheet.mega .char-img-head img {
     margin-top: 185px;
 }
+
 .sheet.sheet--even.page2 .content-inner {
     padding: 470px 30px 0 30px;
 }
-.sheet.sheet--even.page2 .content-inner > .spacer {
+
+.sheet.sheet--even.page2 .content-inner>.spacer {
     margin-top: -150px;
 }
+
 .sheet.sheet--even.page2 .char-img-head {
     left: initial;
     text-align: right;
@@ -570,19 +574,23 @@ header p .button {
     text-align: center;
     margin: 0 auto 10px;
 }
+
 .sheet .content-inner .extra {
     display: flex;
     justify-content: center;
     min-height: 45%;
     align-items: stretch;
 }
+
 .extra .extra-sector {
     flex: 1 0 45%;
     text-align: center;
 }
+
 .extra .extra-sector.two-col {
     columns: 2;
 }
+
 .extra .extra-image {
     flex: 0 0 55%;
     max-width: 100%;
@@ -600,6 +608,7 @@ header p .button {
 .mobile {
     display: none;
 }
+
 @media only screen and (max-width: 1000px) {
     .desktop {
         display: none;
@@ -609,14 +618,20 @@ header p .button {
         display: block;
     }
 
-    html, body {
+    html,
+    body {
         margin: 0;
         padding: 0;
         width: 100%;
     }
-    p, h2, h3, .inline-h3 {
+
+    p,
+    h2,
+    h3,
+    .inline-h3 {
         font-size: revert;
     }
+
     header {
         margin-bottom: 60px;
     }
@@ -625,23 +640,28 @@ header p .button {
         padding: 0;
         margin: 0;
     }
+
     .sheet {
         height: auto;
         width: 100%;
         margin: 30px 0 0;
     }
+
     .sheet .header {
         display: none;
     }
+
     .sheet .header-mobile {
         display: block;
         position: relative;
         z-index: 200;
     }
+
     .sheet .content {
         padding: 0 5px 45px;
         z-index: unset;
     }
+
     .sheet .content-inner {
         column-count: 1;
         margin-top: -60px;
@@ -652,11 +672,9 @@ header p .button {
         background: none !important;
     }
 
-    .sheet .content-inner > * {
-    }
+    .sheet .content-inner>* {}
 
-    .sheet .content-inner .avatar {
-    }
+    .sheet .content-inner .avatar {}
 
     .sheet .char-img-head {
         display: none;
@@ -744,7 +762,7 @@ header p .button {
         padding: 60px 30px 0 30px;
     }
 
-    .sheet.sheet--odd.page1 .content-inner > h2:first-of-type {
+    .sheet.sheet--odd.page1 .content-inner>h2:first-of-type {
         padding-top: 0;
         clear: both;
     }
@@ -753,6 +771,7 @@ header p .button {
     .sheet.sheet--odd .content-inner {
         padding: 30px 30px 0 30px;
     }
+
     .sheet.sheet--odd .footer .pagenum {
         left: 10px;
     }
@@ -771,7 +790,7 @@ header p .button {
         padding: 60px 30px 0 30px;
     }
 
-    .sheet.sheet--even.page2 .content-inner > .spacer {
+    .sheet.sheet--even.page2 .content-inner>.spacer {
         padding-top: 0;
         clear: both;
     }
@@ -783,6 +802,7 @@ header p .button {
     .sheet .content-inner {
         column-count: 2;
     }
+
     .sheet .char-img-head-mobile {
         float: left;
         margin-top: -200px;
@@ -791,27 +811,34 @@ header p .button {
 
 /* PHONE */
 @media only screen and (max-width: 600px) {
-    .headnav > .nav:first-of-type {
+    .headnav>.nav:first-of-type {
         order: 0;
     }
-    .headnav > .current {
+
+    .headnav>.current {
         order: 2;
     }
-    .headnav > .nav:last-of-type {
+
+    .headnav>.nav:last-of-type {
         order: 1;
     }
+
     .sheet .content-inner .extra-title {
         width: 100%;
     }
+
     .sheet .content-inner .extra {
         flex-wrap: wrap;
     }
+
     .extra .extra-sector.two-col {
         columns: 1;
     }
+
     .extra .extra-sector {
         order: 2;
     }
+
     .extra .extra-image {
         flex: 1 0 100%;
         max-width: 100%;
@@ -823,29 +850,40 @@ header p .button {
 /* PRINT */
 @media print {
     @page {
-        size: letter;
+        /*size: letter;*/
         margin: 0;
     }
-    header, footer {
+
+    header,
+    footer {
         display: none;
     }
+
     .headnav {
         display: none;
     }
+
     body {
         -webkit-print-color-adjust: exact !important;
         color-adjust: exact !important;
     }
+
     .sheet-wrapper {
         padding: 0;
     }
-    html, body, .sheet, .sheet-wrapper {
+
+    html,
+    body,
+    .sheet,
+    .sheet-wrapper {
         margin: 0 !important;
         width: 815px;
     }
+
     .sheet {
         overflow: hidden;
     }
+
     .sheet:not(:last-of-type) {
         page-break-after: always;
     }
@@ -864,8 +902,8 @@ header p .button {
     background-color: #eee;
     margin-bottom: 20px;
     border: 2px solid #ddd;
-    -webkit-box-shadow: rgb(0, 0, 0) 0px 10px 13px -7px, 5px 5px 15px 5px rgba(0,0,0,0);
-    box-shadow: rgb(0, 0, 0) 0px 10px 13px -7px, 5px 5px 15px 5px rgba(0,0,0,0);
+    -webkit-box-shadow: rgb(0, 0, 0) 0px 10px 13px -7px, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    box-shadow: rgb(0, 0, 0) 0px 10px 13px -7px, 5px 5px 15px 5px rgba(0, 0, 0, 0);
     display: flex;
     text-decoration: none;
 }
@@ -888,7 +926,7 @@ header p .button {
     gap: 10px;
 }
 
-.char-container > * {
+.char-container>* {
     flex-grow: 1;
     /*flex-shrink: 1;*/
 }
@@ -907,23 +945,25 @@ header p .button {
 .content-inner .tablec {
     overflow: auto;
 }
+
 .content-inner .tablec table {
     background-color: #cdc2a6;
     margin-top: 10px;
     width: 100%;
 }
+
 .content-inner .tablec table tr td {
     background-color: #fff8db;
 }
+
 .content-inner .tablec table tr:nth-child(odd) td {
     background-color: #ffefda;
 }
 
-.content-inner tr {
+.content-inner tr {}
 
-}
-
-.content-inner th, .content-inner td {
+.content-inner th,
+.content-inner td {
     padding: 3px;
 }
 
@@ -933,14 +973,14 @@ header p .button {
     color: white;
 }
 
-.content-inner td {
-}
+.content-inner td {}
 
 .content-inner .tablec table.auto-width {
     width: auto;
 }
 
-.content-inner .tablec table.auto-width th, .content-inner .tablec table.auto-width td {
+.content-inner .tablec table.auto-width th,
+.content-inner .tablec table.auto-width td {
     padding-left: 6px;
     padding-right: 6px;
 }
@@ -961,32 +1001,18 @@ header p .button {
     text-align: right;
 }
 
-.unitc {
-
-}
+.unitc {}
 
 .unitc .unit {
     font-size: 0.95em;
     color: #753527;
 }
 
-.unitc .main {
-
-}
+.unitc .main {}
 
 .unitc .converted {
     font-size: 0.5em;
     color: #222;
-}
-
-.unitc .converted:before {
-    display: inline;
-    content: '(';
-}
-
-.unitc .converted:after {
-    display: inline;
-    content: ')';
 }
 
 .statblock {
@@ -1022,6 +1048,75 @@ header p .button {
     margin-bottom: 5px;
 }
 
+/* PRINT */
+@media print {
+    @page {
+        size: A4;
+    }
+
+    .sheet .bg {
+        background-image: none !important;
+    }
+
+    h2 {
+        border-bottom-color: #636363;
+        break-after: avoid-page;
+    }
+
+    h3,
+    .inline-h3 {
+        color: #000;
+        break-after: avoid-page;
+    }
+
+    .sheet h1 {
+        color: #000;
+        border-bottom-color: #636363;
+        break-after: avoid-page;
+    }
+
+    hr {
+        border-bottom-color: #636363;
+    }
+
+    .content-inner th {
+        background-color: #636363;
+        text-align: left;
+        color: white;
+    }
+
+    .unitc .unit {
+        font-size: 0.95em;
+        color: #636363;
+    }
+
+    .content-inner .tablec table {
+        background-color: #d1d1d1;
+    }
+
+    .content-inner .tablec table tr td {
+        background-color: #ffffff;
+    }
+
+    .content-inner .tablec table tr:nth-child(odd) td {
+        background-color: #e4e4e4;
+    }
+
+    .stat {
+        border: 1px solid #646464;
+        color: #000;
+        background-color: #f8f8f8;
+    }
+
+    .stat .stat-mod {
+        background-color: #fff;
+    }
+
+    .lore-disclaimer {
+        background-color: #646464;
+        color: white;
+    }
+}
 
 /** GALLERY **/
 
@@ -1032,14 +1127,14 @@ header p .button {
 }
 
 .char-img li {
-  height: 150px;
+    height: 150px;
 }
 
 .char-img img {
-  max-height: 100%;
-  min-width: 100%;
-  object-fit: cover;
-  vertical-align: bottom;
+    max-height: 100%;
+    min-width: 100%;
+    object-fit: cover;
+    vertical-align: bottom;
 }
 
 .lore-disclaimer {

@@ -1,0 +1,3 @@
+ogl_spell:
+  $ref: ../base/cure-light-wounds
+  level: 1
