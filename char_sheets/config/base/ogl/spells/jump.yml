@@ -1,0 +1,9 @@
+ogl_spell:
+  name: Jump
+  level: 1
+  components: V, S, M
+  duration: 1 Minute
+  range: 0
+  casting_time: 1 Action
+  description: >
+    You touch a creature. The creature’s jump distance is tripled until the spell ends.

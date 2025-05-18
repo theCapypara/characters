@@ -1,6 +1,12 @@
 version: '3'
 services:
   char_sheets:
+    labels:
+      - "traefik.http.routers.characters.rule=Host(`chars.capypara.de`) || Host(`chars.parakoopa.de`)"
+      - "traefik.enable=true"
+      - "traefik.http.routers.characters.tls=true"
+      - "traefik.http.routers.characters.tls.certresolver=main"
     build: .
-    ports:
-      - 7554:7554
+    image: charsheets 
+    expose:
+      - "7554"
