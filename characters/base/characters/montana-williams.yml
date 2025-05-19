@@ -56,15 +56,46 @@ character:
         backstory: >
           Montana ist in einer Familie von Gelehrten in Varisia aufgewachsen. Er hat sich schon früh viel für Archälogie und die 
           Geheminisse, die das Land und seine Geschichte mitbringen konzentriert. 
-          Schon lange wollte er die berühmten Ruinen auch praktisch besuchen. Er hat gehört, dass böse Mächte aus sind auf die Ruinen
-          und Schätze des Landes und hat daher jetzt entschieden, selbst jene Orte zu erkunden.
+          Schon lange wollte er die berühmten Ruinen auch praktisch besuchen. Er hat die letzten Jahre unter Brodert Quink gelernt und
+          gehört, dass böse Mächte aus sind auf die Ruinen und Schätze des Landes und hat daher jetzt entschieden, selbst jene Orte zu erkunden.
         strengths: >
           Sehr wortgewandt und extrem gut im Navigieren von Dungeons. Durch seine Art hat er in Varisia viele Kontakte aufgebaut 
-          und ist vielen Wohlgesonnen (s. Merchant Families).
+          und ist vielen Wohlgesonnen.
         flaws: >
           Hat Klaustrophobie, diese hat er aber über die Jahre gut in den Griff gekriegt, auf sehr engem Raum kann er aber 
           eine Panikattacke bekommen. Er hat bisher wenig praktische Erfahrung, bisher steckte er die meiste Zeit mit seiner 
           Nase in Büchern. Er will sich aber nicht anmerken lassen, dass er erst seit kurzem auf "Feldeinsätzen" unterwegs ist.
+        bonds: >
+          Brodert Quink:
+
+          BESCHREIBUNG:
+          Der einzige Bewohner dieses historischen Gebdudes ist ein alter Mann namens BRODERT QUINK (NG Mensch Experte 7), 
+          ein kahl werdender Gelehrter der varisischen Geschichte und Baukunst. Brodert behauptet, er habe zwanzig Jahre 
+          seiner Jugend bei den Zwergen von Janderhoff die Baukunst studiert und dreißig Jahre lang als Titelaufnehmer 
+          im Gründerarchiv zu Magnimar gearbeitet. Daher ist er ständig überrascht und erzürnt darüber, dass ihm seine 
+          Gelehrsamkeit und seine offensichtliche Intelligenz nicht mehr Ruhm eingebracht haben. 
+          Seit einigen Jahren untersucht Brodert alte thassilonische Ruinen und ist inzwischen ganz besessen von
+          dem Alten Leuchtturm. Niemand glaubt seiner Theorie, der Turm sei einst eine Kriegsmaschine gewesen, die in
+          der Lage war, über mehr als anderthalb Kilometer hinweg Feuer zu speien.
+
+          BEZIEHUNG:
+          Hat die letzten Jahre unter Quink gelernt, seinen Theorien folgt er begeistert und ist dadurch jetzt auch motiviert,
+          jetzt endlich auch selbst Ruinen zu erfroschen.
+
+
+          Haus Deverin:
+
+          BESCHREIBUNG: 
+            The Deverin family is one of the most down-to-earth aristocratic families in the Varisian city of Magnimar. 
+            As of 4712 AR, they were led by the elderly Hobart Deverin, whose understanding of the plight of regular Magnimarians 
+            has earned him the nickname "the Simple Lord". Along with Deverin Villa, their modest town manor located in the Naos district, 
+            they also own the Fancy Reefclaw, one of Magnimar's most successful breweries. 
+            A branch of the family sailed north with four other important Magnimarian families in 4666 AR to found the town of Sandpoint, 
+            and continue to live there to this day. Kendra Deverin is the current leader of that branch of the family, and is also the mayor 
+            of Sandpoint.
+            
+          BEZIEHUNG:
+          Hat einen Onkel, der zum Haus Deverin gehört.
         ideals: >
           Weiß, dass alte Ruinen starke Geheimnisse mit sich bringen und will auf jeden Fall verhindern, dass diese in die 
           falschen Hände fallen.
@@ -98,7 +129,7 @@ character:
         land: 30
       max_hp: 8
       hit_dice: 8
-      languages: [ "Common", "Taldan", "Thassilonian" ]
+      languages: [ "Taldan", "Thassilonian", "Shoanti", "Varisian" ]
       race_abilities:
         - "Bonustalent: Menschen wählen ein zusätzliches Talent auf der 1. Stufe."
         - "Geschult: Menschen erhalten einen zusätzlichen Fertigkeitsrang auf der 1. Stufe und einen weiteren zusätzlichen Fertigkeitsrang bei jedem Stufenaufstieg."
@@ -127,15 +158,12 @@ character:
           Merchant Family (trait): You are related to one of the
           four noble families from Magnimar who founded the
           Mercantile League of Sandpoint. You either grew up
-          in Magnimar as a cousin in the Valdemar or Deverin
-          family or were born and raised in Sandpoint*. Education
+          in Magnimar as a cousin in the Deverin family. Education
           in running a business and years of looking after the
           family enterprise have given you a knack for trade. You
           increase the gp limit of any settlement by 20% and can
           resell items at an additional 10% over the amount of gp
           you normally would get from selling off treasure.
-
-          *: Siehe Backstory
         - >
           Scholar of the Ancients (trait): Growing up with your nose
           in books, you’ve had a great interest in past cultures

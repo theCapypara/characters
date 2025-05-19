@@ -24,7 +24,7 @@ Params:
                     {{ s['name'] }}
                     {% end %}
                 </td>
-                {% if any('weight' in x for x in spec['inventory']['on_hand'] ) %}<td>{{ s['weight'] if 'weight' in s else '' }}</td>{% end %}
+                {% if any('weight' in x for x in spec['inventory']['on_hand'] ) %}<td>{% raw weight(s['weight']) %}</td>{% end %}
                 <td>{{ s['notes'] if 'notes' in s else '' }}</td>
             </tr>
         {% end %}
@@ -51,7 +51,7 @@ Params:
                     {{ s['name'] }}
                     {% end %}
                 </td>
-                {% if any('weight' in x for x in spec['inventory']['stored'] ) %}<td>{{ s['weight'] if 'weight' in s else '' }}</td>{% end %}
+                {% if any('weight' in x for x in spec['inventory']['stored'] ) %}<td>{% raw weight(s['weight']) %}</td>{% end %}
                 <td>{{ s['notes'] if 'notes' in s else '' }}</td>
             </tr>
         {% end %}
